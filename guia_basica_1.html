@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<!--
+  Guía de matemáticas básica GED · Parte 1 — Números naturales y operaciones básicas
+  Autor: José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago
+  Licencia: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+  GEDparaHispanos.com
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago" />
+    <meta name="license" content="CC BY-NC-SA 4.0" />
+    <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" />
+    <title>Guía de matemáticas básica GED · Parte 1 — Números naturales</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --azul: #1565c0;
+        --azul-osc: #0d47a1;
+        --texto: #1a2330;
+        --texto-suave: #555;
+        --borde-suave: #e4e9f0;
+        --morado: #5b3a91;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-attachment: fixed;
+        min-height: 100vh;
+        padding: 20px;
+        color: var(--texto);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      /* ===== Encabezado ===== */
+      .header {
+        text-align: center;
+        margin-bottom: 22px;
+        color: #fff;
+      }
+
+      .header h1 {
+        font-size: 2.4rem;
+        margin-bottom: 8px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        line-height: 1.2;
+      }
+
+      .header p {
+        font-size: 1.15rem;
+        opacity: 0.95;
+      }
+
+      /* ===== Caja de objetivos ===== */
+      .caja-objetivos {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 22px 26px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        border-left: 6px solid var(--azul);
+      }
+
+      .caja-objetivos h2 {
+        font-size: 1.3rem;
+        color: var(--azul-osc);
+        margin-bottom: 12px;
+      }
+
+      .caja-objetivos ul {
+        list-style: none;
+        display: grid;
+        gap: 8px;
+      }
+
+      .caja-objetivos li {
+        padding-left: 28px;
+        position: relative;
+      }
+
+      .caja-objetivos li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #1b7a3d;
+        font-weight: 700;
+      }
+
+      /* ===== Barra de progreso ===== */
+      .progress-bar {
+        background: #fff;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 18px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .progress-text {
+        text-align: center;
+        color: var(--texto);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .progress-track {
+        background: #e9eef4;
+        height: 10px;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        background: linear-gradient(90deg, #1565c0 0%, #42a5f5 100%);
+        height: 100%;
+        width: 0%;
+        transition: width 0.5s ease;
+      }
+
+      /* ===== Controles abrir/cerrar ===== */
+      .controles {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+
+      .control-btn {
+        background: #ffffff;
+        color: var(--azul-osc);
+        border: 2px solid #ffffff;
+        padding: 9px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+      }
+
+      .control-btn:hover,
+      .control-btn:focus-visible {
+        background: var(--azul-osc);
+        color: #fff;
+        outline: 3px solid #ffd54f;
+        outline-offset: 2px;
+      }
+
+      /* ===== Acordeón de temas (details nativo) ===== */
+      .tema {
+        background: #fff;
+        border-radius: 15px;
+        margin-bottom: 18px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .tema > summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 22px 56px 22px 25px;
+        position: relative;
+        color: var(--texto);
+        user-select: none;
+      }
+
+      .tema > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .tema > summary h2 {
+        font-size: 1.45rem;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .tema > summary .icono {
+        font-size: 1.7rem;
+      }
+
+      .tema > summary::after {
+        content: "▼";
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .tema[open] > summary::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      .tema > summary:focus-visible {
+        outline: 3px solid #ffd54f;
+        outline-offset: -4px;
+      }
+
+      .tema1 > summary { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+      .tema2 > summary { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+
+      .tema > summary:hover { filter: brightness(0.97); }
+
+      /* ===== Subtemas (details anidado) ===== */
+      .subtema {
+        border-top: 1px solid #eef1f5;
+      }
+
+      .subtema > summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 18px 50px 18px 25px;
+        position: relative;
+        user-select: none;
+      }
+
+      .subtema > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .subtema > summary h3 {
+        color: #243140;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .subtema > summary .sub-icono {
+        color: var(--azul);
+        font-size: 1.1rem;
+      }
+
+      .subtema > summary::after {
+        content: "▶";
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #9aa6b2;
+        font-size: 0.95rem;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .subtema[open] > summary::after {
+        transform: translateY(-50%) rotate(90deg);
+        color: var(--azul);
+      }
+
+      .subtema > summary:hover { background: #f5f9ff; }
+
+      .subtema > summary:focus-visible {
+        outline: 3px solid #ffd54f;
+        outline-offset: -4px;
+      }
+
+      .subtema-cuerpo {
+        padding: 4px 25px 24px;
+      }
+
+      /* ===== Secciones de contenido ===== */
+      .content-section {
+        margin-bottom: 22px;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid var(--azul);
+      }
+
+      .theory-section { background: #f6f8fb; }
+      .examples-section { background: #eaf6ec; border-left-color: #1b7a3d; }
+      .exercise-section { background: #fff6e0; border-left-color: #a86a00; }
+
+      .section-title {
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: #243140;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .content-section p { margin-bottom: 10px; }
+
+      .example-box {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 12px 0;
+        border: 1px solid var(--borde-suave);
+      }
+
+      .step {
+        margin: 7px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .step::before {
+        content: "•";
+        position: absolute;
+        left: 2px;
+        color: var(--azul);
+        font-weight: bold;
+      }
+
+      /* ===== Videos ===== */
+      .video-bloque {
+        background: #efeaf7;
+        border-left: 4px solid var(--morado);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin-bottom: 22px;
+        text-align: center;
+      }
+
+      .video-bloque .video-titulo {
+        font-weight: 700;
+        color: var(--morado);
+        margin-bottom: 12px;
+        font-size: 1.05rem;
+      }
+
+      .video-frame {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .video-frame iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* ===== Ejercicios ===== */
+      .exercise {
+        background: #fff;
+        padding: 18px;
+        border-radius: 10px;
+        margin: 14px 0;
+        border: 2px solid #f0c674;
+      }
+
+      .question {
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #243140;
+      }
+
+      .answer-input {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .answer-input input {
+        padding: 9px 12px;
+        border: 2px solid var(--borde-suave);
+        border-radius: 6px;
+        font-size: 1rem;
+        width: 130px;
+      }
+
+      .answer-input input:focus-visible {
+        outline: 3px solid #ffd54f;
+        border-color: var(--azul);
+      }
+
+      .check-btn {
+        background: var(--azul);
+        color: #fff;
+        border: none;
+        padding: 9px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.25s ease;
+      }
+
+      .check-btn:hover,
+      .check-btn:focus-visible {
+        background: var(--azul-osc);
+        outline: 3px solid #ffd54f;
+        outline-offset: 2px;
+      }
+
+      .feedback {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-weight: 600;
+        display: none;
+      }
+
+      .feedback.correct {
+        background: #d8f0de;
+        color: #0f5128;
+        border: 1px solid #b6ddc1;
+      }
+
+      .feedback.incorrect {
+        background: #fbdcdf;
+        color: #6e1620;
+        border: 1px solid #f3bcc2;
+      }
+
+      .hint {
+        background: #eaf2fd;
+        padding: 10px 12px;
+        border-radius: 6px;
+        margin: 10px 0 0;
+        border-left: 3px solid var(--azul);
+        font-style: italic;
+        color: #2c3a48;
+      }
+
+      /* ===== Enlace al interactivo ===== */
+      .enlace-interactivo {
+        text-align: center;
+        margin: 18px 0 6px;
+        padding: 22px;
+        background: #eef4ff;
+        border: 2px dashed var(--azul);
+        border-radius: 12px;
+      }
+
+      .enlace-interactivo p {
+        margin-bottom: 14px;
+        font-weight: 600;
+        color: var(--azul-osc);
+      }
+
+      .interactive-link {
+        display: inline-block;
+        padding: 15px 34px;
+        background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
+        color: #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.08rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .interactive-link:hover,
+      .interactive-link:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        background: linear-gradient(135deg, #0d47a1 0%, #1e88e5 100%);
+        outline: 3px solid #ffd54f;
+        outline-offset: 2px;
+      }
+
+      .link-caption {
+        margin-top: 12px;
+        font-size: 0.92rem;
+        color: var(--texto-suave);
+        font-style: italic;
+      }
+
+      /* ===== Pie ===== */
+      footer {
+        text-align: center;
+        color: #f3f3f3;
+        font-size: 0.9rem;
+        padding: 24px 12px 8px;
+        line-height: 1.7;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 { font-size: 1.8rem; }
+        .tema > summary h2 { font-size: 1.2rem; }
+        .subtema > summary h3 { font-size: 1.05rem; }
+        .answer-input input { width: 110px; }
+        .controles { justify-content: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Números naturales y operaciones básicas</h1>
+        <p>Guía de matemáticas básica GED · Parte 1</p>
+      </header>
+
+      <section class="caja-objetivos">
+        <h2>Objetivos de aprendizaje</h2>
+        <ul>
+          <li>Distinguir entre dígito, cifra y número, y comprender el valor posicional hasta la centena de millón.</li>
+          <li>Sumar y restar números naturales, incluso llevando y pidiendo prestado.</li>
+          <li>Calcular el perímetro de figuras como aplicación de la suma.</li>
+          <li>Multiplicar y dividir números naturales y reconocer las operaciones inversas.</li>
+        </ul>
+      </section>
+
+      <div class="progress-bar">
+        <div class="progress-text">
+          Ejercicios completados:
+          <span id="progress-count">0</span> de 18
+          (<span id="progress-percent">0%</span>)
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Progreso de ejercicios" aria-valuemin="0" aria-valuemax="18" aria-valuenow="0" id="progress-meter">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="controles">
+        <button type="button" class="control-btn" id="abrir-todo">Abrir todo</button>
+        <button type="button" class="control-btn" id="cerrar-todo">Cerrar todo</button>
+      </div>
+
+      <!-- ============ TEMA 1 ============ -->
+      <details class="tema tema1">
+        <summary>
+          <h2><span class="icono" aria-hidden="true">#️⃣</span> 1. Conceptos básicos y fundamentos</h2>
+        </summary>
+
+        <!-- Subtema: Números naturales -->
+        <details class="subtema">
+          <summary>
+            <h3><span class="sub-icono" aria-hidden="true">🎯</span> Números naturales</h3>
+          </summary>
+          <div class="subtema-cuerpo">
+            <div class="content-section theory-section">
+              <div class="section-title"><span aria-hidden="true">📖</span> Teoría</div>
+              <p><strong>¿Qué son y cómo se utilizan?</strong></p>
+              <p>Los números naturales son los números que usamos para contar: 1, 2, 3, 4, 5... Son los primeros números que aprendemos.</p>
+              <p><strong>Conceptos clave:</strong></p>
+              <div class="step"><strong>Dígito:</strong> cada símbolo individual (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).</div>
+              <div class="step"><strong>Cifra:</strong> cada posición que ocupa un dígito en un número.</div>
+              <div class="step"><strong>Número:</strong> combinación de dígitos que representa una cantidad.</div>
+            </div>
+
+            <div class="content-section examples-section">
+              <div class="section-title"><span aria-hidden="true">💡</span> Ejemplos prácticos</div>
+              <div class="example-box">
+                <strong>Ejemplo 1: identificando dígitos y cifras</strong>
+                <div class="step">En el número 3,547:</div>
+                <div class="step">Dígitos: 3, 5, 4, 7 (son los símbolos individuales).</div>
+                <div class="step">Cifras: 4 cifras en total (miles, centenas, decenas, unidades).</div>
+                <div class="step">Este número representa tres mil quinientos cuarenta y siete.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 2: uso en la vida diaria</strong>
+                <div class="step">Para contar personas: 1, 2, 3, 4...</div>
+                <div class="step">Para numerar páginas: página 1, página 2...</div>
+                <div class="step">Para indicar cantidades: 5 manzanas, 10 estudiantes.</div>
+              </div>
+            </div>
+
+            <div class="content-section exercise-section">
+              <div class="section-title"><span aria-hidden="true">🎯</span> Ejercicios prácticos</div>
+              <div class="exercise">
+                <div class="question">1. ¿Cuántos dígitos tiene el número 6,829?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex1-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(1, 4)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex1-feedback" role="status"></div>
+                <div class="hint">💡 Pista: cuenta cada símbolo individual del número.</div>
+              </div>
+              <div class="exercise">
+                <div class="question">2. ¿Cuál es el dígito de las decenas en el número 2,375?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex2-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(2, 7)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex2-feedback" role="status"></div>
+                <div class="hint">💡 Pista: las decenas están en la segunda posición desde la derecha.</div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Subtema: Valor posicional -->
+        <details class="subtema">
+          <summary>
+            <h3><span class="sub-icono" aria-hidden="true">📍</span> Valor posicional</h3>
+          </summary>
+          <div class="subtema-cuerpo">
+            <div class="content-section theory-section">
+              <div class="section-title"><span aria-hidden="true">📖</span> Teoría</div>
+              <p><strong>Valor posicional hasta la centena de millón.</strong></p>
+              <p>Cada posición en un número tiene un valor específico. El valor del dígito depende de su posición.</p>
+            </div>
+
+            <div class="content-section examples-section">
+              <div class="section-title"><span aria-hidden="true">💡</span> Ejemplos prácticos</div>
+              <div class="example-box">
+                <strong>Ejemplo 1: desglosando 123,456,789</strong>
+                <div class="step">1 = centena de millón (1 × 100,000,000 = 100,000,000).</div>
+                <div class="step">2 = decena de millón (2 × 10,000,000 = 20,000,000).</div>
+                <div class="step">3 = unidad de millón (3 × 1,000,000 = 3,000,000).</div>
+                <div class="step">4 = centena de mil (4 × 100,000 = 400,000).</div>
+                <div class="step">5 = decena de mil (5 × 10,000 = 50,000).</div>
+                <div class="step">6 = unidad de mil (6 × 1,000 = 6,000).</div>
+                <div class="step">7 = centena (7 × 100 = 700).</div>
+                <div class="step">8 = decena (8 × 10 = 80).</div>
+                <div class="step">9 = unidad (9 × 1 = 9).</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 2: el número 4,567</strong>
+                <div class="step">4 está en las unidades de mil = 4,000.</div>
+                <div class="step">5 está en las centenas = 500.</div>
+                <div class="step">6 está en las decenas = 60.</div>
+                <div class="step">7 está en las unidades = 7.</div>
+                <div class="step">Total: 4,000 + 500 + 60 + 7 = 4,567.</div>
+              </div>
+            </div>
+
+            <div class="video-bloque">
+              <div class="video-titulo"><span aria-hidden="true">🎥</span> Video: valor posicional</div>
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/bTnQYe1ZOVQ?si=7mcntEDi9XT4xgF5"
+                  title="Video: valor posicional"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <!-- ENLACE AL INTERACTIVO: valor posicional -->
+            <div class="enlace-interactivo">
+              <p><span aria-hidden="true">🎮</span> ¡Practica el valor posicional!</p>
+              <a class="interactive-link" href="https://zhemaria.github.io/interactivos/valor_posicional" target="_blank" rel="noopener">
+                Abrir el interactivo: valor posicional
+              </a>
+              <p class="link-caption">Refuerza con ejercicios interactivos el valor de cada dígito según su posición. Se abre en una pestaña nueva.</p>
+            </div>
+
+            <div class="content-section exercise-section">
+              <div class="section-title"><span aria-hidden="true">🎯</span> Ejercicios prácticos</div>
+              <div class="exercise">
+                <div class="question">3. En el número 8,394, ¿cuál es el valor del dígito 3?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex3-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(3, 300)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex3-feedback" role="status"></div>
+                <div class="hint">💡 Pista: el 3 está en la posición de las centenas.</div>
+              </div>
+              <div class="exercise">
+                <div class="question">4. ¿Cuál es el valor del dígito 7 en el número 27,456?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex4-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(4, 7000)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex4-feedback" role="status"></div>
+                <div class="hint">💡 Pista: el 7 está en la posición de las unidades de mil.</div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Subtema: Suma -->
+        <details class="subtema">
+          <summary>
+            <h3><span class="sub-icono" aria-hidden="true">➕</span> Suma de números naturales</h3>
+          </summary>
+          <div class="subtema-cuerpo">
+            <div class="content-section theory-section">
+              <div class="section-title"><span aria-hidden="true">📖</span> Teoría</div>
+              <p><strong>Elementos de la suma:</strong></p>
+              <div class="step"><strong>Sumandos:</strong> los números que se suman.</div>
+              <div class="step"><strong>Suma o total:</strong> el resultado.</div>
+              <p><strong>Regla importante:</strong> siempre suma de derecha a izquierda, llevando cuando sea necesario.</p>
+            </div>
+
+            <div class="content-section examples-section">
+              <div class="section-title"><span aria-hidden="true">💡</span> Ejemplos prácticos</div>
+              <div class="example-box">
+                <strong>Ejemplo 1: suma de 1 dígito</strong>
+                <div class="step">3 + 5 = 8.</div>
+                <div class="step">Sumandos: 3 y 5.</div>
+                <div class="step">Suma: 8.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 2: suma de 2 dígitos (sin llevar)</strong>
+                <div class="step">25 + 34.</div>
+                <div class="step">Paso 1: 5 + 4 = 9 (unidades).</div>
+                <div class="step">Paso 2: 2 + 3 = 5 (decenas).</div>
+                <div class="step">Resultado: 59.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 3: suma con "llevar"</strong>
+                <div class="step">47 + 28.</div>
+                <div class="step">Paso 1: 7 + 8 = 15 (escribo 5, llevo 1).</div>
+                <div class="step">Paso 2: 4 + 2 + 1 = 7.</div>
+                <div class="step">Resultado: 75.</div>
+              </div>
+            </div>
+
+            <div class="video-bloque">
+              <div class="video-titulo"><span aria-hidden="true">🎥</span> Video: aprendiendo a sumar sin llevar</div>
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/Gv29eTcUgcE?si=BizsxKGo5yrsvqo6"
+                  title="Video: aprendiendo a sumar sin llevar"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="video-bloque">
+              <div class="video-titulo"><span aria-hidden="true">🎥</span> Video: aprendiendo a sumar llevando</div>
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/J5ZWeL97Ao0?si=m3dE0ZgWa_a_AMzn"
+                  title="Video: aprendiendo a sumar llevando"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="content-section exercise-section">
+              <div class="section-title"><span aria-hidden="true">🎯</span> Ejercicios prácticos</div>
+              <div class="exercise">
+                <div class="question">5. Resuelve: 23 + 45 = ?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex5-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(5, 68)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex5-feedback" role="status"></div>
+                <div class="hint">💡 Pista: suma primero las unidades (3 + 5), luego las decenas (2 + 4).</div>
+              </div>
+              <div class="exercise">
+                <div class="question">6. Resuelve: 157 + 286 = ?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex6-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(6, 443)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex6-feedback" role="status"></div>
+                <div class="hint">💡 Pista: recuerda "llevar" cuando la suma de una columna sea mayor que 9.</div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Subtema: Perímetro -->
+        <details class="subtema">
+          <summary>
+            <h3><span class="sub-icono" aria-hidden="true">⬜</span> Perímetro</h3>
+          </summary>
+          <div class="subtema-cuerpo">
+            <div class="content-section theory-section">
+              <div class="section-title"><span aria-hidden="true">📖</span> Concepto</div>
+              <p>
+                El <strong>perímetro</strong> es una medida que indica la longitud total del contorno
+                de una figura geométrica. En otras palabras, es <strong>la suma de las longitudes de
+                todos los lados</strong> de una figura.
+              </p>
+            </div>
+
+            <div class="content-section examples-section">
+              <div class="section-title"><span aria-hidden="true">💡</span> Ejemplos prácticos</div>
+              <div class="example-box">
+                <strong>Ejemplo 1: perímetro de un triángulo</strong>
+                <div class="step">El triángulo tiene 3 lados.</div>
+                <div class="step">Los lados miden 6 m, 7 m y 10 m.</div>
+                <div class="step">Sumamos los tres lados: 6 + 7 + 10 = 23.</div>
+                <div class="step">El perímetro es 23 m.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 2: perímetro de un cuadrado</strong>
+                <div class="step">El cuadrado tiene 4 lados iguales.</div>
+                <div class="step">El lado mide 15 cm.</div>
+                <div class="step">Calculamos: 15 + 15 + 15 + 15 = 60.</div>
+                <div class="step">El perímetro del cuadrado es 60 cm.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 3: perímetro de un rectángulo</strong>
+                <div class="step">Un rectángulo tiene 4 lados; los lados opuestos son iguales.</div>
+                <div class="step">Dos lados miden 8 pulgadas y los otros dos miden 12 pulgadas.</div>
+                <div class="step">Sumamos los lados: 8 + 8 + 12 + 12 = 40.</div>
+                <div class="step">El perímetro del rectángulo es 40 pulgadas.</div>
+              </div>
+            </div>
+
+            <div class="video-bloque">
+              <div class="video-titulo"><span aria-hidden="true">🎥</span> Video: perímetro, una aplicación de la suma</div>
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/BC-ztjSl4ek?si=Fl4afgBuV8eQ7C8i"
+                  title="Video: perímetro, una aplicación de la suma"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="content-section exercise-section">
+              <div class="section-title"><span aria-hidden="true">🎯</span> Ejercicios prácticos</div>
+              <div class="exercise">
+                <div class="question">7. Calcula el perímetro de un cuadrado cuyo lado mide 10.</div>
+                <div class="answer-input">
+                  <input type="number" id="ex7-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(7, 40)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex7-feedback" role="status"></div>
+                <div class="hint">💡 Pista: el cuadrado tiene los cuatro lados iguales.</div>
+              </div>
+              <div class="exercise">
+                <div class="question">8. Calcula el perímetro de un rectángulo cuyos lados miden 5 mm y 7 mm.</div>
+                <div class="answer-input">
+                  <input type="number" id="ex8-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(8, 24)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex8-feedback" role="status"></div>
+                <div class="hint">💡 Pista: los rectángulos tienen los lados opuestos iguales.</div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Subtema: Resta -->
+        <details class="subtema">
+          <summary>
+            <h3><span class="sub-icono" aria-hidden="true">➖</span> Resta de números naturales</h3>
+          </summary>
+          <div class="subtema-cuerpo">
+            <div class="content-section theory-section">
+              <div class="section-title"><span aria-hidden="true">📖</span> Teoría</div>
+              <p><strong>Elementos de la resta:</strong></p>
+              <div class="step"><strong>Minuendo:</strong> el número del cual se resta.</div>
+              <div class="step"><strong>Sustraendo:</strong> el número que se resta.</div>
+              <div class="step"><strong>Diferencia:</strong> el resultado.</div>
+              <p><strong>Regla importante:</strong> pide prestado cuando el dígito de arriba sea menor que el de abajo.</p>
+            </div>
+
+            <div class="content-section examples-section">
+              <div class="section-title"><span aria-hidden="true">💡</span> Ejemplos prácticos</div>
+              <div class="example-box">
+                <strong>Ejemplo 1: resta simple</strong>
+                <div class="step">8 − 3 = 5.</div>
+                <div class="step">Minuendo: 8.</div>
+                <div class="step">Sustraendo: 3.</div>
+                <div class="step">Diferencia: 5.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 2: resta sin pedir prestado</strong>
+                <div class="step">59 − 25.</div>
+                <div class="step">Paso 1: 9 − 5 = 4 (unidades).</div>
+                <div class="step">Paso 2: 5 − 2 = 3 (decenas).</div>
+                <div class="step">Resultado: 34.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 3: resta pidiendo prestado</strong>
+                <div class="step">52 − 27.</div>
+                <div class="step">Paso 1: no puedo hacer 2 − 7, pido prestado.</div>
+                <div class="step">Paso 2: 12 − 7 = 5 (unidades).</div>
+                <div class="step">Paso 3: 4 − 2 = 2 (decenas, porque presté 1).</div>
+                <div class="step">Resultado: 25.</div>
+              </div>
+            </div>
+
+            <div class="video-bloque">
+              <div class="video-titulo"><span aria-hidden="true">🎥</span> Video: aprendiendo a restar llevando</div>
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/d5ryYotBHeA?si=VywQ4hXgAszEWIbf"
+                  title="Video: aprendiendo a restar llevando"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="content-section exercise-section">
+              <div class="section-title"><span aria-hidden="true">🎯</span> Ejercicios prácticos</div>
+              <div class="exercise">
+                <div class="question">9. Resuelve: 86 − 34 = ?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex9-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(9, 52)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex9-feedback" role="status"></div>
+                <div class="hint">💡 Pista: resta primero las unidades (6 − 4), luego las decenas (8 − 3).</div>
+              </div>
+              <div class="exercise">
+                <div class="question">10. Resuelve: 203 − 157 = ?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex10-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(10, 46)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex10-feedback" role="status"></div>
+                <div class="hint">💡 Pista: tendrás que pedir prestado varias veces.</div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Subtema: Relación entre la suma y la resta -->
+        <details class="subtema">
+          <summary>
+            <h3><span class="sub-icono" aria-hidden="true">🔄</span> Relación entre la suma y la resta</h3>
+          </summary>
+          <div class="subtema-cuerpo">
+            <div class="content-section theory-section">
+              <div class="section-title"><span aria-hidden="true">📖</span> Teoría</div>
+              <p><strong>La suma y la resta son operaciones inversas.</strong> Una operación "deshace" lo que hace la otra.</p>
+              <div class="step">La suma es conmutativa: 3 + 5 = 5 + 3.</div>
+              <div class="step">La resta NO es conmutativa: 8 − 3 ≠ 3 − 8.</div>
+            </div>
+
+            <div class="content-section examples-section">
+              <div class="section-title"><span aria-hidden="true">💡</span> Ejemplos prácticos</div>
+              <div class="example-box">
+                <strong>Ejemplo 1: operaciones inversas</strong>
+                <div class="step">Si: 5 + 3 = 8.</div>
+                <div class="step">Entonces: 8 − 3 = 5 y 8 − 5 = 3.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 2: verificación</strong>
+                <div class="step">Para verificar que 47 + 28 = 75:</div>
+                <div class="step">Hago la resta: 75 − 28 = 47 ✓.</div>
+                <div class="step">O también: 75 − 47 = 28 ✓.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 3: encontrar números faltantes</strong>
+                <div class="step">Si 15 + ? = 23.</div>
+                <div class="step">Entonces ? = 23 − 15 = 8.</div>
+                <div class="step">Verifico: 15 + 8 = 23 ✓.</div>
+              </div>
+            </div>
+
+            <div class="content-section exercise-section">
+              <div class="section-title"><span aria-hidden="true">🎯</span> Ejercicios prácticos</div>
+              <div class="exercise">
+                <div class="question">11. Si 34 + 27 = 61, ¿cuánto es 61 − 27?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex11-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(11, 34)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex11-feedback" role="status"></div>
+                <div class="hint">💡 Pista: son operaciones inversas; el resultado debe ser el otro sumando.</div>
+              </div>
+              <div class="exercise">
+                <div class="question">12. Encuentra el número que falta: 45 + ? = 78</div>
+                <div class="answer-input">
+                  <input type="number" id="ex12-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(12, 33)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex12-feedback" role="status"></div>
+                <div class="hint">💡 Pista: usa la resta para encontrar el número: 78 − 45 = ?</div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </details>
+
+      <!-- ============ TEMA 2 ============ -->
+      <details class="tema tema2">
+        <summary>
+          <h2><span class="icono" aria-hidden="true">📆</span> 2. Operaciones avanzadas con números naturales</h2>
+        </summary>
+
+        <!-- Subtema: Multiplicación -->
+        <details class="subtema">
+          <summary>
+            <h3><span class="sub-icono" aria-hidden="true">✖️</span> Multiplicación de números naturales</h3>
+          </summary>
+          <div class="subtema-cuerpo">
+            <div class="content-section theory-section">
+              <div class="section-title"><span aria-hidden="true">📖</span> Teoría</div>
+              <p><strong>La multiplicación como suma repetida.</strong> Multiplicar es sumar el mismo número varias veces.</p>
+              <div class="step"><strong>Factores:</strong> los números que se multiplican.</div>
+              <div class="step"><strong>Producto:</strong> el resultado.</div>
+              <div class="step"><strong>Propiedad:</strong> la multiplicación es conmutativa (3 × 4 = 4 × 3).</div>
+            </div>
+
+            <div class="content-section examples-section">
+              <div class="section-title"><span aria-hidden="true">💡</span> Ejemplos prácticos</div>
+              <div class="example-box">
+                <strong>Ejemplo 1: como suma repetida</strong>
+                <div class="step">3 × 4 = 3 + 3 + 3 + 3 = 12.</div>
+                <div class="step">O también: 4 × 3 = 4 + 4 + 4 = 12.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 2: multiplicación de 2 dígitos</strong>
+                <div class="step">23 × 15.</div>
+                <div class="step">Paso 1: 23 × 5 = 115.</div>
+                <div class="step">Paso 2: 23 × 10 = 230.</div>
+                <div class="step">Paso 3: 115 + 230 = 345.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 3: multiplicación por 10, 100, 1000</strong>
+                <div class="step">25 × 10 = 250 (agregar un cero).</div>
+                <div class="step">25 × 100 = 2,500 (agregar dos ceros).</div>
+                <div class="step">25 × 1,000 = 25,000 (agregar tres ceros).</div>
+              </div>
+            </div>
+
+            <div class="video-bloque">
+              <div class="video-titulo"><span aria-hidden="true">🎥</span> Video: aprendiendo a multiplicar por un dígito</div>
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/Irhua2l3_Nc?si=mmAewozggmqdOj1a"
+                  title="Video: aprendiendo a multiplicar por un dígito"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="video-bloque">
+              <div class="video-titulo"><span aria-hidden="true">🎥</span> Video: aprendiendo a multiplicar por más de un dígito</div>
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/6y_NqLfsmbs?si=j0OA2veXUwZIinKO"
+                  title="Video: aprendiendo a multiplicar por más de un dígito"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="content-section exercise-section">
+              <div class="section-title"><span aria-hidden="true">🎯</span> Ejercicios prácticos</div>
+              <div class="exercise">
+                <div class="question">13. Resuelve: 6 × 8 = ?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex13-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(13, 48)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex13-feedback" role="status"></div>
+                <div class="hint">💡 Pista: puedes pensar en 6 + 6 + 6 + 6 + 6 + 6 + 6 + 6.</div>
+              </div>
+              <div class="exercise">
+                <div class="question">14. Resuelve: 24 × 13 = ?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex14-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(14, 312)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex14-feedback" role="status"></div>
+                <div class="hint">💡 Pista: multiplica 24 × 3, luego 24 × 10, y suma los resultados.</div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Subtema: División -->
+        <details class="subtema">
+          <summary>
+            <h3><span class="sub-icono" aria-hidden="true">➗</span> División de números naturales</h3>
+          </summary>
+          <div class="subtema-cuerpo">
+            <div class="content-section theory-section">
+              <div class="section-title"><span aria-hidden="true">📖</span> Teoría</div>
+              <p><strong>Elementos de la división:</strong></p>
+              <div class="step"><strong>Dividendo:</strong> el número que se divide.</div>
+              <div class="step"><strong>Divisor:</strong> el número por el cual se divide.</div>
+              <div class="step"><strong>Cociente:</strong> el resultado.</div>
+              <div class="step"><strong>Residuo:</strong> lo que sobra (si existe).</div>
+            </div>
+
+            <div class="content-section examples-section">
+              <div class="section-title"><span aria-hidden="true">💡</span> Ejemplos prácticos</div>
+              <div class="example-box">
+                <strong>Ejemplo 1: división exacta</strong>
+                <div class="step">84 ÷ 4 = 21.</div>
+                <div class="step">Dividendo: 84, divisor: 4, cociente: 21, residuo: 0.</div>
+                <div class="step">Verificación: 21 × 4 = 84 ✓.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 2: división con residuo</strong>
+                <div class="step">85 ÷ 4 = 21, residuo 1.</div>
+                <div class="step">Porque: 21 × 4 = 84, y 85 − 84 = 1.</div>
+                <div class="step">Verificación: (21 × 4) + 1 = 85 ✓.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 3: división larga de 345 ÷ 15</strong>
+                <div class="step">15 no cabe en 3, pero sí en 34.</div>
+                <div class="step">34 ÷ 15 = 2 (queda 4).</div>
+                <div class="step">Bajo el 5: 45 ÷ 15 = 3.</div>
+                <div class="step">Resultado: 345 ÷ 15 = 23.</div>
+              </div>
+            </div>
+
+            <div class="video-bloque">
+              <div class="video-titulo"><span aria-hidden="true">🎥</span> Video: división por una cifra</div>
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/4froVZh9KWE?si=tGwC7ebxvFDha_Vm"
+                  title="Video: división por una cifra"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="video-bloque">
+              <div class="video-titulo"><span aria-hidden="true">🎥</span> Video: división por dos cifras</div>
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/HFzrcgPf7hU?si=hTVt3X7ccZPIeuhS"
+                  title="Video: división por dos cifras"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="content-section exercise-section">
+              <div class="section-title"><span aria-hidden="true">🎯</span> Ejercicios prácticos</div>
+              <div class="exercise">
+                <div class="question">15. Resuelve: 72 ÷ 8 = ?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex15-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(15, 9)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex15-feedback" role="status"></div>
+                <div class="hint">💡 Pista: ¿qué número multiplicado por 8 da 72?</div>
+              </div>
+              <div class="exercise">
+                <div class="question">16. Resuelve: 156 ÷ 12 = ?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex16-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(16, 13)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex16-feedback" role="status"></div>
+                <div class="hint">💡 Pista: usa división larga. 12 × 13 = 156.</div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Subtema: Relación entre la multiplicación y la división -->
+        <details class="subtema">
+          <summary>
+            <h3><span class="sub-icono" aria-hidden="true">🔁</span> Relación entre la multiplicación y la división</h3>
+          </summary>
+          <div class="subtema-cuerpo">
+            <div class="content-section theory-section">
+              <div class="section-title"><span aria-hidden="true">📖</span> Teoría</div>
+              <p><strong>La multiplicación y la división son operaciones inversas.</strong> Al igual que la suma y la resta, una operación "deshace" lo que hace la otra.</p>
+            </div>
+
+            <div class="content-section examples-section">
+              <div class="section-title"><span aria-hidden="true">💡</span> Ejemplos prácticos</div>
+              <div class="example-box">
+                <strong>Ejemplo 1: operaciones inversas básicas</strong>
+                <div class="step">Si: 3 × 4 = 12.</div>
+                <div class="step">Entonces: 12 ÷ 4 = 3 y 12 ÷ 3 = 4.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 2: verificación con números mayores</strong>
+                <div class="step">Si: 15 × 8 = 120.</div>
+                <div class="step">Verifico: 120 ÷ 8 = 15 ✓.</div>
+                <div class="step">Y también: 120 ÷ 15 = 8 ✓.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 3: encontrar factores faltantes</strong>
+                <div class="step">Si 7 × ? = 63.</div>
+                <div class="step">Entonces ? = 63 ÷ 7 = 9.</div>
+                <div class="step">Verifico: 7 × 9 = 63 ✓.</div>
+              </div>
+              <div class="example-box">
+                <strong>Ejemplo 4: problemas de la vida real</strong>
+                <div class="step">144 estudiantes en 12 grupos iguales.</div>
+                <div class="step">¿Cuántos estudiantes por grupo? 144 ÷ 12 = 12.</div>
+                <div class="step">Verifico: 12 grupos × 12 estudiantes = 144 ✓.</div>
+              </div>
+            </div>
+
+            <div class="content-section exercise-section">
+              <div class="section-title"><span aria-hidden="true">🎯</span> Ejercicios prácticos</div>
+              <div class="exercise">
+                <div class="question">17. Si 9 × 7 = 63, ¿cuánto es 63 ÷ 9?</div>
+                <div class="answer-input">
+                  <input type="number" id="ex17-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(17, 7)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex17-feedback" role="status"></div>
+                <div class="hint">💡 Pista: son operaciones inversas; el resultado debe ser el otro factor.</div>
+              </div>
+              <div class="exercise">
+                <div class="question">18. Encuentra el número que falta: 12 × ? = 144</div>
+                <div class="answer-input">
+                  <input type="number" id="ex18-answer" placeholder="Tu respuesta" />
+                  <button type="button" class="check-btn" onclick="checkAnswer(18, 12)">Verificar</button>
+                </div>
+                <div class="feedback" id="ex18-feedback" role="status"></div>
+                <div class="hint">💡 Pista: usa la división para encontrar el factor: 144 ÷ 12 = ?</div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </details>
+    </div>
+
+    <footer>
+      Creado por José M. Fernández — ABE/ASE Math Master Teacher, Harry S. Truman College, City Colleges of Chicago.<br />
+      Material educativo de
+      <a href="https://gedparahispanos.com" target="_blank" rel="noopener">GEDparaHispanos.com</a>
+      · Licencia
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener">CC BY-NC-SA 4.0</a>.
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var totalExercises = 18;
+        var completed = new Set();
+
+        function updateProgress() {
+          var count = completed.size;
+          var percent = Math.round((count / totalExercises) * 100);
+          document.getElementById("progress-count").textContent = count;
+          document.getElementById("progress-percent").textContent = percent + "%";
+          document.getElementById("progress-fill").style.width = percent + "%";
+          document.getElementById("progress-meter").setAttribute("aria-valuenow", String(count));
+        }
+
+        window.checkAnswer = function (exerciseNum, correctAnswer) {
+          var input = document.getElementById("ex" + exerciseNum + "-answer");
+          var feedback = document.getElementById("ex" + exerciseNum + "-feedback");
+          var raw = input.value.trim();
+          var userAnswer = parseInt(raw, 10);
+
+          if (raw === "" || isNaN(userAnswer)) {
+            feedback.textContent = "Escribe un número antes de verificar.";
+            feedback.className = "feedback incorrect";
+            feedback.style.display = "block";
+            return;
+          }
+
+          if (userAnswer === correctAnswer) {
+            feedback.textContent = "¡Correcto! 🎉 Excelente trabajo.";
+            feedback.className = "feedback correct";
+            completed.add(exerciseNum);
+          } else {
+            feedback.textContent =
+              "Incorrecto. La respuesta correcta es " + correctAnswer + ". ¡Inténtalo de nuevo!";
+            feedback.className = "feedback incorrect";
+            completed.delete(exerciseNum);
+          }
+          feedback.style.display = "block";
+          updateProgress();
+        };
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" && e.target.tagName === "INPUT") {
+            e.preventDefault();
+            var btn = e.target.parentElement.querySelector(".check-btn");
+            if (btn) btn.click();
+          }
+        });
+
+        document.getElementById("abrir-todo").addEventListener("click", function () {
+          document.querySelectorAll("details").forEach(function (d) { d.open = true; });
+        });
+        document.getElementById("cerrar-todo").addEventListener("click", function () {
+          document.querySelectorAll("details").forEach(function (d) { d.open = false; });
+        });
+
+        updateProgress();
+      })();
+    </script>
+  </body>
+</html>
