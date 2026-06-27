@@ -1,0 +1,1548 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan curricular — Spanish ASE Math 3 (Nivel 3)</title>
+    <style>
+      :root {
+        --t1: #880e4f;
+        --t1bg: #fce4ec;
+        --t2: #1a237e;
+        --t2bg: #e8eaf6;
+        --t3: #004d40;
+        --t3bg: #e0f2f1;
+        --t4: #bf360c;
+        --t4bg: #fbe9e7;
+        --t5: #1b5e20;
+        --t5bg: #e8f5e9;
+        --t6: #0d47a1;
+        --t6bg: #e3f2fd;
+        --t7: #37474f;
+        --t7bg: #eceff1;
+        --t8: #4a148c;
+        --t8bg: #f3e5f5;
+        --acento: #7b1fa2;
+        --bg: #f5f7fa;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        margin: 0;
+        background: var(--bg);
+        color: #222;
+        line-height: 1.55;
+        font-size: 16px;
+      }
+      .contenedor {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      header.principal {
+        background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 50%, #9c27b0 100%);
+        color: #fff;
+        padding: 36px 32px;
+        border-radius: 14px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 14px rgba(74, 20, 140, 0.25);
+      }
+      header.principal h1 {
+        margin: 0 0 8px;
+        font-size: 28px;
+        font-weight: 700;
+      }
+      header.principal .meta {
+        font-size: 14px;
+        opacity: 0.92;
+        margin-top: 8px;
+      }
+
+      .intro {
+        background: #fff;
+        padding: 20px 24px;
+        border-radius: 10px;
+        border-left: 5px solid var(--acento);
+        margin-bottom: 24px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      }
+      .intro h2 {
+        margin-top: 0;
+        color: var(--acento);
+        font-size: 20px;
+      }
+      .intro p {
+        margin: 8px 0;
+      }
+
+      .tabla-resumen {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        margin-bottom: 32px;
+        font-size: 14px;
+      }
+      .tabla-resumen th,
+      .tabla-resumen td {
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        vertical-align: top;
+      }
+      .tabla-resumen th {
+        background: #37474f;
+        color: #fff;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+      }
+      .tabla-resumen tr:last-child td {
+        border-bottom: none;
+      }
+      .tabla-resumen td.num {
+        text-align: center;
+        width: 44px;
+      }
+      .pildora {
+        display: inline-block;
+        padding: 2px 10px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      details.tema {
+        background: #fff;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+        border-top: 6px solid #ccc;
+      }
+      details.tema > summary {
+        padding: 20px 24px;
+        cursor: pointer;
+        list-style: none;
+        background: var(--bgtema, #eceff1);
+        outline: none;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      details.tema > summary::-webkit-details-marker {
+        display: none;
+      }
+      details.tema > summary .chevron {
+        font-size: 20px;
+        flex-shrink: 0;
+        margin-top: 2px;
+        transition: transform 0.25s;
+      }
+      details.tema[open] > summary .chevron {
+        transform: rotate(90deg);
+      }
+      details.tema > summary .sum-body {
+        flex: 1;
+      }
+      details.tema > summary h2 {
+        margin: 0 0 5px;
+        font-size: 21px;
+        font-weight: 700;
+        color: var(--coltema, #37474f);
+      }
+      details.tema > summary .subtitulo {
+        font-size: 14px;
+        color: #555;
+        font-weight: 500;
+      }
+      details.tema > summary .standards {
+        font-size: 12px;
+        color: #666;
+        margin-top: 6px;
+        font-style: italic;
+      }
+
+      details.tema.t1 {
+        border-top-color: var(--t1);
+      }
+      details.tema.t1 > summary {
+        background: var(--t1bg);
+      }
+      details.tema.t1 > summary h2 {
+        color: var(--t1);
+      }
+      details.tema.t2 {
+        border-top-color: var(--t2);
+      }
+      details.tema.t2 > summary {
+        background: var(--t2bg);
+      }
+      details.tema.t2 > summary h2 {
+        color: var(--t2);
+      }
+      details.tema.t3 {
+        border-top-color: var(--t3);
+      }
+      details.tema.t3 > summary {
+        background: var(--t3bg);
+      }
+      details.tema.t3 > summary h2 {
+        color: var(--t3);
+      }
+      details.tema.t4 {
+        border-top-color: var(--t4);
+      }
+      details.tema.t4 > summary {
+        background: var(--t4bg);
+      }
+      details.tema.t4 > summary h2 {
+        color: var(--t4);
+      }
+      details.tema.t5 {
+        border-top-color: var(--t5);
+      }
+      details.tema.t5 > summary {
+        background: var(--t5bg);
+      }
+      details.tema.t5 > summary h2 {
+        color: var(--t5);
+      }
+      details.tema.t6 {
+        border-top-color: var(--t6);
+      }
+      details.tema.t6 > summary {
+        background: var(--t6bg);
+      }
+      details.tema.t6 > summary h2 {
+        color: var(--t6);
+      }
+      details.tema.t7 {
+        border-top-color: var(--t7);
+      }
+      details.tema.t7 > summary {
+        background: var(--t7bg);
+      }
+      details.tema.t7 > summary h2 {
+        color: var(--t7);
+      }
+      details.tema.t8 {
+        border-top-color: var(--t8);
+      }
+      details.tema.t8 > summary {
+        background: var(--t8bg);
+      }
+      details.tema.t8 > summary h2 {
+        color: var(--t8);
+      }
+
+      .lecciones {
+        padding: 14px 20px 18px;
+      }
+
+      details.leccion {
+        border-left: 4px solid #ccc;
+        border-radius: 0 8px 8px 0;
+        background: #fafafa;
+        margin-bottom: 10px;
+        overflow: hidden;
+      }
+      .t1 details.leccion {
+        border-left-color: var(--t1);
+      }
+      .t2 details.leccion {
+        border-left-color: var(--t2);
+      }
+      .t3 details.leccion {
+        border-left-color: var(--t3);
+      }
+      .t4 details.leccion {
+        border-left-color: var(--t4);
+      }
+      .t5 details.leccion {
+        border-left-color: var(--t5);
+      }
+      .t6 details.leccion {
+        border-left-color: var(--t6);
+      }
+      .t7 details.leccion {
+        border-left-color: var(--t7);
+      }
+      .t8 details.leccion {
+        border-left-color: var(--t8);
+      }
+
+      details.leccion > summary {
+        padding: 12px 16px;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        outline: none;
+      }
+      details.leccion > summary::-webkit-details-marker {
+        display: none;
+      }
+      details.leccion > summary .chevron-s {
+        font-size: 13px;
+        transition: transform 0.2s;
+        flex-shrink: 0;
+      }
+      details.leccion[open] > summary .chevron-s {
+        transform: rotate(90deg);
+      }
+      details.leccion > summary h3 {
+        margin: 0;
+        font-size: 16px;
+        color: #263238;
+        font-weight: 600;
+        flex: 1;
+      }
+      details.leccion > summary .dur {
+        font-size: 12px;
+        color: #888;
+        font-style: italic;
+        white-space: nowrap;
+      }
+
+      .leccion-body {
+        padding: 10px 18px 16px 18px;
+      }
+      .obj {
+        font-size: 14px;
+        color: #37474f;
+        margin: 0 0 12px;
+        padding: 8px 12px;
+        background: #fff;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+      }
+      .componente {
+        margin: 8px 0;
+        padding-left: 26px;
+        position: relative;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+      .componente::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 15px;
+      }
+      .componente.material::before {
+        content: '📐';
+      }
+      .componente.practica::before {
+        content: '💬';
+      }
+      .componente.quiz::before {
+        content: '✅';
+      }
+      .componente.rubrica::before {
+        content: '📊';
+      }
+      .componente strong {
+        color: #263238;
+        font-weight: 600;
+      }
+
+      .notas {
+        background: #fff8e1;
+        border-left: 4px solid #f9a825;
+        padding: 14px 18px;
+        margin: 8px 0 24px;
+        border-radius: 0 8px 8px 0;
+        font-size: 14px;
+      }
+      .notas strong {
+        color: #c54500;
+      }
+      .notas li {
+        margin-bottom: 6px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 24px;
+        color: #666;
+        font-size: 13px;
+        margin-top: 16px;
+        border-top: 1px solid #ddd;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+        details.tema,
+        details.leccion {
+          box-shadow: none;
+          border: 1px solid #ccc;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <header class="principal">
+        <h1>Plan curricular — Matemáticas, Nivel 3</h1>
+        <div class="meta">
+          <strong>Spanish ASE Math 3</strong>
+          · AE 0170-0323 · City Colleges of Chicago
+          <br />
+          96 horas totales (48 sincrónicas + 48 asincrónicas) · 16 semanas · NRS Levels 3–4
+          <br />
+          Plataforma: Brightspace D2L · Prof. José M. Fernández, con Claude
+        </div>
+      </header>
+
+      <section class="intro">
+        <h2>Cómo está organizado este plan</h2>
+        <p>
+          El contenido se distribuye en
+          <strong>8 grandes temas de 12 horas cada uno</strong>
+          (≈ 2 semanas por tema), respetando el
+          <em>Topical Outline v2</em>
+          del syllabus de 16 semanas y los Student Learning Outcomes.
+        </p>
+        <p>
+          Cada tema contiene
+          <strong>3 lecciones</strong>
+          de 4 horas. Para cada lección:
+          <strong>📐 Material/Recursos</strong>
+          ,
+          <strong>💬 Práctica guiada</strong>
+          ,
+          <strong>✅ Quiz/Tarea</strong>
+          y
+          <strong>📊 Rúbrica</strong>
+          .
+        </p>
+        <p>
+          Los temas 1–3 completan el sentido numérico avanzado (exponentes, notación científica, radicales). Los temas 4–5 desarrollan el álgebra lineal completa (ecuaciones, inecuaciones, fórmulas).
+          Los temas 6–7 cubren geometría espacial avanzada, volumen y análisis de datos. El tema 8 cierra con combinatoria, probabilidad compuesta y proyecto final integrador.
+        </p>
+        <p>
+          <strong>Uso del acordeón:</strong>
+          clic en el encabezado del tema para expandirlo; clic en cada lección para ver sus componentes. El primer tema ya está abierto.
+        </p>
+      </section>
+
+      <table class="tabla-resumen">
+        <caption style="display: none">Temas a desarrollar</caption>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tema</th>
+            <th scope="col">Semanas</th>
+            <th scope="col">Horas</th>
+            <th scope="col">Foco principal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num"><span class="pildora" style="background: #880e4f">1</span></td>
+            <td><strong>Reglas de los exponentes</strong></td>
+            <td>1–2</td>
+            <td>12 h</td>
+            <td>Producto, cociente, potencia; exp. negativo y cero; simplificar expresiones exponenciales</td>
+          </tr>
+          <tr>
+            <td class="num"><span class="pildora" style="background: #1a237e">2</span></td>
+            <td><strong>Notación científica</strong></td>
+            <td>3–4</td>
+            <td>12 h</td>
+            <td>Conversión decimal↔científica; ×, ÷, + y − en notación científica; aplicaciones científicas</td>
+          </tr>
+          <tr>
+            <td class="num"><span class="pildora" style="background: #004d40">3</span></td>
+            <td><strong>Radicales irracionales y el sistema de números reales</strong></td>
+            <td>5–6</td>
+            <td>12 h</td>
+            <td>Simplificar radicales; operaciones; números irracionales; recta numérica completa</td>
+          </tr>
+          <tr>
+            <td class="num"><span class="pildora" style="background: #bf360c">4</span></td>
+            <td><strong>Álgebra lineal: variables, expresiones y ecuaciones</strong></td>
+            <td>7–8</td>
+            <td>12 h</td>
+            <td>Traducir, simplificar; propiedades de igualdad; variables en ambos lados; sin solución e infinitas</td>
+          </tr>
+          <tr>
+            <td class="num"><span class="pildora" style="background: #1b5e20">5</span></td>
+            <td><strong>Inecuaciones lineales, fórmulas literales y estrategia general</strong></td>
+            <td>9–10</td>
+            <td>12 h</td>
+            <td>Resolver y graficar inecuaciones; inecuaciones compuestas; despejar fórmulas; problemas verbales</td>
+          </tr>
+          <tr>
+            <td class="num"><span class="pildora" style="background: #0d47a1">6</span></td>
+            <td><strong>Geometría avanzada: ángulos, Pitágoras y semejanza</strong></td>
+            <td>11–12</td>
+            <td>12 h</td>
+            <td>Ángulos y paralelas; Teorema de Pitágoras y su converso; figuras semejantes; Teorema de Thales</td>
+          </tr>
+          <tr>
+            <td class="num"><span class="pildora" style="background: #37474f">7</span></td>
+            <td><strong>Volumen de sólidos y análisis de datos complejo</strong></td>
+            <td>13–14</td>
+            <td>12 h</td>
+            <td>Volumen de prismas y cilindros; diagramas de caja; histogramas; comparar distribuciones</td>
+          </tr>
+          <tr>
+            <td class="num"><span class="pildora" style="background: #4a148c">8</span></td>
+            <td><strong>Combinatoria, probabilidad compuesta y proyecto final</strong></td>
+            <td>15–16</td>
+            <td>12 h</td>
+            <td>Conteo; permutaciones y combinaciones; P compuesta con/sin reemplazo; proyecto integrador GED</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- TEMA 1 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <details class="tema t1" open>
+        <summary>
+          <span class="chevron" aria-hidden="true">▶</span>
+          <div class="sum-body">
+            <h2>Tema 1 · Reglas de los exponentes</h2>
+            <div class="subtitulo">Semanas 1–2 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+            <div class="standards">Estándares: NS · SLO Number System 1 · Sección 1.1 del Topical Outline</div>
+          </div>
+        </summary>
+        <div class="lecciones">
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 1.1 · Regla del producto, potencia de potencia y potencia de un producto</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante aplica las reglas del producto (aᵐ · aⁿ = aᵐ⁺ⁿ), potencia de potencia ((aᵐ)ⁿ = aᵐⁿ) y potencia de un producto ((ab)ⁿ = aⁿbⁿ) para simplificar expresiones exponenciales;
+                verifica sus resultados expandiendo las potencias.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                tarjetas de las tres reglas con demostración por expansión (a³ · a² = aaa · aa = a⁵); tabla de patrones para "descubrir" las reglas antes de enunciarlas; MyOpenMath: lección de
+                propiedades de los exponentes.
+                <em>Modalidad:</em>
+                inducción — expansión → patrón → regla → aplicación.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "Descubre la regla" — el estudiante expande 4 ejemplos de cada tipo (a³·a⁴, (x²)³, (2y)⁴) y escribe el resultado simplificado, luego generaliza la regla. Actividad en parejas: uno
+                escribe una expresión, el otro la simplifica usando la regla correcta y cita el nombre. Asincrónica: 12 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                12 preguntas en Brightspace — 4 de regla del producto, 4 de potencia de potencia, 4 de potencia de un producto (incluyendo bases numéricas y variables). Sin calculadora. Tiempo: 20
+                min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de reglas de exponentes (3 criterios × 4 niveles): aplica la regla del producto correctamente (suma exponentes de la misma base) · aplica potencia de potencia (multiplica exponentes) ·
+                aplica potencia de un producto (distribuye el exponente a cada factor).
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 1.2 · Regla del cociente, exponente cero y exponentes negativos</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante aplica la regla del cociente (aᵐ/aⁿ = aᵐ⁻ⁿ), justifica por qué a⁰ = 1 (para a ≠ 0) mediante la regla del cociente, define exponentes negativos como recíprocos (a⁻ⁿ =
+                1/aⁿ) y reescribe expresiones con exponentes negativos como fracciones positivas.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                patrón de potencias decrecientes de 2 (2⁴=16, 2³=8, 2²=4, 2¹=2, 2⁰=?, 2⁻¹=?, 2⁻²=?) para "descubrir" el exponente cero y el negativo por división repetida por 2; tabla resumen de las 5
+                reglas completas; MyOpenMath.
+                <em>Modalidad:</em>
+                el patrón como motor del descubrimiento — no solo enunciar la regla, sino verla emerger.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "La tabla mágica" — los estudiantes completan la tabla de potencias de 3 hacia abajo hasta 3⁻⁴, luego convierten 10 expresiones con exponentes negativos a fracciones positivas y
+                viceversa. Actividad de verificación: usar la calculadora TI-30XS para confirmar que 2⁻³ = 0.125 = 1/8. Asincrónica: 12 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 3 de regla del cociente, 2 de exponente cero (¿cuál es el valor?), 5 de reescribir con exponentes negativos como fracciones positivas y viceversa. Tiempo:
+                20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de exponentes negativos y cero (3 criterios × 4 niveles): aplica la regla del cociente restando exponentes · justifica a⁰ = 1 usando la regla del cociente · reescribe correctamente a⁻ⁿ
+                = 1/aⁿ en ambas direcciones.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 1.3 · Simplificar expresiones exponenciales con múltiples reglas</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante simplifica expresiones exponenciales que requieren aplicar dos o más reglas en secuencia (ej. (2x³y⁻²)⁴ / (4x⁻¹y²)), y expresa el resultado con exponentes positivos;
+                identifica y corrige errores comunes (distribuir mal la potencia, confundir suma de bases con multiplicación).
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                tabla de las 5 reglas de exponentes a la vista; tarjetas de errores comunes ("¿cuál está mal?"); MyOpenMath: lección de simplificación completa; Steck-Vaughn GED Mathematics.
+                <em>Modalidad:</em>
+                resolución paso a paso anotando qué regla se aplica en cada paso.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El árbitro de exponentes" — el profesor presenta 6 soluciones con errores plantados; los estudiantes identifican el paso incorrecto y lo corrigen. Luego simplifican 8 expresiones
+                complejas mostrando cada regla aplicada. Asincrónica: 10 ejercicios de simplificación múltiple en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 4 de simplificación con 2 reglas combinadas, 4 con 3+ reglas, 2 de identificar el error en una simplificación dada. Resultado siempre con exponentes
+                positivos. Tiempo: 25 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                integradora de exponentes (4 criterios × 4 niveles): identifica y aplica la regla correcta en cada paso · muestra los pasos intermedios claramente · expresa el resultado final con
+                exponentes positivos solamente · detecta errores comunes en simplificaciones ajenas.
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- TEMA 2 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <details class="tema t2">
+        <summary>
+          <span class="chevron" aria-hidden="true">▶</span>
+          <div class="sum-body">
+            <h2>Tema 2 · Notación científica</h2>
+            <div class="subtitulo">Semanas 3–4 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+            <div class="standards">Estándares: NS · SLO Number System 2 · Sección 1.2 del Topical Outline</div>
+          </div>
+        </summary>
+        <div class="lecciones">
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 2.1 · Conversión decimal ↔ científica y órdenes de magnitud</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante convierte números muy grandes y muy pequeños entre notación decimal estándar y notación científica (a × 10ⁿ, donde 1 ≤ a &lt; 10); determina el orden de magnitud; y
+                compara cantidades de órdenes de magnitud diferentes (la distancia a la Luna vs. el diámetro de un átomo).
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                tarjetas con datos científicos reales (masa del Sol = 1.989 × 10³⁰ kg; masa del electrón = 9.109 × 10⁻³¹ kg; distancia Tierra-Sol = 1.496 × 10¹¹ m); regla de "mover el punto decimal"
+                con la conexión a exponentes de 10; MyOpenMath.
+                <em>Modalidad:</em>
+                los datos científicos asombrosos como motivación antes de la mecánica de conversión.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El universo en números" — los estudiantes convierten 10 datos del espacio y la biología (masa de bacterias, distancia entre galaxias) a notación científica y los ordenan de menor a
+                mayor. Actividad: ¿cuántas veces más grande es la Tierra que un glóbulo rojo? (dividir potencias de 10). Asincrónica: 12 conversiones en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 4 de decimal → científica (2 grandes, 2 pequeños), 4 de científica → decimal, 2 de comparar y ordenar números en notación científica. Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de conversión a notación científica (3 criterios × 4 niveles): determina correctamente el coeficiente a (1 ≤ a &lt; 10) · determina el exponente correcto de 10 (positivo para grandes,
+                negativo para pequeños) · compara y ordena números en notación científica correctamente.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 2.2 · Multiplicación y división en notación científica</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante multiplica y divide números en notación científica usando las reglas de exponentes (multiplicar/dividir los coeficientes por separado de las potencias de 10), y verifica
+                que el resultado esté en notación científica correcta (ajustar el coeficiente si es necesario).
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                procedimiento en 3 pasos: (1) opera los coeficientes, (2) aplica reglas de exponentes en las potencias de 10, (3) verifica que 1 ≤ coeficiente &lt; 10 y ajusta si no lo está;
+                calculadora TI-30XS (función EE); MyOpenMath.
+                <em>Modalidad:</em>
+                primero sin calculadora para dominar el procedimiento, luego verificar con TI-30XS.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "Cálculos de la NASA" — los estudiantes resuelven 6 problemas de contexto científico: velocidad de la luz × tiempo de viaje a Marte, masa de una molécula × número de Avogadro, etc.
+                Ajuste del coeficiente: ¿qué hago si el coeficiente me da 24.5? (24.5 × 10⁴ = 2.45 × 10⁵). Asincrónica: 10 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 4 de multiplicación, 4 de división, 2 de ajuste del coeficiente necesario. Sin calculadora. Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de operaciones en not. científica (3 criterios × 4 niveles): opera los coeficientes correctamente · aplica las reglas de exponentes en las potencias de 10 · ajusta el resultado a la
+                forma estándar de notación científica cuando el coeficiente queda fuera del rango [1, 10).
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 2.3 · Suma, resta y aplicaciones en ciencia y tecnología</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante suma y resta números en notación científica (igualando primero los exponentes de 10), resuelve problemas de aplicación que combinan las cuatro operaciones en notación
+                científica, y usa la calculadora TI-30XS eficientemente para verificar cálculos complejos.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                regla para suma/resta: "primero iguala los exponentes, luego opera los coeficientes"; 8 problemas de aplicación interdisciplinar (astronomía, biología celular, informática, economía
+                global); MyOpenMath; Steck-Vaughn GED Mathematics.
+                <em>Modalidad:</em>
+                conexión con otras materias — cada problema menciona una ciencia o contexto real.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El informe científico" — en grupos de 3, los estudiantes resuelven un mini-problema de cada área (espacio, biología, tecnología) usando las 4 operaciones en notación científica y
+                presentan los resultados en formato de "reporte de datos". Asincrónica: foro en Brightspace — cada estudiante busca un dato científico en notación científica y lo comparte con su
+                conversión.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 3 de suma, 3 de resta (igualando exponentes), 4 de aplicación mixta. Se permite calculadora TI-30XS para verificar. Tiempo: 25 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                integradora de notación científica (4 criterios × 4 niveles): iguala los exponentes correctamente antes de sumar/restar · opera los coeficientes sin errores · presenta el resultado en
+                notación científica válida · resuelve un problema de contexto científico con exactitud.
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- TEMA 3 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <details class="tema t3">
+        <summary>
+          <span class="chevron" aria-hidden="true">▶</span>
+          <div class="sum-body">
+            <h2>Tema 3 · Radicales irracionales y el sistema de números reales</h2>
+            <div class="subtitulo">Semanas 5–6 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+            <div class="standards">Estándares: NS · SLO Number System 3–4 · Sección 1.3 del Topical Outline</div>
+          </div>
+        </summary>
+        <div class="lecciones">
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 3.1 · Simplificar radicales: factorización en cuadrados perfectos</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante simplifica radicales cuadrados extrayendo los factores que son cuadrados perfectos (√72 = √36·2 = 6√2), usa la propiedad √(ab) = √a · √b, simplifica radicales con
+                variables (√x⁴ = x²) y reconoce cuándo un radical ya está en su forma más simple.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                árbol de factorización para descomponer el radicando; tabla de cuadrados perfectos hasta 225; propiedad del producto de radicales; MyOpenMath: lección de simplificación de radicales.
+                <em>Modalidad:</em>
+                factorización primero → identificar pares → extraer → simplificar; siempre verificar con calculadora.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "Simplifica el arquitecto" — el arquitecto necesita simplificar las medidas de sus diseños que contienen radicales (√50, √98, √200, √48, √75...). Los estudiantes trabajan en parejas:
+                uno factoriza, el otro simplifica. Actividad de verificación: calcular √72 con TI-30XS (≈ 8.485) y comparar con 6√2 ≈ 6 × 1.414 = 8.485. Asincrónica: 10 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 6 de simplificar radicales numéricos, 4 de simplificar radicales con variables. Sin calculadora. Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de simplificación de radicales (3 criterios × 4 niveles): factoriza el radicando identificando el mayor cuadrado perfecto · aplica √(a·b) = √a · √b correctamente · presenta el
+                resultado en forma simplificada con el coeficiente fuera del radical.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 3.2 · Operaciones con radicales: suma, resta y multiplicación</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante suma y resta radicales semejantes (misma parte irracional: 3√2 + 5√2 = 8√2); simplifica primero cuando los radicales no son semejantes; multiplica radicales usando √a ·
+                √b = √(ab) y binomios con radicales; y aproxima radicales irracionales a dos decimales.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                analogía con términos semejantes en álgebra (3x + 5x = 8x ↔ 3√2 + 5√2 = 8√2); tabla de operaciones permitidas y no permitidas con radicales (no se puede combinar √2 + √3); calculadora
+                TI-30XS; MyOpenMath.
+                <em>Modalidad:</em>
+                la analogía algebraica antes de los radicales.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "¿Semejantes o no?" — los estudiantes clasifican 10 pares de radicales en "se pueden combinar / no se pueden combinar" antes de operar. Luego suman, restan y multiplican 8 expresiones
+                con radicales, simplificando antes de combinar cuando necesario. Asincrónica: 10 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                12 preguntas en Brightspace — 3 de identificar radicales semejantes, 4 de suma/resta, 4 de multiplicación, 1 de aproximar a 2 decimales. Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de operaciones con radicales (3 criterios × 4 niveles): simplifica antes de intentar combinar radicales · combina solo radicales con la misma parte irracional · multiplica radicales
+                correctamente y simplifica el resultado.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 3.3 · El sistema de números reales: racionales, irracionales y la recta numérica completa</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante clasifica números en el sistema de números reales (naturales ⊂ enteros ⊂ racionales ⊂ reales; irracionales ⊂ reales); ubica irracionales en la recta numérica usando
+                aproximaciones; justifica por qué π y √2 son irracionales; y convierte decimales periódicos a fracciones para mostrar que son racionales.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                diagrama de Venn del sistema de números reales (círculos concéntricos); recta numérica con marcas en los irracionales más comunes (√2 ≈ 1.414, √3 ≈ 1.732, π ≈ 3.14159); procedimiento
+                para convertir decimal periódico a fracción (0.333... = 1/3); MyOpenMath.
+                <em>Modalidad:</em>
+                el diagrama de Venn como mapa conceptual antes de la clasificación de ejemplos.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "Clasifica y ubica" — los estudiantes reciben 20 números (enteros, fracciones, radicales, π, decimales) y los clasifican en el diagrama de Venn, luego ubican los irracionales en la
+                recta numérica. Actividad de conversión: demostrar que 0.666... = 2/3 y que √2 no se puede escribir como fracción. Asincrónica: 10 ejercicios de clasificación y ubicación en
+                MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 4 de clasificar en el sistema de números reales, 3 de ubicar en la recta numérica, 3 de convertir decimal periódico a fracción. Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                del sistema de números reales (3 criterios × 4 niveles): clasifica correctamente un número en el subconjunto más específico del diagrama · ubica irracionales en la recta numérica con
+                la aproximación correcta · convierte un decimal periódico a fracción usando el procedimiento algebraico.
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- TEMA 4 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <details class="tema t4">
+        <summary>
+          <span class="chevron" aria-hidden="true">▶</span>
+          <div class="sum-body">
+            <h2>Tema 4 · Álgebra lineal: variables, expresiones y ecuaciones</h2>
+            <div class="subtitulo">Semanas 7–8 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+            <div class="standards">Estándares: EE · SLO Expressions &amp; Equations 1–5 · Secciones 2.1 y 2.2 del Topical Outline</div>
+          </div>
+        </summary>
+        <div class="lecciones">
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 4.1 · Variables, expresiones algebraicas y traducción</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante usa variables para escribir expresiones algebraicas, traduce enunciados verbales al lenguaje algebraico (y viceversa), simplifica expresiones usando la propiedad
+                distributiva y combinando términos semejantes, y evalúa expresiones sustituyendo valores enteros o fraccionarios.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                tabla de traducción verbal→algebraico (el doble, la mitad, tres más que, disminuido en, el cuadrado de); fichas de "términos semejantes" para identificar visualmente; MyOpenMath:
+                lección de expresiones algebraicas.
+                <em>Modalidad:</em>
+                doble dirección — algebraico→verbal y verbal→algebraico.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El traductor matemático" — 10 frases verbales para convertir y 10 expresiones para describir con palabras. Luego simplificar 8 expresiones combinando términos semejantes con la
+                propiedad distributiva. Asincrónica: 12 ejercicios en MyOpenMath incluyendo evaluación con sustitución.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                12 preguntas en Brightspace — 4 de traducir verbal→algebraico, 4 de simplificar expresiones, 4 de evaluar expresiones con valores dados. Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de expresiones algebraicas (3 criterios × 4 niveles): traduce correctamente entre lenguaje verbal y algebraico · aplica la propiedad distributiva y combina términos semejantes · evalúa
+                la expresión sustituyendo el valor correcto y aplicando el PEMDAS.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 4.2 · Resolver ecuaciones lineales: propiedades de igualdad y variables en ambos lados</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante resuelve ecuaciones lineales en una variable aplicando sistemáticamente las propiedades de igualdad (suma, resta, multiplicación, división); resuelve ecuaciones con
+                variables en ambos lados; y usa la estrategia de "aislar la variable" de forma metódica y verificable.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                balanza de equilibrio visual como metáfora de la ecuación; estrategia de pasos ordenados (1. Distribuir · 2. Combinar términos semejantes · 3. Pasar variables a un lado · 4. Aislar la
+                variable · 5. Verificar); MyOpenMath; Steck-Vaughn GED Mathematics.
+                <em>Modalidad:</em>
+                los 5 pasos como check-list obligatorio antes de dar la respuesta.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El detector de errores" — el profesor muestra 4 soluciones de ecuaciones con errores de signo o de operación; los estudiantes los identifican y corrigen. Luego resuelven 8 ecuaciones
+                (4 simples, 4 con variables en ambos lados) mostrando todos los pasos. Asincrónica: 12 ecuaciones en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 3 de ecuaciones simples (2–3 pasos), 4 de variables en ambos lados, 3 de identificar el primer paso correcto. Tiempo: 20 min. Siempre verificar
+                sustituyendo.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de ecuaciones lineales (4 criterios × 4 niveles): aplica la propiedad de igualdad correcta en cada paso · mueve las variables al mismo lado correctamente · aísla la variable sin
+                errores de signo · verifica la solución sustituyendo en la ecuación original.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 4.3 · Ecuaciones con coeficientes fraccionarios, decimales y casos especiales</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante resuelve ecuaciones con coeficientes fraccionarios (multiplicando por el MCM para eliminarlos), con coeficientes decimales (multiplicando por potencias de 10), e
+                identifica los casos especiales: ecuación sin solución (0 = 5 → contradicción) y ecuación con infinitas soluciones (0 = 0 → identidad).
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                estrategia "limpiar fracciones" — multiplicar ambos lados por el MCM antes de resolver; "limpiar decimales" — multiplicar por 10, 100 o 1000 según los dígitos decimales; ejemplos de
+                contradicción e identidad; MyOpenMath.
+                <em>Modalidad:</em>
+                estrategia proactiva — "limpia primero, resuelve después".
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "¿Cuántas soluciones?" — los estudiantes resuelven 10 ecuaciones de distintos tipos y clasifican el resultado como: una solución / sin solución / infinitas soluciones. Cada resultado
+                se verifica. Discusión: ¿qué situación real modela una ecuación sin solución? Asincrónica: 10 ecuaciones en MyOpenMath de todos los tipos.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 4 de ecuaciones con fracciones, 3 con decimales, 3 de casos especiales (identificar tipo de solución). Tiempo: 25 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de ecuaciones avanzadas (4 criterios × 4 niveles): elimina fracciones multiplicando por el MCM · elimina decimales multiplicando por la potencia de 10 correcta · resuelve la ecuación
+                resultante sin errores · identifica y clasifica correctamente los casos especiales.
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- TEMA 5 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <details class="tema t5">
+        <summary>
+          <span class="chevron" aria-hidden="true">▶</span>
+          <div class="sum-body">
+            <h2>Tema 5 · Inecuaciones lineales, fórmulas literales y estrategia general</h2>
+            <div class="subtitulo">Semanas 9–10 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+            <div class="standards">Estándares: EE · SLO Expressions &amp; Equations 6–8 · Secciones 2.3 y 2.4 del Topical Outline</div>
+          </div>
+        </summary>
+        <div class="lecciones">
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 5.1 · Resolver inecuaciones lineales y graficar en la recta numérica</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante resuelve inecuaciones lineales en una variable, aplica la regla crítica de invertir el signo al multiplicar o dividir por un número negativo, grafica la solución en la
+                recta numérica (círculo abierto vs. cerrado; flecha a la izquierda vs. derecha), y expresa la solución en notación de intervalo y con desigualdad.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                comparación paralela ecuación↔inecuación (mismos pasos EXCEPTO la regla del cambio de signo); recta numérica para graficar; tabla: ≤ y ≥ → punto cerrado ●; &lt; y &gt; → punto abierto
+                ○; MyOpenMath.
+                <em>Modalidad:</em>
+                verificar la regla del cambio de signo con un ejemplo numérico concreto: 6 &gt; 4 → ¿qué pasa si multiplico ambos por -1? -6 &gt; -4 es FALSO → se invierte: -6 &lt; -4.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "¿Qué pasa con el signo?" — los estudiantes resuelven 6 inecuaciones, marcando con un asterisco cada vez que el signo cambia y por qué. Luego grafican las 6 soluciones en la recta.
+                Conexión: ¿qué valores satisfacen la inecuación? (verificar sustituyendo 3 valores: uno dentro, uno en el límite, uno fuera). Asincrónica: 10 inecuaciones en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 4 de resolver la inecuación, 3 de identificar la gráfica correcta, 3 de identificar si un valor satisface la inecuación. Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de inecuaciones lineales (4 criterios × 4 niveles): aplica los mismos pasos que en ecuaciones · invierte el signo al multiplicar/dividir por negativo · grafica correctamente (punto
+                abierto/cerrado, dirección) · verifica la solución con un valor de prueba.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 5.2 · Inecuaciones que requieren simplificación y problemas verbales</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante resuelve inecuaciones que requieren distribuir, combinar términos semejantes y mover variables de lado, traduce enunciados verbales a inecuaciones y las resuelve, e
+                interpreta la solución en el contexto del problema (¿cuántos artículos puede comprar como máximo? ¿cuál es el mínimo de horas necesarias?).
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                vocabulario de inecuaciones verbales (al menos, no más de, mínimo, máximo, suficiente para, no excede); 8 problemas de contexto real (presupuesto, tiempo, velocidad, temperatura);
+                MyOpenMath; Steck-Vaughn GED Mathematics.
+                <em>Modalidad:</em>
+                identificar las palabras clave antes de escribir la inecuación.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El presupuesto mensual" — 5 problemas de planificación financiera que se modelan con inecuaciones: "Si gano $2,400/mes y quiero que mis gastos no superen el 80% de mis ingresos,
+                ¿cuánto puedo gastar como máximo en entretenimiento si ya gasté $X en renta y $Y en comida?" Asincrónica: 8 problemas verbales en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 4 de inecuaciones con simplificación previa, 4 de traducir verbal→inecuación y resolver, 2 de interpretar la solución en contexto. Tiempo: 25 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de inecuaciones aplicadas (4 criterios × 4 niveles): simplifica correctamente antes de resolver · traduce el enunciado verbal a la inecuación correcta · resuelve la inecuación sin
+                errores · interpreta y comunica la solución en el contexto del problema con unidades.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 5.3 · Despeje de fórmulas literales y estrategia general de resolución</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante despeja una variable específica en fórmulas literales de geometría, física y finanzas (A = bh → h = A/b; I = Prt → P = I/(rt); d = rt → t = d/r; F = (9/5)C + 32 → C =
+                (F-32)·5/9); y aplica la estrategia general de resolución de problemas de 4 pasos.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                tabla de fórmulas de uso frecuente en el GED (área, perímetro, volumen, interés simple, distancia-velocidad-tiempo, conversión °F↔°C); estrategia de 4 pasos: (1) identificar la
+                variable a despejar, (2) aislarla con las propiedades de igualdad, (3) simplificar, (4) verificar; MyOpenMath.
+                <em>Modalidad:</em>
+                "despejar es resolver una ecuación donde la variable es un símbolo, no un número".
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El kit de fórmulas del GED" — los estudiantes despegan cada variable de las 8 fórmulas más frecuentes del examen. Luego aplican cada fórmula despejada en un problema de contexto.
+                Actividad de conexión: si F = ma y quiero a, ¿qué necesito saber? (enlace con física básica). Asincrónica: 10 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 6 de despejar una variable en una fórmula dada, 4 de aplicar la fórmula despejada en un problema de contexto. Se provee la fórmula original. Tiempo: 25
+                min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de despeje de fórmulas (3 criterios × 4 niveles): aplica correctamente las propiedades de igualdad para aislar la variable buscada · simplifica el resultado correctamente (con fracción
+                si es necesario) · usa la fórmula despejada para resolver un problema de aplicación correctamente.
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- TEMA 6 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <details class="tema t6">
+        <summary>
+          <span class="chevron" aria-hidden="true">▶</span>
+          <div class="sum-body">
+            <h2>Tema 6 · Geometría avanzada: ángulos, Pitágoras y semejanza</h2>
+            <div class="subtitulo">Semanas 11–12 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+            <div class="standards">Estándares: G · SLO Geometry 1–3 · Secciones 3.1, 3.2 y 3.3 del Topical Outline</div>
+          </div>
+        </summary>
+        <div class="lecciones">
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 6.1 · Ángulos: relaciones y líneas paralelas cortadas por una transversal</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante identifica y usa las relaciones entre ángulos: complementarios (suman 90°), suplementarios (suman 180°), verticales (opuestos e iguales); aplica las propiedades de
+                ángulos formados por dos líneas paralelas cortadas por una transversal (correspondientes, alternos internos, co-internos); y calcula ángulos desconocidos en figuras geométricas.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                diagrama de transversal con líneas paralelas con todos los ángulos numerados y sus relaciones indicadas; transportador para medir y verificar; tarjetas de relaciones de ángulos
+                (iguales vs. suplementarios); MyOpenMath.
+                <em>Modalidad:</em>
+                medir primero con transportador → descubrir las relaciones → formalizarlas → aplicarlas sin medir.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El topógrafo" — los estudiantes reciben 6 diagramas de calles paralelas con una calle transversal y deben calcular todos los ángulos desconocidos a partir de uno dado. Actividad de
+                construcción: dibujar su propio diagrama de transversal con una regla y protactor, etiquetar los 8 ángulos y clasificar sus relaciones. Asincrónica: 10 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 3 de ángulos complementarios/suplementarios, 4 de ángulos en transversal, 3 de calcular ángulos en triángulos (suma = 180°). Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de ángulos (3 criterios × 4 niveles): identifica el tipo de relación angular correctamente · aplica la propiedad correcta (igual, suplementario, suma 180°) · calcula el ángulo
+                desconocido sin errores aritméticos.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 6.2 · Teorema de Pitágoras: demostración, aplicaciones y converso</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante aplica el Teorema de Pitágoras (a² + b² = c²) para calcular el lado desconocido de un triángulo rectángulo; usa el converso (si a² + b² = c² entonces el triángulo es
+                rectángulo) para verificar si un triángulo es rectángulo; y resuelve problemas aplicados en 2D y 3D (distancia en el plano, altura de un edificio, longitud de una rampa).
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                demostración visual de a² + b² = c² con cuadrados construidos sobre cada lado; triples pitagóricos (3-4-5, 5-12-13, 8-15-17, 7-24-25); calculadora TI-30XS; Steck-Vaughn GED
+                Mathematics.
+                <em>Modalidad:</em>
+                demostración visual con cuadrados de papel → fórmula → calcular la hipotenusa → calcular un cateto → verificar con triple pitagórico.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El constructor" — 8 problemas de construcción real: ¿cuánto mide la diagonal de una puerta de 2m × 90cm? ¿cuánto cable necesito para sujetar una antena de 15m a 8m de distancia de su
+                base? ¿es rectangular una parcela con lados 30m, 40m y 50m? Asincrónica: 10 ejercicios en MyOpenMath incluyendo 2 con el converso.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 3 de calcular la hipotenusa, 3 de calcular un cateto, 2 de verificar si un triángulo es rectángulo (converso), 2 de aplicación contextual. Se permite
+                calculadora. Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de Teorema de Pitágoras (4 criterios × 4 niveles): identifica correctamente hipotenusa y catetos · plantea la ecuación a² + b² = c² correctamente · calcula el lado desconocido
+                despejando y sacando la raíz · aplica el converso correctamente para clasificar el triángulo.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 6.3 · Semejanza de figuras y dibujos a escala (Teorema de Thales)</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante identifica figuras semejantes (ángulos iguales, lados proporcionales), plantea y resuelve proporciones para encontrar lados desconocidos en figuras semejantes, interpreta
+                y usa la escala de dibujos planos (mapas, planos de construcción), y aplica el Teorema de Thales para encontrar longitudes a partir de paralelas y transversales.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                pares de triángulos semejantes con todos sus ángulos y lados (algunos desconocidos); mapa de Chicago con su escala; plano de construcción simple a escala; MyOpenMath; Steck-Vaughn GED
+                Mathematics.
+                <em>Modalidad:</em>
+                comenzar con figuras semejantes visuales antes de la proporción algebraica.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El arquitecto y el cartógrafo" — los estudiantes (1) usan el mapa de Chicago para calcular distancias reales entre puntos; (2) calculan la altura de un edificio a partir de su sombra
+                y la de un poste de referencia (Thales); (3) encuentran lados en 3 pares de triángulos semejantes. Asincrónica: 8 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 3 de identificar y calcular lados en figuras semejantes, 3 de interpretar escala (mapa o plano), 4 de Teorema de Thales en contexto (sombra, espejo,
+                cámara estenopeica). Tiempo: 25 min. Se permite calculadora.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de semejanza y escala (3 criterios × 4 niveles): verifica la semejanza comprobando la proporcionalidad de los lados · plantea y resuelve la proporción para el lado desconocido · aplica
+                la escala del dibujo correctamente para convertir a medidas reales.
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- TEMA 7 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <details class="tema t7">
+        <summary>
+          <span class="chevron" aria-hidden="true">▶</span>
+          <div class="sum-body">
+            <h2>Tema 7 · Volumen de sólidos y análisis de datos complejo</h2>
+            <div class="subtitulo">Semanas 13–14 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+            <div class="standards">Estándares: G · SP · SLO Geometry 4 · SLO Statistics &amp; Probability 1–3 · Secciones 3.4, 4.1 del Topical Outline</div>
+          </div>
+        </summary>
+        <div class="lecciones">
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 7.1 · Volumen de prismas y cilindros</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante calcula el volumen de prismas rectangulares y triangulares (V = Área base × altura) y cilindros (V = πr²h); despeja la altura o el radio cuando el volumen es conocido; y
+                resuelve problemas de aplicación (capacidad de un tanque, cantidad de hormigón, almacenamiento de líquidos).
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                modelos físicos o imágenes 3D de prismas y cilindros con dimensiones reales (caja de leche, lata de refresco, tanque de gas propano); fórmulas V = A_base × h; calculadora TI-30XS (para
+                π); MyOpenMath.
+                <em>Modalidad:</em>
+                calcular primero el área de la base (reconocer el tipo), luego multiplicar por la altura.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "Construcción y almacenamiento" — 6 problemas reales: ¿cuántos litros caben en un tanque cilíndrico de radio 0.8m y altura 2m? ¿cuántos m³ de hormigón necesito para una columna
+                cilíndrica de 3m de alto y 30cm de diámetro? Problema inverso: dada la capacidad y la altura, encontrar el radio. Asincrónica: 8 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 4 de volumen de prismas, 4 de volumen de cilindros, 2 de despejar altura o radio. Se permite calculadora. Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de volumen de sólidos (4 criterios × 4 niveles): identifica correctamente la base y la altura del sólido · calcula el área de la base sin errores · aplica V = A_base × h correctamente
+                · expresa el resultado en unidades cúbicas correctas (cm³, m³, L).
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 7.2 · Diagramas de caja y bigotes</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante construye un diagrama de caja y bigotes a partir de un conjunto de datos ordenados identificando el mínimo, Q1, Q2 (mediana), Q3 y el máximo; calcula el rango
+                intercuartílico (IQR = Q3 − Q1); identifica valores atípicos (outliers) usando la regla 1.5×IQR; e interpreta la asimetría de la distribución a partir de la caja.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                procedimiento de 5 pasos para construir la caja (ordenar → encontrar mediana → encontrar Q1 y Q3 → trazar caja → trazar bigotes); papel cuadriculado; conjuntos de datos reales de 10–15
+                valores (temperaturas, salarios, calificaciones); MyOpenMath.
+                <em>Modalidad:</em>
+                construir con papel cuadriculado antes de usar herramientas digitales.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "Las notas del equipo" — los estudiantes construyen el diagrama de caja de las calificaciones de dos grupos (A y B) y los comparan: ¿cuál grupo tiene mayor variabilidad? ¿cuál tiene la
+                mediana más alta? ¿hay valores atípicos? Actividad: dado el diagrama, ¿qué podemos y qué no podemos saber? Asincrónica: 6 ejercicios de construcción e interpretación en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 3 de calcular Q1, Q2, Q3 y IQR, 3 de identificar valores atípicos, 4 de interpretar un diagrama dado (¿cuál es la mediana? ¿cuál es el rango? ¿hay
+                sesgo?). Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de diagramas de caja (4 criterios × 4 niveles): ordena los datos e identifica correctamente los 5 valores clave · calcula el IQR y usa la regla 1.5×IQR para outliers · construye el
+                diagrama correctamente a escala · interpreta la simetría/asimetría de la distribución.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 7.3 · Histogramas: construir, interpretar y comparar distribuciones</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante construye un histograma a partir de una tabla de frecuencias, describe la forma de la distribución (simétrica, sesgada a la derecha, sesgada a la izquierda, unimodal,
+                bimodal), compara dos distribuciones usando histograma y diagrama de caja simultáneamente, y elige la representación más informativa para un contexto dado.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                diferencia clave entre gráfica de barras e histograma (barras contiguas en histograma = datos continuos); tabla de frecuencias para construir el histograma; 3 histogramas con
+                diferentes formas para analizar; MyOpenMath; Steck-Vaughn GED Mathematics.
+                <em>Modalidad:</em>
+                construir de la tabla → analizar la forma → comparar con el diagrama de caja del mismo conjunto.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "El perfil del salón" — los estudiantes recopilan sus propias edades (o alturas simuladas) y construyen un histograma con intervalos de 5 años (o 5cm). Luego construyen el diagrama de
+                caja del mismo conjunto y comparan qué información da cada gráfica. Discusión: ¿cuándo prefiero el histograma? ¿cuándo la caja? Asincrónica: 4 construcciones + 4 interpretaciones en
+                MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 3 de construir o completar un histograma, 4 de interpretar forma y distribución, 3 de comparar dos distribuciones (histograma vs. caja). Tiempo: 25 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de histogramas (4 criterios × 4 niveles): construye el histograma con los intervalos y frecuencias correctos · describe la forma de la distribución con terminología correcta · compara
+                dos distribuciones usando al menos dos estadísticas · elige y justifica la representación gráfica más informativa para el contexto.
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- TEMA 8 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <details class="tema t8">
+        <summary>
+          <span class="chevron" aria-hidden="true">▶</span>
+          <div class="sum-body">
+            <h2>Tema 8 · Combinatoria, probabilidad compuesta y proyecto final integrador</h2>
+            <div class="subtitulo">Semanas 15–16 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+            <div class="standards">Estándares: SP · SLO Statistics &amp; Probability 4–5 · Secciones 4.2 y 4.3 del Topical Outline</div>
+          </div>
+        </summary>
+        <div class="lecciones">
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 8.1 · Principio fundamental del conteo, permutaciones y combinaciones</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante aplica el Principio Fundamental del Conteo para determinar el número total de resultados posibles de eventos sucesivos; calcula permutaciones (el orden importa: P(n,r) =
+                n!/(n-r)!) y combinaciones (el orden no importa: C(n,r) = n!/[r!(n-r)!]); y distingue cuándo aplicar cada uno según el contexto.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                diagrama de árbol para el Principio Fundamental; tabla comparativa: ¿orden importa? → permutación vs. combinación; fórmulas P(n,r) y C(n,r) con la definición de n! (factorial);
+                calculadora TI-30XS (funciones nPr y nCr); MyOpenMath.
+                <em>Modalidad:</em>
+                árbol primero → fórmula después → calculadora para verificar.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "La lotería y el comité" — ¿de cuántas formas puedo ordenar 5 libros en un estante? (permutación) vs. ¿de cuántas formas puedo elegir 3 libros de 5 para llevar a un viaje?
+                (combinación). Clasificar 8 situaciones en permutación vs. combinación antes de calcular. Asincrónica: 10 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 3 de Principio Fundamental, 3 de permutaciones, 4 de combinaciones (incluyendo 2 de clasificar el tipo correcto). Se permite calculadora TI-30XS. Tiempo:
+                20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de combinatoria (3 criterios × 4 niveles): aplica el Principio Fundamental multiplicando los resultados de cada evento · determina correctamente si el problema pide permutación o
+                combinación · aplica la fórmula correcta sin errores de factorial.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 8.2 · Probabilidad compuesta: con y sin reemplazo</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante calcula la probabilidad de dos eventos compuestos con reemplazo (independientes: P(A y B) = P(A) × P(B)) y sin reemplazo (dependientes: P(A y B) = P(A) × P(B|A));
+                construye tablas de probabilidad y diagramas de árbol para visualizar el espacio muestral; y distingue el efecto del reemplazo en las probabilidades.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                urna con fichas de colores para experimento físico; tabla de diferencias: con reemplazo (el denominador no cambia) vs. sin reemplazo (el denominador decrece); diagrama de árbol de dos
+                niveles; MyOpenMath; Steck-Vaughn GED Mathematics.
+                <em>Modalidad:</em>
+                experimento físico con la urna antes de la fórmula abstracta.
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "La bolsa de caramelos" — urna con 4 rojos, 3 azules y 2 verdes. Calcular P(rojo, luego azul) con reemplazo vs. sin reemplazo. Construir el diagrama de árbol de dos extracciones.
+                Extender a 3 eventos. Discusión: ¿siempre es mayor la probabilidad con reemplazo? Asincrónica: 10 ejercicios en MyOpenMath.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                10 preguntas en Brightspace — 4 de probabilidad con reemplazo, 4 sin reemplazo, 2 de clasificar y comparar (¿con o sin reemplazo? ¿cuál da mayor probabilidad?). Tiempo: 20 min.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                de probabilidad compuesta (3 criterios × 4 niveles): clasifica correctamente el tipo de evento (independiente/dependiente) · aplica la fórmula de multiplicación correcta según el tipo
+                · calcula sin errores de fracción y expresa el resultado en fracción, decimal y porcentaje.
+              </div>
+            </div>
+          </details>
+
+          <details class="leccion">
+            <summary>
+              <span class="chevron-s" aria-hidden="true">▶</span>
+              <h3>Lección 8.3 · Proyecto final integrador + estrategias para el GED Mathematical Reasoning</h3>
+              <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+            </summary>
+            <div class="leccion-body">
+              <div class="obj">
+                <strong>Objetivo:</strong>
+                El estudiante presenta el proyecto integrador "Mi análisis de datos" (un conjunto de datos real + diagrama de caja o histograma + cálculos estadísticos + interpretación escrita + al
+                menos un cálculo de probabilidad), y responde 10 preguntas tipo GED de nivel intermedio que cubren todos los temas del nivel.
+              </div>
+              <div class="componente material">
+                <strong>Material/Recursos:</strong>
+                plantilla del proyecto integrador; hoja de referencia del GED Mathematical Reasoning (fórmulas provistas en el examen); 10 preguntas tipo GED de nivel intermedio (mix de álgebra,
+                geometría y estadística); Steck-Vaughn GED Mathematics.
+                <em>Modalidad:</em>
+                presentación oral del proyecto + práctica de estrategias GED (uso de la hoja de fórmulas, manejo del tiempo).
+              </div>
+              <div class="componente practica">
+                <strong>Práctica guiada:</strong>
+                "Comparto mi análisis" — cada estudiante presenta su proyecto (3–4 min) con el diagrama, los estadísticos y la interpretación. Los compañeros hacen 1 pregunta. Práctica de 10 preguntas
+                tipo GED en parejas, discutiendo la estrategia de solución (no solo el resultado). Asincrónica: cada estudiante sube su proyecto completo a Brightspace y comenta el de dos compañeros.
+              </div>
+              <div class="componente quiz">
+                <strong>Quiz:</strong>
+                <strong>Evaluación final sumativa</strong>
+                — 25 preguntas en Brightspace mezclando todos los temas: 5 de exponentes y notación científica, 5 de álgebra lineal (ecuaciones e inecuaciones), 5 de geometría (Pitágoras, semejanza,
+                volumen), 5 de estadística (caja, histograma, medidas), 5 de probabilidad y combinatoria. Tiempo: 60 min. 2 intentos. Se permite calculadora TI-30XS y hoja de fórmulas del GED.
+              </div>
+              <div class="componente rubrica">
+                <strong>Rúbrica:</strong>
+                <strong>analítica del proyecto final</strong>
+                (5 criterios × 4 niveles = 20 pts): (1) conjunto de datos real y bien descrito · (2) representación gráfica correcta (caja o histograma) con todas las etiquetas · (3) cálculo correcto
+                de al menos 3 estadísticos (media, mediana, IQR u otro) · (4) interpretación escrita coherente con los datos · (5) cálculo de probabilidad correcto vinculado al contexto del proyecto.
+                La nota del proyecto se combina con la del quiz sumativo.
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <!-- NOTAS -->
+      <div class="notas">
+        <strong>📝 Notas pedagógicas para revisión:</strong>
+        <ul>
+          <li>
+            <strong>Distribución 50/50:</strong>
+            cada lección = 2h sincrónicas + 2h asincrónicas = 4h. Total: 48 sinc. + 48 asinc. = 96h.
+          </li>
+          <li>
+            <strong>Álgebra como hilo conductor:</strong>
+            los Temas 1–3 usan álgebra de forma natural (simplificar expresiones con exponentes, evaluar expresiones con radicales). Los Temas 4–5 la formalizan completamente. Los Temas 6–8 la aplican
+            en geometría y estadística.
+          </li>
+          <li>
+            <strong>Hoja de fórmulas del GED:</strong>
+            a partir del Tema 6, acostumbrar a los estudiantes a usar la hoja de fórmulas oficial del GED Mathematical Reasoning tal como aparece en el examen. El Nivel 4 completará esta preparación.
+          </li>
+          <li>
+            <strong>Calculadora TI-30XS:</strong>
+            se usa extensivamente en este nivel. Recordar siempre limpiar la memoria antes de calcular. Practicar las funciones: √x, x², xⁿ, nPr, nCr y π.
+          </li>
+          <li>
+            <strong>Continuidad con Nivel 2 y Nivel 4:</strong>
+            PEMDAS (N2) se aplica sin mencionarlo explícitamente. Factorización de polinomios, cuadráticas y sistemas de ecuaciones quedan para el Nivel 4.
+          </li>
+          <li>
+            <strong>Brightspace HTML:</strong>
+            usar solo hex sólidos; &lt;details&gt;/&lt;summary&gt; nativos para acordeón; no usar rgba() ni gradientes. Recordar no usar &lt;label&gt; en formularios.
+          </li>
+        </ul>
+      </div>
+
+      <footer>
+        Plan curricular preparado para Prof. José M. Fernández (Truman College, CCC) — con Claude.
+        <br />
+        Spanish ASE Math 3 · AE 0170-0323 · Adult Education · Brightspace D2L
+      </footer>
+    </div>
+  </body>
+</html>
