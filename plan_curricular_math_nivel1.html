@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan curricular — Spanish ASE Math 1 (Nivel 1)</title>
+  <style>
+    :root {
+      --t1:   #1565c0; --t1bg:  #e3f2fd;
+      --t2:   #00695c; --t2bg:  #e0f2f1;
+      --t3:   #283593; --t3bg:  #e8eaf6;
+      --t4:   #6a1b9a; --t4bg:  #f3e5f5;
+      --t5:   #e65100; --t5bg:  #fff3e0;
+      --t6:   #4e342e; --t6bg:  #efebe9;
+      --t7:   #37474f; --t7bg:  #eceff1;
+      --t8:   #1b5e20; --t8bg:  #e8f5e9;
+      --acento: #0d47a1;
+      --bg:   #f5f7fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0; background: var(--bg); color: #222;
+      line-height: 1.55; font-size: 16px;
+    }
+    .contenedor { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    /* ── HEADER ──────────────────────────────────────────────── */
+    header.principal {
+      background: #0d47a1;
+      background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #283593 100%);
+      color: #fff; padding: 36px 32px; border-radius: 14px;
+      margin-bottom: 24px; box-shadow: 0 4px 14px rgba(13,71,161,.25);
+    }
+    header.principal h1 { margin: 0 0 8px; font-size: 28px; font-weight: 700; }
+    header.principal .meta { font-size: 14px; opacity: .92; margin-top: 8px; }
+
+    /* ── INTRO ───────────────────────────────────────────────── */
+    .intro {
+      background: #fff; padding: 20px 24px; border-radius: 10px;
+      border-left: 5px solid var(--acento); margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .intro h2 { margin-top: 0; color: var(--acento); font-size: 20px; }
+    .intro p  { margin: 8px 0; }
+
+    /* ── TABLA RESUMEN ───────────────────────────────────────── */
+    .tabla-resumen {
+      width: 100%; border-collapse: collapse; background: #fff;
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05); margin-bottom: 32px; font-size: 14px;
+    }
+    .tabla-resumen th, .tabla-resumen td {
+      padding: 10px 12px; text-align: left;
+      border-bottom: 1px solid #eee; vertical-align: top;
+    }
+    .tabla-resumen th {
+      background: #37474f; color: #fff; font-weight: 600;
+      font-size: 13px; text-transform: uppercase; letter-spacing: .4px;
+    }
+    .tabla-resumen tr:last-child td { border-bottom: none; }
+    .tabla-resumen td.num { text-align: center; width: 44px; }
+    .pildora {
+      display: inline-block; padding: 2px 10px; border-radius: 12px;
+      font-size: 12px; font-weight: 700; color: #fff;
+    }
+
+    /* ── ACORDEÓN TEMA (nivel 1) ──────────────────────────────── */
+    details.tema {
+      background: #fff; border-radius: 12px; margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07); overflow: hidden;
+      border-top: 6px solid #ccc;
+    }
+    details.tema > summary {
+      padding: 20px 24px; cursor: pointer; list-style: none;
+      background: var(--bgtema, #eceff1); outline: none;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    details.tema > summary::-webkit-details-marker { display: none; }
+    details.tema > summary .chevron {
+      font-size: 20px; flex-shrink: 0; margin-top: 2px;
+      transition: transform .25s;
+    }
+    details.tema[open] > summary .chevron { transform: rotate(90deg); }
+    details.tema > summary .sum-body { flex: 1; }
+    details.tema > summary h2 {
+      margin: 0 0 5px; font-size: 21px; font-weight: 700;
+      color: var(--coltema, #37474f);
+    }
+    details.tema > summary .subtitulo { font-size: 14px; color: #555; font-weight: 500; }
+    details.tema > summary .standards { font-size: 12px; color: #666; margin-top: 6px; font-style: italic; }
+
+    /* color variants */
+    details.tema.t1 { border-top-color: var(--t1); }
+    details.tema.t1 > summary { background: var(--t1bg); }
+    details.tema.t1 > summary h2 { color: var(--t1); }
+    details.tema.t2 { border-top-color: var(--t2); }
+    details.tema.t2 > summary { background: var(--t2bg); }
+    details.tema.t2 > summary h2 { color: var(--t2); }
+    details.tema.t3 { border-top-color: var(--t3); }
+    details.tema.t3 > summary { background: var(--t3bg); }
+    details.tema.t3 > summary h2 { color: var(--t3); }
+    details.tema.t4 { border-top-color: var(--t4); }
+    details.tema.t4 > summary { background: var(--t4bg); }
+    details.tema.t4 > summary h2 { color: var(--t4); }
+    details.tema.t5 { border-top-color: var(--t5); }
+    details.tema.t5 > summary { background: var(--t5bg); }
+    details.tema.t5 > summary h2 { color: var(--t5); }
+    details.tema.t6 { border-top-color: var(--t6); }
+    details.tema.t6 > summary { background: var(--t6bg); }
+    details.tema.t6 > summary h2 { color: var(--t6); }
+    details.tema.t7 { border-top-color: var(--t7); }
+    details.tema.t7 > summary { background: var(--t7bg); }
+    details.tema.t7 > summary h2 { color: var(--t7); }
+    details.tema.t8 { border-top-color: var(--t8); }
+    details.tema.t8 > summary { background: var(--t8bg); }
+    details.tema.t8 > summary h2 { color: var(--t8); }
+
+    /* ── ACORDEÓN LECCIÓN (nivel 2 — anidado) ─────────────────── */
+    .lecciones { padding: 14px 20px 18px; }
+
+    details.leccion {
+      border-left: 4px solid #ccc; border-radius: 0 8px 8px 0;
+      background: #fafafa; margin-bottom: 10px; overflow: hidden;
+    }
+    .t1 details.leccion { border-left-color: var(--t1); }
+    .t2 details.leccion { border-left-color: var(--t2); }
+    .t3 details.leccion { border-left-color: var(--t3); }
+    .t4 details.leccion { border-left-color: var(--t4); }
+    .t5 details.leccion { border-left-color: var(--t5); }
+    .t6 details.leccion { border-left-color: var(--t6); }
+    .t7 details.leccion { border-left-color: var(--t7); }
+    .t8 details.leccion { border-left-color: var(--t8); }
+
+    details.leccion > summary {
+      padding: 12px 16px; cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 10px; outline: none;
+    }
+    details.leccion > summary::-webkit-details-marker { display: none; }
+    details.leccion > summary .chevron-s {
+      font-size: 13px; transition: transform .2s; flex-shrink: 0;
+    }
+    details.leccion[open] > summary .chevron-s { transform: rotate(90deg); }
+    details.leccion > summary h3 {
+      margin: 0; font-size: 16px; color: #263238; font-weight: 600; flex: 1;
+    }
+    details.leccion > summary .dur {
+      font-size: 12px; color: #888; font-style: italic; white-space: nowrap;
+    }
+
+    /* ── CONTENIDO DE LECCIÓN ─────────────────────────────────── */
+    .leccion-body { padding: 10px 18px 16px 18px; }
+    .obj {
+      font-size: 14px; color: #37474f; margin: 0 0 12px;
+      padding: 8px 12px; background: #fff;
+      border-radius: 6px; border: 1px solid #e0e0e0;
+    }
+    .componente {
+      margin: 8px 0; padding-left: 26px; position: relative;
+      font-size: 14px; line-height: 1.55;
+    }
+    .componente::before { position: absolute; left: 0; top: 0; font-size: 15px; }
+    .componente.material::before  { content: '📐'; }
+    .componente.practica::before  { content: '💬'; }
+    .componente.quiz::before      { content: '✅'; }
+    .componente.rubrica::before   { content: '📊'; }
+    .componente strong { color: #263238; font-weight: 600; }
+
+    /* ── NOTAS ───────────────────────────────────────────────── */
+    .notas {
+      background: #fff8e1; border-left: 4px solid #f9a825;
+      padding: 14px 18px; margin: 8px 0 24px;
+      border-radius: 0 8px 8px 0; font-size: 14px;
+    }
+    .notas strong { color: #e65100; }
+    .notas li { margin-bottom: 6px; }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      text-align: center; padding: 24px; color: #666;
+      font-size: 13px; margin-top: 16px; border-top: 1px solid #ddd;
+    }
+
+    @media print {
+      body { background: #fff; }
+      details.tema { box-shadow: none; border: 1px solid #ccc; }
+      details.tema[open], details.leccion[open] { display: block; }
+    }
+  </style>
+</head>
+<body>
+<div class="contenedor">
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="principal">
+    <h1>Plan curricular — Matemáticas, Nivel 1</h1>
+    <div class="meta">
+      <strong>Spanish ASE Math: Level 1</strong> · AE 0170-0321 · City Colleges of Chicago<br>
+      96 horas totales (48 sincrónicas + 48 asincrónicas) · 16 semanas · NRS Levels 1–2<br>
+      Plataforma: Brightspace D2L · Prof. José M. Fernández, con Claude
+    </div>
+  </header>
+
+  <!-- ═══════════════ INTRO ═══════════════ -->
+  <section class="intro">
+    <h2>Cómo está organizado este plan</h2>
+    <p>El contenido se distribuye en <strong>8 grandes temas de 12 horas cada uno</strong> (≈ 2 semanas por tema),
+       respetando la progresión del <em>Topical Outline v2</em> del syllabus de 16 semanas y los Student Learning Outcomes.</p>
+    <p>Cada tema contiene <strong>3 lecciones</strong> de 4 horas cada una. Para cada lección se especifican cuatro componentes:
+       <strong>📐 Material/Recursos</strong>, <strong>💬 Práctica guiada</strong>,
+       <strong>✅ Quiz/Tarea</strong> y <strong>📊 Rúbrica</strong>.</p>
+    <p>Los temas 1–4 desarrollan aritmética (enteros, decimales, fracciones).
+       Los temas 5–6 trabajan razonamiento, patrones y medición.
+       Los temas 7–8 cierran con geometría, datos y proyecto final integrador.</p>
+    <p><strong>Uso del acordeón:</strong> haz clic en el encabezado de cada tema para expandirlo. Dentro, haz clic en cada lección para ver sus componentes. El primer tema ya está abierto.</p>
+  </section>
+
+  <!-- ═══════════════ TABLA RESUMEN ═══════════════ -->
+  <table class="tabla-resumen">
+    <thead>
+      <tr>
+        <th>#</th><th>Tema</th><th>Semanas</th><th>Horas</th><th>Foco principal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1565c0">1</span></td>
+        <td><strong>Números enteros: valor posicional y suma/resta</strong></td>
+        <td>1–2</td><td>12 h</td>
+        <td>Leer, escribir, comparar, redondear; suma y resta con reagrupación; problemas verbales</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#00695c">2</span></td>
+        <td><strong>Multiplicación y división de números enteros</strong></td>
+        <td>3–4</td><td>12 h</td>
+        <td>Algoritmo estándar; residuos; propiedades; problemas verbales</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#283593">3</span></td>
+        <td><strong>Decimales: conceptos y operaciones</strong></td>
+        <td>5–6</td><td>12 h</td>
+        <td>Leer, escribir, comparar; las 4 operaciones; equivalencias fracción-decimal</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#6a1b9a">4</span></td>
+        <td><strong>Fracciones: conceptos y operaciones</strong></td>
+        <td>7–8</td><td>12 h</td>
+        <td>Fracciones equivalentes, simplificar; +, -, ×; números mixtos; problemas verbales</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#e65100">5</span></td>
+        <td><strong>Patrones y problemas verbales de un paso</strong></td>
+        <td>9–10</td><td>12 h</td>
+        <td>Patrones numéricos y de figuras; lenguaje algebraico; incógnitas simples</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#4e342e">6</span></td>
+        <td><strong>Sistemas de medidas y el tiempo</strong></td>
+        <td>11–12</td><td>12 h</td>
+        <td>Sistema inglés, sistema métrico, tiempo, temperatura; conversiones y aplicaciones</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#37474f">7</span></td>
+        <td><strong>Geometría: figuras 2D, perímetro y área</strong></td>
+        <td>13–14</td><td>12 h</td>
+        <td>Clasificar figuras; perímetro; área de rectángulos y triángulos</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1b5e20">8</span></td>
+        <td><strong>Tablas, gráficas y proyecto final integrador</strong></td>
+        <td>15–16</td><td>12 h</td>
+        <td>Tablas de datos; gráficas de barras y líneas; proyecto final; intro al GED</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 1 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t1" open>
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 1 · Números enteros: valor posicional y suma/resta</h2>
+        <div class="subtitulo">Semanas 1–2 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: NBT · SLO Number &amp; Operations 1–3 · Secciones 1–2 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 1.1 · Valor posicional: leer, escribir, comparar y redondear</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante lee, escribe, compara y ordena números enteros hasta los billones, identifica el valor de cada dígito en su posición, y redondea a cualquier posición indicada.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de valor posicional (ones → billions) impresa y en Brightspace; tarjetas de números (manipulative); MyOpenMath: lección introductoria de valor posicional. <em>Modalidad:</em> el profesor demuestra con la tabla proyectada; los estudiantes completan su propia tabla en papel.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Cuánto vale?" — cada estudiante recibe un número de 6–9 dígitos y debe descomponerlo posición por posición en la tabla. En parejas, uno dicta un número y el otro lo escribe con letras y luego en notación estándar. Asincrónica: 3 ejercicios de ordenar de mayor a menor y redondear a la decena, centena y millar más cercanos en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas de selección múltiple en Brightspace — 3 de identificar valor posicional, 2 de escribir el número con letras, 2 de comparar con &gt; / &lt; / =, 3 de redondear a la posición indicada. Tiempo: 15 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> lista de cotejo de valor posicional (4 criterios): identifica correctamente ones/tens/hundreds/thousands ✓ · escribe el número con letras sin errores mayores ✓ · compara dos números usando el símbolo correcto ✓ · redondea correctamente a la posición indicada ✓.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 1.2 · Suma y resta de números enteros multidigitales</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante suma y resta números enteros multidigitales usando el algoritmo estándar con reagrupación (llevar y pedir prestado), y verifica sus respuestas usando la operación inversa.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> Base-10 Blocks (bloques de unidades, decenas, centenas) para modelar la reagrupación visual; MyOpenMath: lección de suma y resta con algoritmo estándar. <em>Modalidad:</em> demostración con bloques físicos → trabajo en cuadrícula alineada → sin cuadrícula.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Tres rondas": Ronda 1 (sin reagrupación, 4 operaciones), Ronda 2 (con reagrupación, 6 operaciones), Ronda 3 (verificar con la operación inversa). Actividad en parejas: un estudiante resuelve, el otro verifica. Asincrónica: 8 problemas de suma y resta en MyOpenMath con retroalimentación inmediata.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problemas en Brightspace — 4 de suma sin reagrupación, 4 de suma con reagrupación, 4 de resta con reagrupación (incluyendo ceros en el sustraendo). Tiempo: 20 min. 2 intentos. Se permite calculadora solo para verificar.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> analítica de proceso (4 criterios × 4 niveles): alinea correctamente los dígitos · aplica la reagrupación en suma · aplica pedir prestado en resta · verifica el resultado con la operación inversa.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 1.3 · Suma y resta en problemas verbales</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica si un problema verbal requiere suma o resta, lo traduce a una ecuación, lo resuelve con el algoritmo estándar y verifica que la respuesta tiene sentido en el contexto.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tarjetas de "palabras clave" (total, en total, cuánto más, cuánto queda, diferencia, aumentó, disminuyó); 10 problemas de contexto real auténtico (gastos del hogar, distancias entre ciudades, poblaciones); Steck-Vaughn GED Mathematics. <em>Modalidad:</em> lectura en voz alta del problema → identificar palabras clave → plantear la ecuación.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "4 pasos" (modelado primero por el profesor, luego en parejas): (1) Leo y subrayo lo que me piden; (2) Identifico la operación; (3) Resuelvo; (4) ¿Tiene sentido? Cada pareja resuelve 4 problemas usando la tarjeta de 4 pasos como guía. Asincrónica: foro en Brightspace — cada estudiante publica un problema verbal que inventó con datos de su vida real y resuelve el de un compañero.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 problemas verbales de selección múltiple en Brightspace — mezcla de suma, resta y combinados (2 operaciones). Algunos incluyen información innecesaria que el estudiante debe ignorar. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de proceso de resolución de problemas (4 pasos × 4 niveles = 16 pts): (1) identifica correctamente qué se pide · (2) selecciona la operación correcta · (3) calcula sin errores aritméticos · (4) interpreta y expresa la respuesta con unidades y contexto.</div>
+        </div>
+      </details>
+
+    </div><!-- fin lecciones tema 1 -->
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 2 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t2">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 2 · Multiplicación y división de números enteros</h2>
+        <div class="subtitulo">Semanas 3–4 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: NBT · OA · SLO Number &amp; Operations 1–2 · Sección 2 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 2.1 · Multiplicación de números enteros multidigitales</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante multiplica números enteros de varios dígitos usando el algoritmo estándar, domina las tablas de multiplicar hasta 12×12 y aplica las propiedades conmutativa, asociativa y distributiva para simplificar cálculos.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de multiplicar 12×12 (como referencia, no como muleta); MyOpenMath: lección de multiplicación multidigital. <em>Modalidad:</em> demostración del algoritmo con números de 2×2, 3×2 y 3×3 dígitos; identificación de cuándo la propiedad distributiva simplifica el cálculo mental.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Escalera de multiplicación" — los estudiantes comienzan con 2×1 dígitos, luego 3×1, luego 2×2, luego 3×2. Juego de Bingo de multiplicación (tarjetas 5×5, el profesor llama factores). Asincrónica: 10 problemas en MyOpenMath con retroalimentación en cada paso del algoritmo.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problemas en Brightspace — 3 de 2×1 dígitos, 4 de 3×2 dígitos, 3 de 4×2 dígitos, 2 de propiedad distributiva aplicada. Tiempo: 20 min. Sin calculadora.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> analítica del algoritmo de multiplicación (4 criterios × 4 niveles): domina tablas básicas hasta 12×12 · aplica correctamente los productos parciales · suma productos parciales sin errores · verifica con estimación (redondear y multiplicar).</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 2.2 · División de números enteros e interpretación del residuo</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante divide números enteros por divisores de 1 y 2 dígitos usando la división larga, identifica el residuo y lo interpreta correctamente según el contexto del problema (¿cuántos sobran?, ¿cuántos grupos completos?)</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> modelo "DMSR" (Divide, Multiplica, Sustrae, Repite) con mnemónico visual; fichas físicas para modelar grupos y residuo; MyOpenMath: lección de división larga. <em>Modalidad:</em> modelado físico con fichas → algoritmo en papel → MyOpenMath.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Qué hago con el residuo?" — el estudiante resuelve 6 divisiones y para cada una decide según el contexto: (a) lo reporta como residuo, (b) sube al cociente, (c) lo descarta. Ejemplo: "24 sillas en grupos de 5 — ¿cuántos grupos completos? ¿cuántas sillas sobran?" Asincrónica: 8 problemas en MyOpenMath con contextos variados.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 problemas en Brightspace — 5 de división larga (solo el resultado), 5 con interpretación del residuo en contexto. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de proceso y comprensión (3 criterios × 4 niveles): aplica correctamente el algoritmo DMSR · calcula el residuo sin errores · interpreta el residuo según el contexto del problema.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 2.3 · Multiplicación y división en problemas verbales; propiedades</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica si un problema verbal requiere multiplicación o división, aplica las propiedades de las operaciones para simplificar cálculos, y resuelve problemas de 1 paso con las 4 operaciones.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tarjetas de palabras clave de multiplicación (por cada, total de grupos, veces más) y división (repartió igualmente, por persona, cuántos grupos); Steck-Vaughn GED Mathematics; tabla de propiedades (conmutativa, asociativa, distributiva, de cero y de uno). <em>Modalidad:</em> análisis en voz alta de cada problema con el grupo antes de resolver individualmente.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Multiplico o divido?" — tarjetas de 12 problemas, los estudiantes las clasifican primero (×  ÷) antes de resolverlos. Luego verifican con la operación inversa. Actividad de propiedades: ¿cuál propiedad me ayuda a calcular 25 × 4 mentalmente? Asincrónica: foro — crear un problema verbal de multiplicación o división con datos reales (trabajo, cocina, viaje).</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problemas verbales en Brightspace — 4 de multiplicación, 4 de división, 4 mixtos (× y ÷ combinados). 2 preguntas adicionales de propiedades (¿qué propiedad ilustra esta ecuación?). Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> resolución de problemas (4 criterios × 4 niveles): identifica la operación correcta · plantea la ecuación · calcula sin errores · verifica e interpreta el resultado con unidades.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 3 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t3">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 3 · Decimales: conceptos y operaciones</h2>
+        <div class="subtitulo">Semanas 5–6 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: NBT · SLO Number &amp; Operations 4, 9 · Sección 3 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 3.1 · Leer, escribir, comparar, ordenar y redondear decimales</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante lee y escribe decimales hasta las milésimas, los compara y ordena en la recta numérica, y los redondea a la décima o centésima más cercana.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de valor posicional extendida (ones · tenths · hundredths · thousandths); recta numérica entre 0 y 2 con marcas de décimas; fichas con precios de productos reales (0.99, 1.25, 2.50...). <em>Modalidad:</em> conectar decimales con dinero real — "¿cuánto vale $1.75?" — antes de la notación abstracta.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Pon el precio correcto" — tarjetas de artículos con precios desordenados; los estudiantes los ordenan de menor a mayor y ubican en la recta numérica. Ejercicio de redondeo: "¿A cuánto redondeo este precio al dólar más cercano?" Asincrónica: 10 ejercicios de comparar, ordenar y redondear decimales en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 2 de leer/escribir decimales, 2 de valor posicional (¿cuánto vale el 7 en 3.571?), 3 de comparar y ordenar, 3 de redondear. Tiempo: 15 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> lista de cotejo (4 criterios): lee correctamente un decimal de 3 posiciones ✓ · identifica el valor de un dígito en posición decimal ✓ · compara dos decimales con &gt; / &lt; / = correctamente ✓ · redondea a la posición indicada ✓.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 3.2 · Suma, resta, multiplicación y división de decimales</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante suma, resta, multiplica y divide decimales aplicando el principio de alineación del punto decimal en suma/resta, y la regla de posición del punto en multiplicación y división. Usa la calculadora TI-30XS para verificar, no para sustituir el proceso.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> papel cuadriculado para alinear el punto decimal; póster de reglas: "suma/resta → alinea el punto · multiplicación → cuenta los lugares decimales · división → mueve el punto". Calculadora TI-30XS (instrucción: limpiar memoria antes de calcular). <em>Modalidad:</em> cada operación se modela en papel antes de usar la calculadora.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Cuatro estaciones" — la clase se divide en 4 grupos, cada uno en una estación (suma, resta, mult., div. de decimales); rotan cada 15 min. En cada estación: 4 problemas sin calculadora + verificación con calculadora. Asincrónica: 12 problemas variados en MyOpenMath con retroalimentación automática.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problemas sin calculadora en Brightspace — 3 de suma, 3 de resta, 3 de multiplicación, 3 de división con decimales. Tiempo: 25 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> analítica de proceso (4 criterios × 4 niveles): alinea correctamente el punto decimal en suma/resta · coloca el punto correctamente en multiplicación · desplaza el punto correctamente en división · resultado exacto con unidades correctas.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 3.3 · Decimales en contexto y equivalencias fracción–decimal</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante convierte fracciones comunes a decimales y viceversa, y resuelve problemas de contexto real con decimales (precios, distancias, medidas, cambio de moneda).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de equivalencias fracción-decimal más comunes (1/2 = 0.5, 1/4 = 0.25, 3/4 = 0.75, 1/3 ≈ 0.333, 1/5 = 0.2...); recibos y facturas reales como material de lectura contextual; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> conectar con experiencias de compra real antes de la conversión algorítmica.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "La compra del mercado" — simulación de compra con 8 artículos con precios decimales; los estudiantes calculan el total, el cambio de $20, y el precio de "la mitad" de cada artículo (fracción → decimal). Asincrónica: foro de "precio y fracción" — cada estudiante busca un precio real en una tienda online y escribe la equivalencia en fracción.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de conversión fracción↔decimal (sin calculadora), 6 de problemas de aplicación con decimales (compras, distancias, medidas). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de conversión y aplicación (3 criterios × 4 niveles): convierte correctamente fracción → decimal dividiendo numerador ÷ denominador · convierte decimal → fracción simplificada · resuelve problemas de contexto con decimales con exactitud y unidades.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 4 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t4">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 4 · Fracciones: conceptos y operaciones</h2>
+        <div class="subtitulo">Semanas 7–8 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: NF · SLO Number &amp; Operations 5–9 · Sección 4 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 4.1 · Fracciones equivalentes, simplificar y comparar</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica y genera fracciones equivalentes usando modelos visuales y el procedimiento algebraico; simplifica fracciones al mínimo término; compara y ordena fracciones con diferente denominador; convierte entre números mixtos y fracciones impropias.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> Fraction Towers (torres de fracciones físicas) para visualizar equivalencias; recta numérica de fracciones; MyOpenMath: lección de fracciones equivalentes. <em>Modalidad:</em> primero con las torres físicas → luego diagrama de área → luego algoritmo (×/÷ numerador y denominador por el mismo número).</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "La feria de fracciones" — los estudiantes usan las torres para encontrar 3 fracciones equivalentes a 1/2, 2/3 y 3/4. Luego simplifican 8 fracciones usando el MCD. Actividad de conversión mixto↔impropio con tarjetas emparejadas. Asincrónica: 10 ejercicios en MyOpenMath de simplificar, comparar y convertir.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 2 de fracciones equivalentes (escribir una), 3 de simplificar al mínimo, 3 de comparar con &gt; / &lt; / = incluyendo fracciones y decimales mezclados, 2 de convertir mixto↔impropio. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> conceptual y procedimental (4 criterios × 3 niveles): explica con un modelo visual por qué dos fracciones son equivalentes · simplifica correctamente usando el MCD · compara fracciones con diferente denominador usando el mínimo común denominador · convierte entre mixto e impropio sin errores.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 4.2 · Suma, resta y multiplicación de fracciones</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante suma y resta fracciones con igual y diferente denominador (incluyendo números mixtos), multiplica fracciones por enteros y por otras fracciones, y simplifica el resultado al mínimo término.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> diagrama de área para visualizar la suma y multiplicación de fracciones; regla del MCM para encontrar el denominador común; MyOpenMath: lecciones de suma/resta y multiplicación de fracciones; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> visual con diagrama → procedimental con algoritmo → contextual con problemas.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Receta de cocina" — los estudiantes ajustan una receta para ½ porción y para 3 porciones (suma y multiplicación de fracciones en contexto). Luego practican 8 operaciones mixtas: 2 suma igual denom., 2 suma diferente denom., 2 resta con números mixtos, 2 multiplicación. Asincrónica: 10 problemas en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problemas en Brightspace — 3 de suma (igual denom.), 3 de suma (diferente denom.), 3 de resta con números mixtos, 3 de multiplicación de fracciones. Tiempo: 25 min. Simplificar siempre el resultado.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> analítica de operaciones con fracciones (4 criterios × 4 niveles): encuentra el MCM correctamente para denominadores diferentes · suma/resta sin errores de numerador · multiplica usando la regla "numerador × numerador / denominador × denominador" · simplifica el resultado al mínimo término.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 4.3 · Fracciones en problemas verbales</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica qué operación de fracciones requiere un problema verbal, lo resuelve aplicando el proceso correcto y expresa la respuesta con unidades en el contexto del problema.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> 10 problemas de contexto auténtico (recetas, construcción, tiempo, distancias); tarjeta de estrategia de 4 pasos adaptada a fracciones; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> el profesor resuelve 2 problemas en voz alta pensando en voz alta ("primero identifico lo que me piden, luego..."), luego los estudiantes resuelven en parejas.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El carpintero y la cocinera" — 6 problemas de contexto real con fracciones (medir maderas, calcular ingredientes, dividir tiempo). Los estudiantes trabajan en parejas: uno plantea la ecuación, el otro resuelve, ambos verifican. Asincrónica: foro — inventar un problema verbal con fracciones basado en una situación cotidiana y resolverlo.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 problemas verbales en Brightspace — mezcla de suma, resta y multiplicación de fracciones en contexto. Incluye problemas con información innecesaria. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de resolución de problemas con fracciones (4 pasos × 4 niveles): identifica datos y lo que se pide · selecciona la operación correcta con fracciones · calcula correctamente · expresa la respuesta con unidades y en el contexto del problema.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 5 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t5">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 5 · Patrones matemáticos y problemas verbales de un paso</h2>
+        <div class="subtitulo">Semanas 9–10 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: OA · SLO Operations &amp; Algebraic Thinking 1–4 · Secciones 5–6 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 5.1 · Patrones numéricos y de figuras</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica la regla de una secuencia numérica o de figuras, extiende la secuencia al menos 3 términos más, y comunica la regla con palabras.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tarjetas con secuencias numéricas (aritméticas: +3, ×2, -5...) y de figuras (cuadrados que crecen); tablas de entrada-salida simples; MyOpenMath: lección de patrones. <em>Modalidad:</em> primero con figuras físicas (fichas o bloques), luego numérico, luego tabla E/S.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Adivina la regla" — en parejas, un estudiante crea una secuencia con su regla secreta y el otro la adivina en máximo 3 intentos. Luego usan tablas de entrada-salida para registrar la regla. Actividad grupal: "El patrón del salón" — contar objetos del salón que forman patrones (filas de sillas, cuadrados del piso). Asincrónica: 8 secuencias para identificar y extender en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de extender una secuencia numérica, 3 de identificar el término faltante en el medio, 2 de describir la regla con palabras, 2 de tabla de entrada-salida. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de pensamiento algebraico inicial (3 criterios × 4 niveles): identifica correctamente la regla de la secuencia · extiende la secuencia sin errores · comunica la regla con palabras claras.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 5.2 · Lenguaje algebraico e incógnitas simples</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante traduce frases numéricas al lenguaje algebraico, escribe ecuaciones de un paso con una incógnita (□ o x), las resuelve usando la operación inversa y verifica sustituyendo el valor encontrado.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de traducción (el doble de x = 2x; cinco más que n = n + 5; x dividido entre 3 = x/3); balanza de ecuaciones visual (equilibrio); MyOpenMath: lección de ecuaciones de un paso. <em>Modalidad:</em> balanza física o dibujada antes de la notación algebraica.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "La balanza misteriosa" — el profesor coloca pesas (números) en un lado y una caja misteriosa (□) en el otro; los estudiantes encuentran el valor de la caja. Traducción de 8 frases a ecuaciones y resolución. Verificación: "¿Si sustituyo □ por mi respuesta, la ecuación se cumple?" Asincrónica: 10 ejercicios en MyOpenMath de traducir y resolver.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de traducir frase → ecuación, 4 de resolver la ecuación y 2 de verificar (dado un valor, ¿es la solución?). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de introducción al álgebra (3 criterios × 4 niveles): traduce correctamente la frase al lenguaje algebraico · aplica la operación inversa para resolver · verifica sustituyendo el valor en la ecuación original.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 5.3 · Problemas verbales de un paso con las 4 operaciones</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica la operación correcta en un problema verbal con cualquiera de las 4 operaciones, plantea la ecuación con una incógnita, la resuelve y verifica que la respuesta tiene sentido.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> mapa de palabras clave completo (las 4 operaciones); 12 problemas verbales graduados de contexto auténtico (trabajo, hogar, ciudad, deportes); Steck-Vaughn GED Mathematics. <em>Modalidad:</em> clasificar los problemas por tipo antes de resolverlos.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Torneo de resolución" — los estudiantes trabajan en equipos de 3; cada equipo recibe 4 tarjetas de problemas (uno de cada operación); deben resolverlos todos y explicar qué operación usaron y por qué. Asincrónica: foro "El problema de mi semana" — cada estudiante inventa un problema de la vida real, lo publica y resuelve el de un compañero.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problemas verbales en Brightspace — 3 de cada operación, presentados en orden aleatorio. El estudiante también debe indicar qué operación usó (una pregunta extra por problema). Tiempo: 30 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> integradora de resolución de problemas (4 criterios × 4 niveles): identifica la operación correcta · plantea la ecuación o expresión adecuada · calcula correctamente · expresa la respuesta con unidades y sentido en el contexto.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 6 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t6">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 6 · Sistemas de medidas y el tiempo</h2>
+        <div class="subtitulo">Semanas 11–12 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: MD · SLO Measurement &amp; Geometry 1–3 · Sección 7 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 6.1 · Sistema inglés: longitud, peso y capacidad</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica las unidades del sistema inglés (U.S. customary) para longitud, peso y capacidad, elige la unidad apropiada para cada contexto, y convierte entre unidades dentro del mismo sistema usando tablas de equivalencias.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de equivalencias del sistema inglés (12 in = 1 ft, 3 ft = 1 yd, 5,280 ft = 1 mi · 16 oz = 1 lb, 2,000 lb = 1 ton · 8 oz = 1 cup, 2 cups = 1 pint, 2 pints = 1 qt, 4 qt = 1 gal); objetos físicos para comparar (una pulgada, un pie, un galón vacío). <em>Modalidad:</em> medir objetos reales del salón antes de trabajar conversiones abstractas.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El maestro carpintero" y "La mamá cocinera" — dos escenarios con 5 problemas de conversión cada uno. Método: "¿Estoy pasando a una unidad más grande o más pequeña?" → multiplico o divido. Trabajo en parejas con verificación cruzada. Asincrónica: 10 ejercicios de conversión en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de elegir la unidad correcta para el contexto (¿pulgadas o millas?), 6 de conversión dentro del sistema inglés (longitud, peso, capacidad mezclados). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de medición práctica (3 criterios × 4 niveles): identifica la unidad más apropiada para el contexto · convierte correctamente (multiplica cuando baja de tamaño, divide cuando sube) · expresa el resultado con la unidad correcta.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 6.2 · Sistema métrico, tiempo y temperatura</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante convierte entre unidades del sistema métrico usando los prefijos (kilo-, hecto-, deca-, deci-, centi-, mili-), lee la hora en reloj analógico y digital, calcula duraciones de tiempo, y convierte entre °F y °C en contextos cotidianos.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> "escalera métrica" (kilo → mili) con la regla ×10 y ÷10 por cada escalón; reloj de pared analógico; tarjetas de horario de autobús/metro; termómetro con escala dual °F/°C. <em>Modalidad:</em> la escalera métrica como herramienta visual permanente durante todo el tema.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El viaje en autobús" — a partir de un horario real, los estudiantes calculan: ¿cuánto tiempo dura el trayecto? ¿A qué hora llego si salgo a las 8:45 am y el viaje dura 1 h 20 min? Actividad de temperatura: "¿Qué ropa me pongo?" — tarjetas de temperaturas en °F y °C que los estudiantes traducen a recomendaciones de vestimenta. Asincrónica: 8 ejercicios de métrico + 4 de tiempo en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 6 de conversiones métricas, 4 de tiempo (leer y calcular duración), 2 de temperatura (convertir °F ↔ °C con fórmula provista). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de medición métrica y temporal (3 criterios × 4 niveles): aplica la escalera métrica correctamente (×10 o ÷10 por escalón) · lee el reloj analógico y calcula duraciones con y sin cruce de horas · interpreta una temperatura en contexto cotidiano.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 6.3 · Problemas aplicados de medición en contexto real</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante resuelve problemas de aplicación que requieren seleccionar la unidad correcta, realizar una conversión y calcular la respuesta en un contexto auténtico (cocina, salud, construcción, viaje, trabajo).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> 10 problemas de contexto real mixtos (inglés y métrico); etiquetas de productos reales (nutrición en onzas y gramos, instrucciones en pies y metros); Steck-Vaughn GED Mathematics. <em>Modalidad:</em> lectura cuidadosa del enunciado para identificar el sistema de medida usado antes de resolver.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El técnico del edificio" — escenario de un técnico de mantenimiento que necesita saber cuántos metros de cable comprar (dado en pies), cuántas libras pesan sus materiales (dados en kg), y cuántas horas trabajará (horario en formato 24h). Asincrónica: foro — cada estudiante trae un problema de medición de su trabajo o vida real y lo comparte.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 problemas aplicados en Brightspace — mix de todos los tipos de medida trabajados en el tema. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> integradora de medición (4 criterios × 4 niveles): identifica el sistema de medida correcto · selecciona la unidad apropiada · convierte correctamente cuando es necesario · calcula el resultado final con unidades.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 7 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t7">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 7 · Geometría: figuras 2D, perímetro y área</h2>
+        <div class="subtitulo">Semanas 13–14 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: G · MD · SLO Measurement &amp; Geometry 3–5 · Secciones 8–10 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 7.1 · Clasificación de figuras 2D: atributos y vocabulario</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica y clasifica polígonos (triángulos, cuadriláteros, pentágonos, hexágonos) por el número de lados, tipo de ángulos y longitud de lados; distingue entre triángulos (equilátero, isósceles, escaleno) y cuadriláteros (cuadrado, rectángulo, rombo, trapecio, paralelogramo).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> set de figuras geométricas planas (tangram o tarjetas laminadas); cuadro de clasificación de polígonos con definiciones y ejemplos visuales; MyOpenMath: lección de figuras 2D. <em>Modalidad:</em> manipulación física de figuras antes de la clasificación formal.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El museo de figuras" — los estudiantes crean un "cartel de museo" para una figura asignada (con nombre, número de lados, tipo de ángulos, ejemplo en la vida real). Actividad de clasificación tipo "árbol de decisión" (¿tiene 3 lados? → triángulo → ¿todos iguales? → equilátero...). Asincrónica: 10 preguntas de clasificación en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de identificar la figura por su descripción, 3 de nombrar atributos de una figura mostrada, 3 de clasificar (¿qué tipo de triángulo/cuadrilátero es?). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de vocabulario geométrico (3 criterios × 4 niveles): usa correctamente los términos lado, vértice, ángulo recto, agudo, obtuso · clasifica triángulos por lados y ángulos · clasifica cuadriláteros con precisión.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 7.2 · Perímetro de polígonos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula el perímetro de triángulos, rectángulos, cuadrados y polígonos irregulares usando la fórmula apropiada o la suma de lados, expresa el resultado con unidades lineales y resuelve problemas de aplicación (cercar, enmarcar, bordear).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> cuadrícula centimétrica para dibujar figuras; regla; tabla de fórmulas de perímetro (P = 4l para cuadrado; P = 2l + 2a para rectángulo; P = suma de todos los lados para polígonos); MyOpenMath. <em>Modalidad:</em> medir con regla figuras dibujadas → calcular con fórmula → verificar midiendo físicamente.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El jardinero" — los estudiantes reciben el plano de un jardín irregular (polígono de 5 lados) y deben calcular cuántos metros de cerca necesitan. Luego diseñan su propio jardín rectangular con un perímetro dado (ej. 24 metros): ¿cuántas dimensiones distintas son posibles? Asincrónica: 8 problemas de perímetro en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de calcular el perímetro con todos los lados dados, 3 de hallar un lado desconocido dado el perímetro, 4 de aplicación (cercar, enmarcar, instalar moldura). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de cálculo de perímetro (4 criterios × 4 niveles): identifica y aplica la fórmula correcta · suma todos los lados sin omitir ninguno · expresa el resultado con unidades lineales (cm, m, ft) · resuelve el problema de aplicación con sentido contextual.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 7.3 · Área de rectángulos y triángulos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula el área de rectángulos, cuadrados y triángulos usando las fórmulas correspondientes, expresa el resultado en unidades cuadradas, distingue claramente el perímetro del área, y resuelve problemas de aplicación (alfombras, pinturas, terrenos).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> cuadrícula centimétrica (contar cuadrados como demostración visual del área antes de la fórmula); fórmulas: A = b × h para rectángulo, A = ½ × b × h para triángulo; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> contar cuadrados en la cuadrícula → verificar con fórmula → aplicar directamente la fórmula.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Reforma del apartamento" — los estudiantes reciben el plano de un apartamento simple (sala rectangular + dormitorio triangular) y deben calcular: cuántos m² de piso de madera necesitan para la sala, cuántos m² de alfombra para el dormitorio. Actividad de distinción: dado un rectángulo, calcular perímetro Y área, luego explicar la diferencia. Asincrónica: 10 problemas en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 3 de área de rectángulos, 3 de área de triángulos, 3 de aplicación (alfombra, pintura de pared, terreno), 3 de distinción perímetro vs. área (¿cuál se necesita para cercar? ¿cuál para alfombrar?). Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> analítica de área (4 criterios × 4 niveles): identifica base y altura correctamente · aplica la fórmula sin errores · expresa en unidades cuadradas (cm², m², ft²) · distingue cuándo usar perímetro y cuándo usar área según el contexto.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 8 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t8">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 8 · Tablas, gráficas y proyecto final integrador</h2>
+        <div class="subtitulo">Semanas 15–16 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: SP · SLO Statistics &amp; Data 1–4 · Secciones 11–12 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 8.1 · Leer e interpretar tablas de datos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante lee e interpreta tablas de datos con 2–4 columnas, responde preguntas de comprensión (localizar datos, comparar, calcular total/promedio simple, encontrar máximo y mínimo), y explica lo que muestran los datos con oraciones completas.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> 3 tablas de datos reales con complejidad creciente: (1) tabla de precios de 5 productos, (2) tabla de temperaturas de 7 ciudades en 3 meses, (3) tabla de notas de 4 estudiantes en 5 materias; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> "leer la tabla antes de leer las preguntas" — el estudiante primero describe qué muestra la tabla en sus propias palabras.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El reportero de datos" — en parejas, uno hace de reportero (hace 5 preguntas sobre la tabla) y el otro responde usando datos de la tabla. Luego intercambian roles. Actividad de cálculo: encontrar el promedio y el rango de una columna de datos simple (sin calculadora). Asincrónica: 3 tablas con 10 preguntas de comprensión en Brightspace.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas sobre dos tablas en Brightspace — localizar datos específicos, comparar dos valores, calcular el total de una columna, identificar el máximo y mínimo, escribir una oración que describe un dato. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de lectura de tablas (3 criterios × 4 niveles): localiza datos específicos sin errores · compara y calcula usando los datos de la tabla correctamente · describe con palabras lo que muestran los datos usando lenguaje matemático apropiado.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 8.2 · Gráficas de barras y de líneas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante lee e interpreta gráficas de barras (verticales y horizontales) y de líneas, identifica el título, los ejes y la escala, compara valores, identifica tendencias (creciente, decreciente, estable) y construye una gráfica de barras simple a partir de datos dados.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> 4 gráficas reales de periódicos/internet: 2 de barras (verticales y horizontales) y 2 de líneas con series de tiempo; papel cuadriculado para crear gráficas; MyOpenMath. <em>Modalidad:</em> "leer la gráfica en 5 pasos": (1) título, (2) ejes y lo que miden, (3) escala, (4) leer valores, (5) tendencia general.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Mi gráfica del mes" — cada estudiante recopila durante 2 semanas un dato diario (temperatura, gasto diario, minutos de estudio) y lo registra en una tabla. En esta lección, usan esos datos para crear su propia gráfica de líneas. Luego interpretan la gráfica de barras del nivel de empleo en Chicago de los últimos 6 meses. Asincrónica: 10 preguntas de interpretación de gráficas en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 5 sobre una gráfica de barras, 5 sobre una gráfica de líneas, 2 de construir (completar una gráfica de barras con datos dados). Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de lectura y creación de gráficas (4 criterios × 4 niveles): identifica correctamente título, ejes y escala · lee valores específicos con precisión · identifica y describe la tendencia · construye una gráfica de barras correctamente etiquetada.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 8.3 · Proyecto final integrador + introducción al GED</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante presenta el proyecto integrador "Mi gráfica de la vida" (tabla de datos personales + gráfica de barras + párrafo descriptivo + cálculos básicos), y responde 10 preguntas tipo GED de nivel básico que combinan todos los temas del nivel.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> plantilla del proyecto "Mi gráfica de la vida" (tabla de 5 datos personales medibles, ej. horas de sueño por día durante 5 días, gastos de la semana, etc.); 10 preguntas tipo GED de nivel básico (mix de aritmética, fracciones, decimales, geometría y tablas/gráficas); Steck-Vaughn GED Mathematics. <em>Modalidad:</em> presentación oral al grupo del proyecto (3–4 min por estudiante).</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Comparto mi gráfica" — actividad sincrónica: cada estudiante presenta su proyecto oral al grupo en 3–4 minutos y responde 1–2 preguntas de sus compañeros. El grupo da retroalimentación usando la rúbrica del proyecto. Asincrónica: cada estudiante sube su proyecto completo a Brightspace y comenta el de dos compañeros usando frases modelo ("Entendí bien que... / Quiero preguntarte sobre... / Tu gráfica muestra...").</div>
+          <div class="componente quiz"><strong>Quiz:</strong> <strong>Evaluación final sumativa</strong> — 25 preguntas en Brightspace mezclando todos los temas: 5 de operaciones con enteros, 5 de fracciones y decimales, 5 de medidas, 5 de geometría (perímetro y área), 5 de tablas y gráficas. Tiempo: 60 min. 2 intentos. Se permite calculadora TI-30XS (limpiar memoria antes).</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> <strong>analítica del proyecto final</strong> (5 criterios × 4 niveles = 20 pts): (1) tabla de datos completa y correcta · (2) gráfica de barras correctamente etiquetada (título, ejes, escala) · (3) párrafo descriptivo con al menos 3 datos de la gráfica · (4) cálculos correctos (total, promedio, diferencia) · (5) presentación oral clara y audible. La nota del proyecto (20 pts) se combina con la nota del quiz sumativo.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════ NOTAS PEDAGÓGICAS ═══════════════ -->
+  <div class="notas">
+    <strong>📝 Notas pedagógicas para revisión:</strong>
+    <ul>
+      <li><strong>Distribución 50/50:</strong> cada lección sugiere 2 horas sincrónicas + 2 asincrónicas, totalizando 4 horas. Esto cuadra con las 48 + 48 horas del syllabus v2.</li>
+      <li><strong>Coherencia con el Topical Outline v2:</strong> los 8 temas pedagógicos respetan exactamente las 4 secciones del outline (Aritmética 36 h → Temas 1–4; Patrones 16 h → Tema 5; Medidas 10 h + Geometría 18 h → Temas 6–7; Datos 16 h → Tema 8).</li>
+      <li><strong>Calculadora TI-30XS:</strong> se introduce en el Tema 3 para verificar operaciones con decimales. Recordar siempre la instrucción de limpiar memoria antes de calcular.</li>
+      <li><strong>Continuidad con el Nivel 2:</strong> este plan respeta la progresión longitudinal. PEMDAS completo (con potencias y raíces), fracciones complejas avanzadas, proporciones e interés simple quedan reservados para el Nivel 2.</li>
+      <li><strong>Rúbricas DUA:</strong> todas siguen un patrón analítico simple (3–5 criterios × 3–4 niveles) compatible con Brightspace Ally. Usar encabezados &lt;h2&gt; para los criterios en Brightspace.</li>
+      <li><strong>Brightspace HTML:</strong> al pasar este plan a páginas Brightspace, usar solo colores hexadecimales sólidos, sin rgba() ni gradientes; reemplazar &lt;details&gt;/&lt;summary&gt; con .caja-acordeon + onClick en &lt;div&gt; si Brightspace filtra los &lt;details&gt; nativos.</li>
+      <li><strong>Steck-Vaughn:</strong> en una segunda fase, alinear cada lección con páginas específicas del workbook <em>Matemáticas GED</em> para que los estudiantes tengan referencia del libro físico.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Plan curricular preparado para Prof. José M. Fernández (Truman College, CCC) — con Claude.<br>
+    Spanish ASE Math: Level 1 · AE 0170-0321 · Adult Education · Brightspace D2L
+  </footer>
+
+</div>
+</body>
+</html>
