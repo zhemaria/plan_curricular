@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan curricular — Spanish ASE Math 4 (Nivel 4)</title>
+  <style>
+    :root {
+      --t1:  #1a237e; --t1bg: #e8eaf6;
+      --t2:  #004d40; --t2bg: #e0f2f1;
+      --t3:  #bf360c; --t3bg: #fbe9e7;
+      --t4:  #880e4f; --t4bg: #fce4ec;
+      --t5:  #37474f; --t5bg: #eceff1;
+      --t6:  #1b5e20; --t6bg: #e8f5e9;
+      --t7:  #4a148c; --t7bg: #f3e5f5;
+      --t8:  #b71c1c; --t8bg: #ffebee;
+      --acento: #c62828;
+      --bg:   #f5f7fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0; background: var(--bg); color: #222;
+      line-height: 1.55; font-size: 16px;
+    }
+    .contenedor { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    header.principal {
+      background: linear-gradient(135deg, #7f0000 0%, #c62828 50%, #e53935 100%);
+      color: #fff; padding: 36px 32px; border-radius: 14px;
+      margin-bottom: 24px; box-shadow: 0 4px 14px rgba(183,28,28,.28);
+    }
+    header.principal h1 { margin: 0 0 8px; font-size: 28px; font-weight: 700; }
+    header.principal .meta { font-size: 14px; opacity: .92; margin-top: 8px; }
+    header.principal .ged-badge {
+      display: inline-block; background: #fff3; border: 2px solid #fff8;
+      border-radius: 8px; padding: 6px 14px; margin-top: 10px;
+      font-size: 13px; font-weight: 700; letter-spacing: .5px;
+    }
+
+    .intro {
+      background: #fff; padding: 20px 24px; border-radius: 10px;
+      border-left: 5px solid var(--acento); margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .intro h2 { margin-top: 0; color: var(--acento); font-size: 20px; }
+    .intro p { margin: 8px 0; }
+
+    .tabla-resumen {
+      width: 100%; border-collapse: collapse; background: #fff;
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05); margin-bottom: 32px; font-size: 14px;
+    }
+    .tabla-resumen th, .tabla-resumen td {
+      padding: 10px 12px; text-align: left;
+      border-bottom: 1px solid #eee; vertical-align: top;
+    }
+    .tabla-resumen th {
+      background: #37474f; color: #fff; font-weight: 600;
+      font-size: 13px; text-transform: uppercase; letter-spacing: .4px;
+    }
+    .tabla-resumen tr:last-child td { border-bottom: none; }
+    .tabla-resumen td.num { text-align: center; width: 44px; }
+    .pildora {
+      display: inline-block; padding: 2px 10px; border-radius: 12px;
+      font-size: 12px; font-weight: 700; color: #fff;
+    }
+    .ged-tag {
+      display: inline-block; background: #c62828; color: #fff;
+      font-size: 11px; font-weight: 700; padding: 1px 7px;
+      border-radius: 4px; margin-left: 6px; vertical-align: middle;
+    }
+
+    details.tema {
+      background: #fff; border-radius: 12px; margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07); overflow: hidden;
+      border-top: 6px solid #ccc;
+    }
+    details.tema > summary {
+      padding: 20px 24px; cursor: pointer; list-style: none;
+      background: var(--bgtema, #eceff1); outline: none;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    details.tema > summary::-webkit-details-marker { display: none; }
+    details.tema > summary .chevron {
+      font-size: 20px; flex-shrink: 0; margin-top: 2px;
+      transition: transform .25s;
+    }
+    details.tema[open] > summary .chevron { transform: rotate(90deg); }
+    details.tema > summary .sum-body { flex: 1; }
+    details.tema > summary h2 {
+      margin: 0 0 5px; font-size: 21px; font-weight: 700;
+      color: var(--coltema, #37474f);
+    }
+    details.tema > summary .subtitulo { font-size: 14px; color: #555; font-weight: 500; }
+    details.tema > summary .standards { font-size: 12px; color: #666; margin-top: 6px; font-style: italic; }
+
+    details.tema.t1 { border-top-color: var(--t1); }
+    details.tema.t1 > summary { background: var(--t1bg); }
+    details.tema.t1 > summary h2 { color: var(--t1); }
+    details.tema.t2 { border-top-color: var(--t2); }
+    details.tema.t2 > summary { background: var(--t2bg); }
+    details.tema.t2 > summary h2 { color: var(--t2); }
+    details.tema.t3 { border-top-color: var(--t3); }
+    details.tema.t3 > summary { background: var(--t3bg); }
+    details.tema.t3 > summary h2 { color: var(--t3); }
+    details.tema.t4 { border-top-color: var(--t4); }
+    details.tema.t4 > summary { background: var(--t4bg); }
+    details.tema.t4 > summary h2 { color: var(--t4); }
+    details.tema.t5 { border-top-color: var(--t5); }
+    details.tema.t5 > summary { background: var(--t5bg); }
+    details.tema.t5 > summary h2 { color: var(--t5); }
+    details.tema.t6 { border-top-color: var(--t6); }
+    details.tema.t6 > summary { background: var(--t6bg); }
+    details.tema.t6 > summary h2 { color: var(--t6); }
+    details.tema.t7 { border-top-color: var(--t7); }
+    details.tema.t7 > summary { background: var(--t7bg); }
+    details.tema.t7 > summary h2 { color: var(--t7); }
+    details.tema.t8 { border-top-color: var(--t8); }
+    details.tema.t8 > summary { background: var(--t8bg); }
+    details.tema.t8 > summary h2 { color: var(--t8); }
+
+    .lecciones { padding: 14px 20px 18px; }
+
+    details.leccion {
+      border-left: 4px solid #ccc; border-radius: 0 8px 8px 0;
+      background: #fafafa; margin-bottom: 10px; overflow: hidden;
+    }
+    .t1 details.leccion { border-left-color: var(--t1); }
+    .t2 details.leccion { border-left-color: var(--t2); }
+    .t3 details.leccion { border-left-color: var(--t3); }
+    .t4 details.leccion { border-left-color: var(--t4); }
+    .t5 details.leccion { border-left-color: var(--t5); }
+    .t6 details.leccion { border-left-color: var(--t6); }
+    .t7 details.leccion { border-left-color: var(--t7); }
+    .t8 details.leccion { border-left-color: var(--t8); }
+
+    details.leccion > summary {
+      padding: 12px 16px; cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 10px; outline: none;
+    }
+    details.leccion > summary::-webkit-details-marker { display: none; }
+    details.leccion > summary .chevron-s {
+      font-size: 13px; transition: transform .2s; flex-shrink: 0;
+    }
+    details.leccion[open] > summary .chevron-s { transform: rotate(90deg); }
+    details.leccion > summary h3 {
+      margin: 0; font-size: 16px; color: #263238; font-weight: 600; flex: 1;
+    }
+    details.leccion > summary .dur {
+      font-size: 12px; color: #888; font-style: italic; white-space: nowrap;
+    }
+
+    .leccion-body { padding: 10px 18px 16px 18px; }
+    .obj {
+      font-size: 14px; color: #37474f; margin: 0 0 12px;
+      padding: 8px 12px; background: #fff;
+      border-radius: 6px; border: 1px solid #e0e0e0;
+    }
+    .componente {
+      margin: 8px 0; padding-left: 26px; position: relative;
+      font-size: 14px; line-height: 1.55;
+    }
+    .componente::before { position: absolute; left: 0; top: 0; font-size: 15px; }
+    .componente.material::before  { content: '📐'; }
+    .componente.practica::before  { content: '💬'; }
+    .componente.quiz::before      { content: '✅'; }
+    .componente.rubrica::before   { content: '📊'; }
+    .componente strong { color: #263238; font-weight: 600; }
+
+    .notas {
+      background: #fff8e1; border-left: 4px solid #f9a825;
+      padding: 14px 18px; margin: 8px 0 24px;
+      border-radius: 0 8px 8px 0; font-size: 14px;
+    }
+    .notas strong { color: #e65100; }
+    .notas li { margin-bottom: 6px; }
+
+    footer {
+      text-align: center; padding: 24px; color: #666;
+      font-size: 13px; margin-top: 16px; border-top: 1px solid #ddd;
+    }
+
+    @media print {
+      body { background: #fff; }
+      details.tema, details.leccion { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <h1>Plan curricular — Matemáticas, Nivel 4</h1>
+    <div class="meta">
+      <strong>Spanish ASE Math 4</strong> · AE 0170-0324 · City Colleges of Chicago<br>
+      96 horas totales (48 sincrónicas + 48 asincrónicas) · 16 semanas · NRS Levels 4–5<br>
+      Plataforma: Brightspace D2L · Prof. José M. Fernández, con Claude
+    </div>
+    <div class="ged-badge">🎓 Curso capstone — Preparación completa para el GED® Mathematical Reasoning</div>
+  </header>
+
+  <section class="intro">
+    <h2>Cómo está organizado este plan</h2>
+    <p>El contenido se distribuye en <strong>8 grandes temas de 12 horas cada uno</strong> (≈ 2 semanas por tema), respetando el <em>Topical Outline v2</em> y los Student Learning Outcomes. Este es el nivel <strong>capstone</strong> de la secuencia: el estudiante que lo completa está listo para tomar el GED® Mathematical Reasoning.</p>
+    <p>Cada tema contiene <strong>3 lecciones</strong> de 4 horas. Para cada lección: <strong>📐 Material/Recursos</strong>, <strong>💬 Práctica guiada</strong>, <strong>✅ Quiz/Tarea</strong> y <strong>📊 Rúbrica</strong>.</p>
+    <p>Los temas 1–2 completan la geometría analítica y el volumen 3D avanzado. Los temas 3–5 desarrollan el álgebra superior (polinomios, cuadráticas, expresiones racionales). Los temas 6–7 cubren sistemas algebraicos y el mundo de las funciones. El tema 8 integra el modelado de funciones cuadráticas y exponenciales con el proyecto final y el simulacro GED.</p>
+    <p><strong>Uso del acordeón:</strong> clic en el encabezado del tema para expandirlo; clic en cada lección para ver sus componentes. El primer tema ya está abierto.</p>
+  </section>
+
+  <table class="tabla-resumen">
+    <thead>
+      <tr><th>#</th><th>Tema</th><th>Semanas</th><th>Horas</th><th>Foco principal</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1a237e">1</span></td>
+        <td><strong>Geometría analítica: plano cartesiano, pendiente y ecuaciones de la recta</strong></td>
+        <td>1–2</td><td>12 h</td>
+        <td>Pares ordenados, distancia, punto medio; pendiente; formas de ecuación de la recta</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#004d40">2</span></td>
+        <td><strong>Volumen 3D avanzado e introducción a polinomios</strong></td>
+        <td>3–4</td><td>12 h</td>
+        <td>Esferas, conos, pirámides; figuras 3D compuestas; clasificar polinomios; sumar y restar</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#bf360c">3</span></td>
+        <td><strong>Multiplicación de polinomios y factorización</strong></td>
+        <td>5–6</td><td>12 h</td>
+        <td>FOIL; identidades notables; factor común; diferencia de cuadrados; factorizar trinomios</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#880e4f">4</span></td>
+        <td><strong>Ecuaciones cuadráticas</strong></td>
+        <td>7–8</td><td>12 h</td>
+        <td>Factorización; completar el cuadrado; fórmula cuadrática; discriminante; aplicaciones</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#37474f">5</span></td>
+        <td><strong>Expresiones racionales complejas</strong></td>
+        <td>9–10</td><td>12 h</td>
+        <td>Simplificar; +, -, ×, ÷ de fracciones algebraicas; resolver ecuaciones racionales; modelado</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1b5e20">6</span></td>
+        <td><strong>Sistemas de ecuaciones lineales</strong></td>
+        <td>11–12</td><td>12 h</td>
+        <td>Sustitución, eliminación, método gráfico; clasificar; aplicaciones y modelado algebraico</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#4a148c">7</span></td>
+        <td><strong>Sistemas de desigualdades y funciones</strong></td>
+        <td>13–14</td><td>12 h</td>
+        <td>Graficar sistemas de desigualdades; relaciones vs. funciones; f(x); tasa de cambio promedio</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#b71c1c">8</span></td>
+        <td><strong>Modelado de funciones, proyecto final integrador y simulacro GED</strong> <span class="ged-tag">GED</span></td>
+        <td>15–16</td><td>12 h</td>
+        <td>Parábolas; funciones exponenciales; logarítmicas (intro); proyecto final; simulacro GED</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 1 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t1" open>
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 1 · Geometría analítica: plano cartesiano, pendiente y ecuaciones de la recta</h2>
+        <div class="subtitulo">Semanas 1–2 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: G · EE · SLO Geometry (Analytic) 1–3 · Secciones 1.1 y 1.2 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 1.1 · El plano cartesiano: pares ordenados, distancia y punto medio</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante grafica pares ordenados en los cuatro cuadrantes, calcula la distancia entre dos puntos usando la fórmula derivada del Teorema de Pitágoras (d = √[(x₂-x₁)² + (y₂-y₁)²]), calcula el punto medio de un segmento (M = ((x₁+x₂)/2, (y₁+y₂)/2)), e identifica figuras geométricas en el plano de coordenadas.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> papel cuadriculado con ejes claramente marcados; mapa de Chicago sobre cuadrícula para contextualizar "coordenadas"; tarjetas de puntos para graficar; fórmulas de distancia y punto medio derivadas del Teorema de Pitágoras (conexión con N3); MyOpenMath. <em>Modalidad:</em> el mapa como contexto antes de la abstracción matemática.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El plano de la ciudad" — los estudiantes trabajan con un mapa de coordenadas de una ciudad ficticia: ¿a qué distancia está la biblioteca del hospital? ¿cuál es el punto exacto en el centro entre dos escuelas? Construcción de figuras: graficar un triángulo con tres puntos dados y calcular el perímetro usando la fórmula de distancia. Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de graficar e identificar puntos, 3 de calcular distancia entre dos puntos, 2 de calcular punto medio, 2 de aplicación (perimetro de figura en el plano). Se permite calculadora TI-30XS. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de geometría analítica básica (3 criterios × 4 niveles): grafica pares ordenados correctamente en los 4 cuadrantes · aplica la fórmula de distancia sin errores de sustitución · calcula el punto medio correctamente y lo interpreta geométricamente.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 1.2 · La pendiente: concepto, fórmula e interpretación</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula la pendiente de una recta desde su gráfica (rise/run) y desde dos puntos (m = (y₂-y₁)/(x₂-x₁)); interpreta la pendiente como tasa de cambio ($ por hora, metros por segundo, costo por unidad); identifica rectas con pendiente positiva, negativa, cero e indefinida; y compara pendientes de dos rectas para determinar cuál es más empinada.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> gráficas de situaciones reales con pendiente interpretable (precio de gasolina vs. litros, salario vs. horas); regla de los cuadrantes para identificar el signo de la pendiente visualmente; fórmula m = Δy/Δx; MyOpenMath. <em>Modalidad:</em> pendiente como "cambio por unidad" antes de la fórmula algebraica.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Rampa, precio y velocidad" — los estudiantes calculan la pendiente de 6 situaciones reales (rampa de accesibilidad, precio de electricidad por kWh, velocidad de un auto en km/h) e interpretan el significado. Actividad: dado m = 3/5, ¿cuántas rectas distintas pueden tener esa pendiente? (infinitas). ¿Qué las diferencia? (el intercepto). Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de calcular la pendiente desde una gráfica, 3 desde dos puntos, 2 de identificar el tipo (positiva/negativa/cero/indefinida), 2 de interpretar la pendiente en contexto. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de pendiente (3 criterios × 4 niveles): calcula la pendiente correctamente (rise ÷ run; Δy ÷ Δx) · identifica el tipo de pendiente a partir de la gráfica o de los puntos · interpreta la pendiente como tasa de cambio con unidades apropiadas en el contexto.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 1.3 · Ecuaciones de la recta: pendiente-intercepto, punto-pendiente y forma estándar</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante escribe la ecuación de una recta en forma pendiente-intercepto (y = mx + b) dada la pendiente y el intercepto; usa la forma punto-pendiente (y - y₁ = m(x - x₁)) dados un punto y la pendiente o dos puntos; convierte entre las formas estándar (Ax + By = C), punto-pendiente y pendiente-intercepto; y escribe la ecuación de rectas paralelas y perpendiculares.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de las tres formas de la ecuación de la recta con ejemplos de conversión entre ellas; propiedad de rectas paralelas (misma pendiente) y perpendiculares (pendientes recíprocas negativas: m₁ × m₂ = -1); Steck-Vaughn GED Mathematics; MyOpenMath. <em>Modalidad:</em> la forma y = mx + b como punto de partida; las otras como transformaciones.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El GPS de funciones" — los estudiantes reciben datos de una situación lineal (costo de un taxi: $2.50 de arranque + $1.80 por km) y escriben la ecuación en las tres formas. Luego determinan si dos rectas son paralelas, perpendiculares o ninguna. Práctica de GED: 4 preguntas tipo GED sobre ecuaciones de rectas. Asincrónica: 12 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 3 de escribir ecuación dada pendiente e intercepto, 3 dados dos puntos, 3 de conversión entre formas, 3 de paralelas y perpendiculares. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de ecuaciones de la recta (4 criterios × 4 niveles): escribe y = mx + b identificando m y b correctamente · aplica la forma punto-pendiente con sustitución correcta · convierte entre las tres formas sin errores algebraicos · determina si dos rectas son paralelas o perpendiculares usando sus pendientes.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 2 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t2">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 2 · Volumen 3D avanzado e introducción a polinomios</h2>
+        <div class="subtitulo">Semanas 3–4 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: G · A · SLO Geometry 5–6 · SLO Higher Algebra 1 · Secciones 1.3 y 2.1 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 2.1 · Volumen de esferas, conos y pirámides</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula el volumen de esferas (V = 4/3 πr³), conos (V = 1/3 πr²h) y pirámides (V = 1/3 × Área base × h) usando las fórmulas de la hoja del GED; despeja r o h cuando el volumen es conocido; y resuelve problemas de aplicación (capacidad de un depósito esférico, volumen de un cono de helado, cantidad de material para una pirámide).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> hoja de fórmulas oficial del GED Mathematical Reasoning (misma que recibirán en el examen); relación entre V_cono = (1/3) V_cilindro y V_pirámide = (1/3) V_prisma; calculadora TI-30XS; MyOpenMath. <em>Modalidad:</em> usar la hoja de fórmulas del GED desde ahora — acostumbrar a buscar la fórmula en la hoja antes de resolver.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Arquitectura y diseño" — los estudiantes calculan: ¿cuántos litros de agua caben en un depósito esférico de radio 1.2m? ¿cuántos cm³ de helado caben en un cono de radio 4cm y altura 10cm? ¿cuántos m³ de piedra se usaron en la Pirámide de Giza (base 230m × 230m, altura 146m)? Asincrónica: 8 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de volumen de esferas, 3 de conos, 3 de pirámides, 1 de despejar r o h. Se permite hoja de fórmulas del GED y calculadora TI-30XS. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de volumen 3D avanzado (3 criterios × 4 niveles): localiza y aplica la fórmula correcta de la hoja del GED · sustituye las dimensiones correctamente y calcula con π · expresa el resultado en unidades cúbicas y con precisión apropiada.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 2.2 · Figuras 3D compuestas y área de superficie</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula el volumen de figuras 3D compuestas (prisma + semiesfera, cilindro + cono, etc.) sumando o restando volúmenes parciales; calcula el área de superficie lateral de cilindros, conos y pirámides; y resuelve problemas de optimización básica (minimizar material para un volumen dado).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> imágenes reales de silos agrícolas (cilindro + cono), cápsulas medicinales (cilindro + dos semiesferas), tazas de café (cilindro truncado); hoja de fórmulas del GED; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> descomponer la figura 3D en sólidos simples antes de calcular.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El silo del granjero" — los estudiantes calculan el volumen total de un silo (cilindro de radio 3m, altura 8m + cono superior de altura 2m) y cuántas toneladas de maíz caben (densidad provista). Problema de área de superficie: ¿cuánta pintura necesito para el exterior del cilindro? Asincrónica: 6 problemas de figuras compuestas + 2 de área de superficie en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 8 preguntas en Brightspace — 4 de volumen de figuras 3D compuestas, 2 de área de superficie, 2 de aplicación contextual (costo de material, cantidad a almacenar). Se permite calculadora y hoja de fórmulas. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de figuras 3D compuestas (3 criterios × 4 niveles): descompone la figura correctamente identificando sus partes · suma o resta los volúmenes parciales correctamente · calcula el área de superficie usando la fórmula lateral correcta.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 2.3 · Polinomios: clasificación, suma, resta y multiplicación básica</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante clasifica polinomios (monomio, binomio, trinomio; grado del polinomio); suma y resta polinomios combinando términos semejantes; multiplica un monomio por un polinomio usando la propiedad distributiva; y evalúa un polinomio sustituyendo un valor numérico.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de terminología: grado de un término, grado del polinomio, coeficiente principal; tarjetas de polinomios para clasificar; MyOpenMath: lección de polinomios. <em>Modalidad:</em> la analogía con términos semejantes en álgebra lineal — "ya sabes combinar 3x + 5x; ahora combinarás 3x² + 5x²".</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El perímetro algebraico" — los estudiantes expresan el perímetro de un polígono cuyos lados están dados como expresiones polinomiales y simplifican. Luego multiplican monomio × binomio y monomio × trinomio en 6 ejercicios. Actividad de evaluación: ¿cuánto mide el perímetro si x = 4? Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 2 de clasificar y determinar el grado, 3 de suma/resta de polinomios, 3 de monomio × polinomio, 2 de evaluación con un valor dado. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de polinomios básicos (3 criterios × 4 niveles): clasifica el polinomio correctamente (nombre y grado) · combina correctamente los términos semejantes en suma/resta · aplica la distributiva en monomio × polinomio sin errores de signo.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 3 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t3">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 3 · Multiplicación de polinomios y factorización</h2>
+        <div class="subtitulo">Semanas 5–6 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: A · SLO Higher Algebra 1–2 · Secciones 2.1 y 2.2 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 3.1 · Multiplicación de binomios: FOIL e identidades notables</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante multiplica binomios usando el método FOIL (First, Outer, Inner, Last); aplica las tres identidades notables: (a+b)² = a²+2ab+b², (a-b)² = a²-2ab+b², y (a+b)(a-b) = a²-b²; y reconoce estas identidades en expresiones dadas para simplificar el cálculo.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> modelo del área (rectángulo dividido en 4 partes) para visualizar FOIL antes del algoritmo; tabla de las tres identidades notables con demostración por FOIL; MyOpenMath. <em>Modalidad:</em> modelo visual del área → FOIL mecánico → reconocimiento de identidades para usar el atajo.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Puedo usar un atajo?" — los estudiantes reciben 12 productos de binomios y los clasifican: ¿FOIL general o identidad notable? Luego aplican el método apropiado. Verificación: expandir (x+5)² con FOIL y con la identidad — ¿dan el mismo resultado? Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 5 de FOIL general, 3 de (a±b)², 4 de (a+b)(a-b). Tiempo: 20 min. Sin calculadora.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de multiplicación de polinomios (3 criterios × 4 niveles): aplica FOIL correctamente con los 4 productos · identifica y usa la identidad notable apropiada · simplifica combinando términos semejantes en el resultado.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 3.2 · Factorización: factor común y diferencia de cuadrados</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante factoriza extrayendo el factor común de todos los términos (identificar el MCD de coeficientes y el menor exponente de cada variable); factoriza diferencias de cuadrados perfectos (a²-b² = (a+b)(a-b)); y verifica la factorización expandiendo para obtener el polinomio original.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> estrategia de verificación: factorizar → expandir → ¿igual al original? (siempre); lista de cuadrados perfectos hasta 225 como referencia; MyOpenMath. <em>Modalidad:</em> factorización como el proceso inverso de la multiplicación — siempre verificar expandiendo.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El detective de factores" — los estudiantes identifican qué tipo de factorización aplicar (factor común o diferencia de cuadrados) antes de factorizar. 8 polinomios para factorizar y verificar. Actividad de conexión: factorizar x²-25 → ¿qué valor de x hace que el resultado sea cero? (prepara la factorización de trinomios). Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de factor común, 4 de diferencia de cuadrados, 2 de tipo mixto (factor común primero, luego diferencia de cuadrados). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de factorización básica (3 criterios × 4 niveles): extrae el MCD correctamente (coeficiente y variables) · reconoce e identifica la diferencia de cuadrados · verifica la factorización expandiendo y obteniendo el polinomio original.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 3.3 · Factorización de trinomios (a=1 y a≠1)</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante factoriza trinomios de la forma x²+bx+c buscando dos números cuyo producto es c y cuya suma es b; factoriza trinomios de la forma ax²+bx+c (a≠1) usando el método de factorización por agrupación (o el método del producto y la suma ac); y combina técnicas de factorización en expresiones que requieren múltiples pasos.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de "dos números que multiplican a ___ y suman ___" como organizador; método ac para a≠1 explicado paso a paso; Steck-Vaughn GED Mathematics; MyOpenMath. <em>Modalidad:</em> factorizar con a=1 fluently antes de pasar a a≠1. Siempre verificar por expansión.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "La escalera de factorización" — Nivel 1: x²+7x+12, x²-5x+6. Nivel 2: x²-x-12, x²+3x-10. Nivel 3: 2x²+7x+3, 3x²-10x+8. Nivel 4: 4x²-12x+9 (cuadrado perfecto). Los estudiantes avanzan por niveles según su ritmo. Asincrónica: 10 trinomios en MyOpenMath de ambos tipos.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de a=1 (con +, -, mezcla de signos), 4 de a≠1, 2 de factorización completa (factor común primero, luego trinomio). Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de factorización de trinomios (4 criterios × 4 niveles): identifica los dos números correctamente para a=1 · aplica el método ac o agrupación para a≠1 · combina factor común con factorización de trinomio cuando es necesario · verifica la factorización por expansión.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 4 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t4">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 4 · Ecuaciones cuadráticas</h2>
+        <div class="subtitulo">Semanas 7–8 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: A · SLO Higher Algebra 3–4 · Sección 2.3 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 4.1 · Resolver ecuaciones cuadráticas por factorización</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante resuelve ecuaciones cuadráticas de la forma ax²+bx+c=0 aplicando la Propiedad del Producto Cero (si A·B=0 entonces A=0 o B=0): lleva la ecuación a forma estándar, factoriza el trinomio o la diferencia de cuadrados, aplica la propiedad, y verifica las dos soluciones sustituyendo en la ecuación original.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> Propiedad del Producto Cero explicada con ejemplos numéricos antes del algebraico; pasos: (1) forma estándar ax²+bx+c=0; (2) factorizar; (3) igualar cada factor a cero; (4) resolver cada ecuación lineal; (5) verificar ambas soluciones; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> los 5 pasos como procedimiento obligatorio.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Dos soluciones, una o ninguna por factorización?" — los estudiantes resuelven 8 ecuaciones cuadráticas por factorización, incluyendo casos donde hay que reorganizar primero (x²=9 → x²-9=0; x²=5x → x²-5x=0). Problema aplicado: el área de un rectángulo cuyo largo es 3 más que el ancho es 54. Asincrónica: 10 ecuaciones en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de resolver directamente, 4 de llevar a forma estándar primero, 2 de aplicación (área, trayectoria). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de ecuaciones cuadráticas por factorización (4 criterios × 4 niveles): lleva la ecuación a forma estándar · factoriza correctamente · aplica la Propiedad del Producto Cero a cada factor · verifica ambas soluciones en la ecuación original.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 4.2 · Completar el cuadrado</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante resuelve ecuaciones cuadráticas completando el cuadrado: (1) lleva a la forma x²+bx = -c, (2) suma (b/2)² a ambos lados, (3) escribe el lado izquierdo como (x + b/2)², (4) saca la raíz cuadrada de ambos lados con ±, (5) resuelve para x; y comprende que completar el cuadrado es el origen de la fórmula cuadrática.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> modelo visual de completar el cuadrado con área (un cuadrado con un rectángulo al lado y el "espacio faltante" para completarlo); procedimiento de 5 pasos laminado; MyOpenMath. <em>Modalidad:</em> visual primero, algebraico después; demostrar que la fórmula cuadrática se deriva completando el cuadrado en ax²+bx+c=0.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "De la figura al algoritmo" — los estudiantes completan el cuadrado con el modelo visual para 2 ecuaciones, luego aplican el procedimiento algebraico a 6 ecuaciones. Actividad de derivación: en grupos de 2, el profesor guía paso a paso la derivación de la fórmula cuadrática completando el cuadrado en la ecuación general. Asincrónica: 8 ecuaciones en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 8 preguntas en Brightspace — 4 de resolver completando el cuadrado (a=1), 2 con a≠1 (dividir primero entre a), 2 de identificar cuánto hay que sumar para completar el cuadrado. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de completar el cuadrado (4 criterios × 4 niveles): calcula (b/2)² correctamente · mantiene la igualdad sumando a ambos lados · escribe el trinomio cuadrado perfecto como binomio al cuadrado · saca la raíz con ± y resuelve correctamente para x.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 4.3 · La fórmula cuadrática, el discriminante y aplicaciones</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante aplica la fórmula cuadrática x = (-b ± √(b²-4ac)) / 2a para resolver cualquier ecuación cuadrática; usa el discriminante (b²-4ac) para determinar previamente el número de soluciones reales (2, 1 o 0); y resuelve problemas aplicados que modelan situaciones con ecuaciones cuadráticas (trayectoria de un proyectil, área, geometría).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> fórmula cuadrática de la hoja oficial del GED; tabla del discriminante (b²-4ac &gt; 0 → 2 soluciones, = 0 → 1, &lt; 0 → 0 reales); calculadora TI-30XS (para el discriminante y la raíz); Steck-Vaughn GED Mathematics. <em>Modalidad:</em> calcular el discriminante ANTES de resolver — "¿cuántas soluciones espero?"</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El proyectil" — dada h(t) = -16t²+96t+5 (altura en pies, t en segundos), calcular: ¿cuándo toca el suelo? ¿cuándo alcanza 120 pies? Clasificar 6 ecuaciones por número de soluciones usando el discriminante antes de resolver. Comparar los 3 métodos: ¿cuándo prefiero factorización? ¿cuándo la fórmula? Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 3 de calcular el discriminante e interpretar, 5 de resolver con la fórmula cuadrática, 4 de aplicación contextual. Se permite calculadora y hoja de fórmulas. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de la fórmula cuadrática (4 criterios × 4 niveles): identifica a, b, c correctamente · calcula el discriminante e interpreta el número de soluciones · aplica la fórmula completa sin errores de sustitución · resuelve el problema de aplicación e interpreta las soluciones en el contexto.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 5 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t5">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 5 · Expresiones racionales complejas</h2>
+        <div class="subtitulo">Semanas 9–10 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: A · SLO Higher Algebra 5–7 · Sección 2.4 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 5.1 · Simplificar expresiones racionales: factorizar y cancelar</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante simplifica expresiones racionales algebraicas (fracciones con polinomios) factorizando el numerador y el denominador y cancelando los factores comunes; identifica los valores excluidos (los que hacen que el denominador sea cero) y los especifica en la solución simplificada.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> analogía con fracciones numéricas: 12/18 = (2·6)/(3·6) = 2/3 → lo mismo con polinomios; advertencia: solo se cancelan factores (multiplicación), nunca términos (suma/resta); MyOpenMath. <em>Modalidad:</em> la fracción numérica como modelo → fracción algebraica monomia → fracción con trinomio.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Qué valores excluyo?" — los estudiantes simplifican 8 expresiones racionales e identifican los valores excluidos del dominio. Error trampa: (x+2)/(x²-4) → factorizar denominador → ¿puedo cancelar? Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de simplificar fracciones algebraicas, 4 de identificar valores excluidos, 2 de detectar errores de cancelación incorrecta. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de simplificación racional (3 criterios × 4 niveles): factoriza correctamente numerador y denominador · cancela solo factores (no términos) · identifica todos los valores excluidos del dominio.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 5.2 · Sumar, restar, multiplicar y dividir expresiones racionales</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante multiplica fracciones algebraicas (factorizar → cancelar → multiplicar); divide (multiplicar por el recíproco); suma y resta con denominador común e idéntico; suma y resta con denominadores diferentes encontrando el MCM de los denominadores polinomiales y reescribiendo con denominador común.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> procedimiento de suma/resta con denominadores diferentes (paralelo exacto al de fracciones numéricas); fórmulas para MCM de expresiones algebraicas; MyOpenMath. <em>Modalidad:</em> cada operación se modela primero con fracciones numéricas, luego con algebraicas del mismo tipo.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Cuatro estaciones algebraicas" — la clase rota por 4 estaciones: (1) multiplicar, (2) dividir, (3) sumar con igual denominador, (4) sumar con diferente denominador. 3 problemas por estación. Trabajo en parejas con verificación cruzada. Asincrónica: 12 ejercicios mixtos en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 3 de multiplicación, 3 de división, 3 de suma/resta con igual denominador, 3 con diferente denominador. Tiempo: 30 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de operaciones con racionales (4 criterios × 4 niveles): multiplica factorizando y cancelando antes de multiplicar · invierte correctamente en la división · encuentra el MCM de los denominadores · suma/resta reescribiendo con denominador común sin errores.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 5.3 · Resolver ecuaciones con expresiones racionales y modelado</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante resuelve ecuaciones que contienen fracciones algebraicas multiplicando ambos lados por el MCM de todos los denominadores para eliminarlas, verifica que las soluciones no sean valores excluidos (soluciones extrañas), y aplica ecuaciones racionales a problemas de modelado (tasas de trabajo, mezclas, distancia-velocidad-tiempo con variantes).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> el método MCM para "limpiar" denominadores algebraicos; verificación de soluciones extrañas; 6 problemas de aplicación clásicos del GED (trabajo conjunto: si A tarda 3h y B tarda 4h solos, ¿cuánto juntos?); MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> ecuación racional → multiplicar por MCM → ecuación lineal o cuadrática → verificar.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Trabajamos juntos?" — los estudiantes resuelven 4 problemas de trabajo conjunto con la ecuación 1/a + 1/b = 1/t y 4 problemas de distancia/velocidad con variantes (corriente a favor y en contra). Identifican y descartan soluciones extrañas. Asincrónica: 8 problemas en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de resolver ecuaciones racionales, 2 de identificar soluciones extrañas, 4 de aplicación (trabajo, mezcla, distancia). Se permite calculadora. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de ecuaciones racionales (4 criterios × 4 niveles): multiplica correctamente por el MCM para eliminar denominadores · resuelve la ecuación resultante · verifica que las soluciones no sean valores excluidos · modela y resuelve un problema de aplicación con ecuación racional.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 6 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t6">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 6 · Sistemas de ecuaciones lineales</h2>
+        <div class="subtitulo">Semanas 11–12 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: A · SLO Systems 1–5 · Sección 3.1 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 6.1 · Resolver sistemas de ecuaciones por sustitución</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante resuelve sistemas de dos ecuaciones lineales con dos variables usando el método de sustitución: despeja una variable en una ecuación, sustituye en la otra, resuelve para la primera variable y luego calcula la segunda; verifica la solución en AMBAS ecuaciones originales.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> procedimiento de 5 pasos: (1) despejar una variable; (2) sustituir en la otra ecuación; (3) resolver para esa variable; (4) sustituir para encontrar la primera; (5) verificar en ambas ecuaciones; problemas de contexto (dos precios, dos velocidades); MyOpenMath. <em>Modalidad:</em> elegir siempre la variable más fácil de despejar (la de coeficiente 1 o -1).</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El sistema de precios" — dos tiendas cobran precios diferentes por café y té; con los datos de dos compras distintas, los estudiantes plantean y resuelven el sistema para encontrar el precio de cada producto. 6 sistemas para resolver por sustitución. Asincrónica: 8 sistemas en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 8 preguntas en Brightspace — 3 de resolver el sistema por sustitución, 2 de verificar si un par ordenado es solución del sistema, 3 de plantear y resolver un problema contextual. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de sustitución (4 criterios × 4 niveles): despeja la variable correctamente en la ecuación elegida · sustituye sin errores de signo · resuelve para ambas variables · verifica la solución en las dos ecuaciones originales.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 6.2 · Resolver sistemas por eliminación y clasificar sistemas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante resuelve sistemas por el método de eliminación (combinación lineal): multiplica una o ambas ecuaciones para que los coeficientes de una variable sean opuestos y los elimina sumando; clasifica sistemas como independiente (1 solución), inconsistente (0 soluciones, paralelas) o dependiente (∞ soluciones, misma recta); y elige el método más eficiente según la estructura del sistema.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla comparativa sustitución vs. eliminación (¿cuándo es más fácil cada método?); tabla de clasificación de sistemas con ejemplos de los 3 tipos; MyOpenMath. <em>Modalidad:</em> eliminar la variable más fácil (aquella cuyos coeficientes son opuestos o fácilmente manejables).</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Cuántas soluciones tiene?" — los estudiantes resuelven 6 sistemas y clasifican el resultado: ¿intersectan en un punto, son paralelas o son la misma recta? Actividad de elección de método: dado un sistema, ¿elimino o sustituyo? Justificar en 2 oraciones. Asincrónica: 10 sistemas en MyOpenMath (mix de métodos).</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de resolver por eliminación, 3 de clasificar el sistema (tipo), 3 de aplicación (mezclas, monedas, velocidades). Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de eliminación y clasificación (4 criterios × 4 niveles): multiplica las ecuaciones por los factores correctos para crear opuestos · elimina la variable y resuelve · clasifica el sistema correctamente con justificación · elige el método más eficiente para un sistema dado.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 6.3 · Método gráfico, aplicaciones y modelado con sistemas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante resuelve sistemas de ecuaciones graficando las dos rectas en el mismo plano y leyendo el punto de intersección; conecta la solución gráfica con la algebraica; modela situaciones reales con sistemas de ecuaciones (análisis de equilibrio precio-demanda, punto de equilibrio de costos e ingresos, problema de mezclas); y traduce problemas verbales complejos a sistemas de ecuaciones.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> papel cuadriculado para gráficas; tabla de valores para cada recta; problemas de modelado con contexto económico y financiero; Steck-Vaughn GED Mathematics; MyOpenMath. <em>Modalidad:</em> graficar primero para visualizar, luego verificar algebraicamente.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El punto de equilibrio" — una empresa tiene costos fijos + variables y una función de ingresos; los estudiantes grafican ambas rectas, encuentran el punto de equilibrio (break-even) e interpretan: ¿cuántas unidades debe vender para ganar dinero? Problema verbal: plantar dos sistemas a partir del texto, resolver por el método preferido. Asincrónica: 6 sistemas en MyOpenMath incluyendo 2 con gráfica.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de identificar la solución de un sistema a partir de su gráfica, 3 de plantear el sistema desde un problema verbal, 4 de resolver y modelar. Se permite calculadora. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de modelado con sistemas (4 criterios × 4 niveles): grafica las dos rectas correctamente y lee el punto de intersección · conecta la solución gráfica con la algebraica · traduce correctamente un problema verbal a un sistema de dos ecuaciones · interpreta la solución del sistema en el contexto del problema.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 7 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t7">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 7 · Sistemas de desigualdades y funciones</h2>
+        <div class="subtitulo">Semanas 13–14 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: A · F · SLO Systems 6 · SLO Functions 1–3 · Secciones 3.2, 4.1 y 4.2 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 7.1 · Sistemas de desigualdades lineales: graficar la región solución</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante grafica una desigualdad lineal en el plano (línea sólida o punteada; sombreado del semiplano correcto usando un punto de prueba); grafica el sistema de dos o más desigualdades y determina la región factible (intersección de los semiplanos); verifica si un punto dado pertenece a la región solución; y aplica el sistema de desigualdades a problemas de programación lineal básica.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> regla para distinguir &lt; (punteada) de ≤ (sólida); método del punto de prueba (0,0) para elegir el lado correcto de la recta; papel cuadriculado; MyOpenMath. <em>Modalidad:</em> graficar cada desigualdad por separado → identificar la intersección → verificar un punto.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El presupuesto de producción" — una empresa puede producir x sillas e y mesas con restricciones de tiempo y materiales (sistema de desigualdades). Los estudiantes grafican la región factible y determinan qué combinaciones (x, y) son viables. Verifican 4 puntos candidatos. Asincrónica: 6 sistemas de desigualdades en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 8 preguntas en Brightspace — 3 de graficar una desigualdad (identificar la gráfica correcta), 3 de determinar la región factible de un sistema, 2 de verificar si un punto es solución del sistema. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de sistemas de desigualdades (3 criterios × 4 niveles): grafica la línea correctamente (sólida vs. punteada) · identifica el semiplano correcto usando el punto de prueba · determina la región factible de intersección y verifica un punto.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 7.2 · Relaciones vs. funciones, notación f(x) y dominio/rango</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante distingue relaciones de funciones (una función asigna exactamente un valor de salida por cada entrada); usa la prueba de la línea vertical para identificar funciones desde una gráfica; usa la notación f(x) para evaluar funciones; identifica el dominio y el rango de una función desde una tabla, gráfica o ecuación; y clasifica funciones lineales, cuadráticas, exponenciales y racionales por su forma.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> diagrama de máquina de funciones (entrada → regla → salida); prueba de la línea vertical ilustrada; tabla de correspondencia tipo con ejemplos de función y no-función; MyOpenMath. <em>Modalidad:</em> la máquina de funciones como metáfora antes de la definición formal.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Función o no?" — los estudiantes clasifican 10 relaciones (tablas, gráficas, mapas de correspondencia) en función/no función. Luego evalúan f(x) = 2x²-3x+1 para x = 0, 1, -2, 1/2. Identifican el dominio y rango de 4 funciones. Actividad: comparar f(3) vs. f(-3) en diferentes tipos de función. Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de identificar función/no función (tabla, gráfica), 4 de evaluar f(x) con diferentes tipos de función, 3 de dominio y rango. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de funciones básicas (3 criterios × 4 niveles): aplica la definición de función correctamente (prueba de la línea vertical y de la tabla) · evalúa f(x) sustituyendo y simplificando con PEMDAS · identifica el dominio y el rango correctamente desde la gráfica, tabla o ecuación.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 7.3 · Tasa de cambio promedio e identificar tipos de funciones</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula la tasa de cambio promedio de una función en un intervalo ([a,b]) como (f(b)-f(a))/(b-a) e interpreta el resultado en contexto ($ por año, metros por segundo); diferencia funciones lineales (tasa constante), cuadráticas (tasa variable, forma de parábola) y exponenciales (crecimiento multiplicativo) observando tablas y gráficas; y conecta la pendiente de una recta con la tasa de cambio constante de una función lineal.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla comparativa de los tres tipos de función: lineal (diferencia constante en y), cuadrática (segunda diferencia constante), exponencial (razón constante de cambio); fórmula de tasa de cambio promedio; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> construir tablas de los tres tipos y observar el patrón antes de la clasificación formal.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Inversión, caída libre y viral" — los estudiantes calculan la tasa de cambio promedio de tres situaciones: (1) cuenta de ahorro con interés simple (lineal), (2) altura de un objeto en caída libre (cuadrática), (3) publicación viral en redes sociales (exponencial). Clasifican 6 tablas de datos en el tipo de función. Asincrónica: 8 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de calcular la tasa de cambio promedio en un intervalo, 3 de clasificar el tipo de función desde una tabla, 3 de interpretar la tasa en contexto. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de tasa de cambio (3 criterios × 4 niveles): calcula (f(b)-f(a))/(b-a) correctamente · interpreta el resultado con unidades y significado en el contexto · clasifica la función como lineal, cuadrática o exponencial basándose en el patrón de diferencias o razones.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 8 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t8">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 8 · Modelado de funciones, proyecto final integrador y simulacro GED <span class="ged-tag">GED</span></h2>
+        <div class="subtitulo">Semanas 15–16 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: F · SLO Functions 4–8 · Sección 4.3 del Topical Outline · GED Mathematical Reasoning</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 8.1 · Funciones cuadráticas: la parábola, el vértice y las intercepts</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante grafica funciones cuadráticas f(x)=ax²+bx+c identificando el vértice (x=-b/2a; y=f(-b/2a)), el eje de simetría (x=-b/2a), las intercepts con los ejes (calcular x-intercepts con la fórmula cuadrática; encontrar la y-intercept con x=0); determina si la parábola abre hacia arriba (a&gt;0) o hacia abajo (a&lt;0); y usa el vértice para resolver problemas de máximo/mínimo.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de valores para graficar parabolas; conexión entre la fórmula cuadrática (Tema 4) y los x-intercepts de la parábola; fórmula del vértice; papel cuadriculado; Steck-Vaughn GED Mathematics; MyOpenMath. <em>Modalidad:</em> construir la tabla → graficar → identificar vértice y eje → confirmar con fórmula.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El proyectil y el beneficio" — (1) h(t)=-16t²+64t+5: graficar, encontrar la altura máxima (vértice) y cuándo toca el suelo (x-intercepts); (2) B(x)=-2x²+120x-800: ¿cuántas unidades maximizan el beneficio? Asincrónica: 8 funciones cuadráticas en MyOpenMath incluyendo graficar e identificar características.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de calcular el vértice y el eje de simetría, 3 de graficar e identificar características, 4 de problemas de máximo/mínimo (proyectil, beneficio, área máxima). Se permite calculadora. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de funciones cuadráticas (4 criterios × 4 niveles): calcula el vértice correctamente (x=-b/2a → sustituir) · identifica si la parábola abre arriba o abajo · encuentra correctamente las x-intercepts e y-intercept · interpreta el vértice como máximo o mínimo en el contexto del problema.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 8.2 · Funciones exponenciales, crecimiento/decaimiento e introducción a logarítmicas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante grafica y caracteriza funciones exponenciales f(x)=a·bˣ (crecimiento: b&gt;1; decaimiento: 0&lt;b&lt;1); aplica la función de crecimiento/decaimiento exponencial en contextos reales (interés compuesto, vida media, crecimiento de población); e introduce la función logarítmica como la inversa de la exponencial (si b^y=x entonces log_b(x)=y), conectando logaritmo base 10 con la calculadora.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de valores de y=2ˣ vs y=f(x)=(1/2)ˣ para ver crecimiento vs. decaimiento; fórmula de interés compuesto A=P(1+r/n)^(nt); introducción al logaritmo como "¿a qué exponente hay que elevar la base para obtener x?"; calculadora TI-30XS (tecla log); MyOpenMath. <em>Modalidad:</em> la función exponencial en contexto real antes de la definición formal de logaritmo.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El banco y el tiempo" — los estudiantes calculan cómo crece $1,000 al 5% de interés compuesto anualmente en 1, 5, 10 y 20 años, graficar los puntos y describir la forma. Luego: ¿en cuántos años se duplica? (introducción al logaritmo como respuesta). Calcular log₁₀(1000)=3 con TI-30XS. Asincrónica: 6 ejercicios de funciones exponenciales + 4 de logaritmos básicos en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de graficar/caracterizar funciones exponenciales, 4 de problemas aplicados (interés compuesto, población, vida media), 2 de introducción al logaritmo (¿qué exponente...?). Se permite calculadora. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de funciones exponenciales (3 criterios × 4 niveles): distingue crecimiento de decaimiento por el valor de la base · aplica la fórmula de interés compuesto o equivalente en un contexto real · conecta la función logarítmica con la exponencial como inversas.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 8.3 · Proyecto final integrador + simulacro GED Mathematical Reasoning <span class="ged-tag">GED</span></h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante presenta el proyecto final integrador "Mi modelo matemático" (una situación real modelada con una función cuadrática o exponencial + gráfica + análisis algebraico + interpretación escrita), responde 10 preguntas tipo GED Mathematical Reasoning de nivel avanzado, y demuestra dominio del uso de la hoja de fórmulas oficial del GED y de la calculadora TI-30XS en condiciones de examen.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> hoja de fórmulas oficial del GED Mathematical Reasoning (usada exactamente como en el examen); plantilla del proyecto final "Mi modelo matemático"; banco de 10 preguntas tipo GED de nivel avanzado (mix de todos los temas del Nivel 4); guía de estrategias para el GED (manejo del tiempo, descarte de opciones, uso de la hoja de fórmulas); Steck-Vaughn GED Mathematics. <em>Modalidad:</em> condiciones de simulacro de examen (tiempo cronometrado, solo los materiales permitidos).</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¡Es hora del examen!" — Presentación oral del proyecto (3–4 min por estudiante, con preguntas del grupo). Simulacro de 10 preguntas tipo GED en condiciones reales (45 min, solo calculadora TI-30XS y hoja de fórmulas). Análisis de resultados: ¿qué temas necesito repasar? Plan de preparación final individual. Asincrónica: los estudiantes suben el proyecto a Brightspace y completan la evaluación sumativa final.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> <strong>Evaluación final sumativa</strong> — 30 preguntas en Brightspace mezclando TODOS los temas de los 4 niveles con énfasis en los del Nivel 4: 5 de geometría analítica y volumen 3D, 5 de polinomios y factorización, 5 de ecuaciones cuadráticas, 5 de expresiones racionales, 5 de sistemas de ecuaciones, 5 de funciones y modelado. Tiempo: 90 min (tiempo del GED). 1 intento. Se permite calculadora TI-30XS y hoja de fórmulas del GED.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> <strong>analítica del proyecto final "Mi modelo matemático"</strong> (5 criterios × 4 niveles = 20 pts): (1) situación real bien descrita y justificada como cuadrática o exponencial · (2) gráfica correcta con todas las etiquetas (ejes, escala, unidades, nombre de la función) · (3) análisis algebraico correcto (vértice, tasa de crecimiento, valor en un punto específico) · (4) interpretación escrita coherente y completa en el contexto real · (5) presentación oral clara, precisa y segura usando vocabulario matemático apropiado. La nota del proyecto (20 pts) se integra con la evaluación sumativa para la calificación final del curso.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- NOTAS -->
+  <div class="notas">
+    <strong>📝 Notas pedagógicas para revisión:</strong>
+    <ul>
+      <li><strong>Distribución 50/50:</strong> cada lección = 2h sinc. + 2h asinc. = 4h. Total: 48 sinc. + 48 asinc. = 96h.</li>
+      <li><strong>Hoja de fórmulas del GED:</strong> a partir del Tema 2, usar siempre la hoja oficial tal como aparece en el examen. El objetivo es que el estudiante llegue al GED habituado a usarla eficientemente, sin perder tiempo buscando fórmulas.</li>
+      <li><strong>Calculadora TI-30XS:</strong> este nivel usa extensivamente las funciones avanzadas: x², √x, xⁿ, log, funciones gráficas básicas. Recordar siempre: LIMPIAR LA MEMORIA antes de cada cálculo.</li>
+      <li><strong>Coherencia vertical:</strong> los 4 planes curriculares (N1–N4) forman un sistema coherente. El Tema 1.3 del N4 (ecuaciones de la recta) conecta con el Tema 5 del N3 (álgebra lineal). El Tema 4 del N4 (cuadráticas) usa la factorización del Tema 3 del N4. El Tema 8 integra todo el sistema.</li>
+      <li><strong>Simulacro GED en L8.3:</strong> es la primera vez que los estudiantes enfrentan condiciones reales de examen (tiempo, materiales permitidos, un solo intento). Preparar emocionalmente al grupo con una charla de motivación antes del simulacro.</li>
+      <li><strong>Brightspace HTML:</strong> solo hex sólidos; no rgba() ni gradientes; &lt;details&gt;/&lt;summary&gt; para acordeones; no usar &lt;label&gt;. El ged-tag rojo se puede adaptar como &lt;span class="pildora"&gt; para Brightspace.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Plan curricular preparado para Prof. José M. Fernández (Truman College, CCC) — con Claude.<br>
+    Spanish ASE Math 4 · AE 0170-0324 · Adult Education · Brightspace D2L<br>
+    🎓 Completar este nivel = listo para el GED® Mathematical Reasoning
+  </footer>
+
+</div>
+</body>
+</html>
