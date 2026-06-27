@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan curricular — Spanish ASE Math 2 (Nivel 2)</title>
+  <style>
+    :root {
+      --t1:  #b71c1c; --t1bg: #ffebee;
+      --t2:  #4a148c; --t2bg: #f3e5f5;
+      --t3:  #1a237e; --t3bg: #e8eaf6;
+      --t4:  #004d40; --t4bg: #e0f2f1;
+      --t5:  #e65100; --t5bg: #fff3e0;
+      --t6:  #33691e; --t6bg: #f1f8e9;
+      --t7:  #37474f; --t7bg: #eceff1;
+      --t8:  #4e342e; --t8bg: #efebe9;
+      --acento: #00695c;
+      --bg:  #f5f7fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0; background: var(--bg); color: #222;
+      line-height: 1.55; font-size: 16px;
+    }
+    .contenedor { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    header.principal {
+      background: #00695c;
+      background: linear-gradient(135deg, #004d40 0%, #00695c 50%, #00897b 100%);
+      color: #fff; padding: 36px 32px; border-radius: 14px;
+      margin-bottom: 24px; box-shadow: 0 4px 14px rgba(0,77,64,.25);
+    }
+    header.principal h1 { margin: 0 0 8px; font-size: 28px; font-weight: 700; }
+    header.principal .meta { font-size: 14px; opacity: .92; margin-top: 8px; }
+
+    .intro {
+      background: #fff; padding: 20px 24px; border-radius: 10px;
+      border-left: 5px solid var(--acento); margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .intro h2 { margin-top: 0; color: var(--acento); font-size: 20px; }
+    .intro p { margin: 8px 0; }
+
+    .tabla-resumen {
+      width: 100%; border-collapse: collapse; background: #fff;
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05); margin-bottom: 32px; font-size: 14px;
+    }
+    .tabla-resumen th, .tabla-resumen td {
+      padding: 10px 12px; text-align: left;
+      border-bottom: 1px solid #eee; vertical-align: top;
+    }
+    .tabla-resumen th {
+      background: #37474f; color: #fff; font-weight: 600;
+      font-size: 13px; text-transform: uppercase; letter-spacing: .4px;
+    }
+    .tabla-resumen tr:last-child td { border-bottom: none; }
+    .tabla-resumen td.num { text-align: center; width: 44px; }
+    .pildora {
+      display: inline-block; padding: 2px 10px; border-radius: 12px;
+      font-size: 12px; font-weight: 700; color: #fff;
+    }
+
+    details.tema {
+      background: #fff; border-radius: 12px; margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07); overflow: hidden;
+      border-top: 6px solid #ccc;
+    }
+    details.tema > summary {
+      padding: 20px 24px; cursor: pointer; list-style: none;
+      background: var(--bgtema, #eceff1); outline: none;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    details.tema > summary::-webkit-details-marker { display: none; }
+    details.tema > summary .chevron {
+      font-size: 20px; flex-shrink: 0; margin-top: 2px;
+      transition: transform .25s;
+    }
+    details.tema[open] > summary .chevron { transform: rotate(90deg); }
+    details.tema > summary .sum-body { flex: 1; }
+    details.tema > summary h2 {
+      margin: 0 0 5px; font-size: 21px; font-weight: 700;
+      color: var(--coltema, #37474f);
+    }
+    details.tema > summary .subtitulo { font-size: 14px; color: #555; font-weight: 500; }
+    details.tema > summary .standards { font-size: 12px; color: #666; margin-top: 6px; font-style: italic; }
+
+    details.tema.t1 { border-top-color: var(--t1); }
+    details.tema.t1 > summary { background: var(--t1bg); }
+    details.tema.t1 > summary h2 { color: var(--t1); }
+    details.tema.t2 { border-top-color: var(--t2); }
+    details.tema.t2 > summary { background: var(--t2bg); }
+    details.tema.t2 > summary h2 { color: var(--t2); }
+    details.tema.t3 { border-top-color: var(--t3); }
+    details.tema.t3 > summary { background: var(--t3bg); }
+    details.tema.t3 > summary h2 { color: var(--t3); }
+    details.tema.t4 { border-top-color: var(--t4); }
+    details.tema.t4 > summary { background: var(--t4bg); }
+    details.tema.t4 > summary h2 { color: var(--t4); }
+    details.tema.t5 { border-top-color: var(--t5); }
+    details.tema.t5 > summary { background: var(--t5bg); }
+    details.tema.t5 > summary h2 { color: var(--t5); }
+    details.tema.t6 { border-top-color: var(--t6); }
+    details.tema.t6 > summary { background: var(--t6bg); }
+    details.tema.t6 > summary h2 { color: var(--t6); }
+    details.tema.t7 { border-top-color: var(--t7); }
+    details.tema.t7 > summary { background: var(--t7bg); }
+    details.tema.t7 > summary h2 { color: var(--t7); }
+    details.tema.t8 { border-top-color: var(--t8); }
+    details.tema.t8 > summary { background: var(--t8bg); }
+    details.tema.t8 > summary h2 { color: var(--t8); }
+
+    .lecciones { padding: 14px 20px 18px; }
+
+    details.leccion {
+      border-left: 4px solid #ccc; border-radius: 0 8px 8px 0;
+      background: #fafafa; margin-bottom: 10px; overflow: hidden;
+    }
+    .t1 details.leccion { border-left-color: var(--t1); }
+    .t2 details.leccion { border-left-color: var(--t2); }
+    .t3 details.leccion { border-left-color: var(--t3); }
+    .t4 details.leccion { border-left-color: var(--t4); }
+    .t5 details.leccion { border-left-color: var(--t5); }
+    .t6 details.leccion { border-left-color: var(--t6); }
+    .t7 details.leccion { border-left-color: var(--t7); }
+    .t8 details.leccion { border-left-color: var(--t8); }
+
+    details.leccion > summary {
+      padding: 12px 16px; cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 10px; outline: none;
+    }
+    details.leccion > summary::-webkit-details-marker { display: none; }
+    details.leccion > summary .chevron-s {
+      font-size: 13px; transition: transform .2s; flex-shrink: 0;
+    }
+    details.leccion[open] > summary .chevron-s { transform: rotate(90deg); }
+    details.leccion > summary h3 {
+      margin: 0; font-size: 16px; color: #263238; font-weight: 600; flex: 1;
+    }
+    details.leccion > summary .dur {
+      font-size: 12px; color: #888; font-style: italic; white-space: nowrap;
+    }
+
+    .leccion-body { padding: 10px 18px 16px 18px; }
+    .obj {
+      font-size: 14px; color: #37474f; margin: 0 0 12px;
+      padding: 8px 12px; background: #fff;
+      border-radius: 6px; border: 1px solid #e0e0e0;
+    }
+    .componente {
+      margin: 8px 0; padding-left: 26px; position: relative;
+      font-size: 14px; line-height: 1.55;
+    }
+    .componente::before { position: absolute; left: 0; top: 0; font-size: 15px; }
+    .componente.material::before  { content: '📐'; }
+    .componente.practica::before  { content: '💬'; }
+    .componente.quiz::before      { content: '✅'; }
+    .componente.rubrica::before   { content: '📊'; }
+    .componente strong { color: #263238; font-weight: 600; }
+
+    .notas {
+      background: #fff8e1; border-left: 4px solid #f9a825;
+      padding: 14px 18px; margin: 8px 0 24px;
+      border-radius: 0 8px 8px 0; font-size: 14px;
+    }
+    .notas strong { color: #e65100; }
+    .notas li { margin-bottom: 6px; }
+
+    footer {
+      text-align: center; padding: 24px; color: #666;
+      font-size: 13px; margin-top: 16px; border-top: 1px solid #ddd;
+    }
+
+    @media print {
+      body { background: #fff; }
+      details.tema, details.leccion { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <h1>Plan curricular — Matemáticas, Nivel 2</h1>
+    <div class="meta">
+      <strong>Spanish ASE Math: Level 2</strong> · AE 0170-0322 · City Colleges of Chicago<br>
+      96 horas totales (48 sincrónicas + 48 asincrónicas) · 16 semanas · NRS Levels 2–3<br>
+      Plataforma: Brightspace D2L · Prof. José M. Fernández, con Claude
+    </div>
+  </header>
+
+  <section class="intro">
+    <h2>Cómo está organizado este plan</h2>
+    <p>El contenido se distribuye en <strong>8 grandes temas de 12 horas cada uno</strong> (≈ 2 semanas por tema), respetando la progresión del <em>Topical Outline v2</em> del syllabus de 16 semanas y los Student Learning Outcomes.</p>
+    <p>Cada tema contiene <strong>3 lecciones</strong> de 4 horas cada una. Para cada lección se especifican cuatro componentes: <strong>📐 Material/Recursos</strong>, <strong>💬 Práctica guiada</strong>, <strong>✅ Quiz/Tarea</strong> y <strong>📊 Rúbrica</strong>.</p>
+    <p>Los temas 1–3 desarrollan el sistema de números racionales con signo, exponentes, raíces y el PEMDAS completo. Los temas 4–6 cubren razonamiento proporcional, porcentajes y matemáticas financieras. Los temas 7–8 cierran con geometría transicional, estadística descriptiva, gráficos circulares, probabilidad simple y proyecto final integrador.</p>
+    <p><strong>Uso del acordeón:</strong> haz clic en el encabezado de cada tema para expandirlo. Dentro, haz clic en cada lección para ver sus componentes. El primer tema ya está abierto.</p>
+  </section>
+
+  <table class="tabla-resumen">
+    <thead>
+      <tr><th>#</th><th>Tema</th><th>Semanas</th><th>Horas</th><th>Foco principal</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#b71c1c">1</span></td>
+        <td><strong>Enteros con signo: recta numérica y las cuatro operaciones</strong></td>
+        <td>1–2</td><td>12 h</td>
+        <td>Valor absoluto, opuestos; +, -, ×, ÷ con enteros negativos; aplicaciones</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#4a148c">2</span></td>
+        <td><strong>Fracciones complejas, exponentes y raíces cuadradas perfectas</strong></td>
+        <td>3–4</td><td>12 h</td>
+        <td>Fracciones con coeficientes negativos; potencias; raíces de cuadrados perfectos hasta √225</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1a237e">3</span></td>
+        <td><strong>PEMDAS completo</strong></td>
+        <td>5–6</td><td>12 h</td>
+        <td>Orden de operaciones con potencias, raíces, fracciones y paréntesis anidados</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#004d40">4</span></td>
+        <td><strong>Razones, tasas unitarias y proporciones</strong></td>
+        <td>7–8</td><td>12 h</td>
+        <td>Razones y tasas; proporciones directas e inversas; regla de tres; aplicaciones</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#e65100">5</span></td>
+        <td><strong>Porcentajes: conceptos, cálculos y aplicaciones</strong></td>
+        <td>9–10</td><td>12 h</td>
+        <td>Conversiones %; hallar parte, todo y porcentaje; cambio porcentual; descuento, impuesto</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#33691e">6</span></td>
+        <td><strong>Matemáticas financieras y conversiones de medidas</strong></td>
+        <td>11–12</td><td>12 h</td>
+        <td>Interés simple; depreciación; conversiones entre sistema inglés y métrico</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#37474f">7</span></td>
+        <td><strong>Geometría transicional: figuras compuestas y el círculo</strong></td>
+        <td>13–14</td><td>12 h</td>
+        <td>Área de figuras compuestas; circunferencia; área del círculo; aplicaciones con π</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#4e342e">8</span></td>
+        <td><strong>Estadística descriptiva, gráficos circulares y probabilidad simple</strong></td>
+        <td>15–16</td><td>12 h</td>
+        <td>Media, mediana, moda, rango, media ponderada; gráficos circulares; P simple; proyecto final</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 1 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t1" open>
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 1 · Enteros con signo: recta numérica y las cuatro operaciones</h2>
+        <div class="subtitulo">Semanas 1–2 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: NS · SLO Number System 1–3 · Sección 1 (operaciones con enteros negativos) del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 1.1 · La recta numérica, valor absoluto y opuestos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante ubica enteros positivos y negativos en la recta numérica, los compara y ordena usando &gt;, &lt;, =, calcula el valor absoluto de un número y lo interpreta como distancia al cero, e identifica los opuestos de números enteros.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> recta numérica grande en papel de póster (de -15 a 15); tarjetas de números para ubicar; MyOpenMath: lección de enteros negativos. <em>Modalidad:</em> contextos reales antes del símbolo — temperatura bajo cero, deuda, altura sobre/bajo el nivel del mar — luego formalizar con la recta.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Termómetros y bancos" — 8 situaciones reales donde los estudiantes asignan un entero con signo (temperatura -12°F, deuda de $45, altura -30 m...) y los ubican en la recta. Luego comparan pares de enteros y calculan el valor absoluto de cada uno. Asincrónica: 10 ejercicios en MyOpenMath de ordenar, comparar y calcular valor absoluto.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de ubicar un entero en la recta, 2 de comparar con &gt;/&lt;/=, 2 de valor absoluto, 3 de contexto real (¿cuál temperatura es más fría? ¿quién tiene más deuda?). Tiempo: 15 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> lista de cotejo (4 criterios): ubica correctamente enteros negativos en la recta ✓ · compara dos enteros con el símbolo correcto ✓ · calcula el valor absoluto correctamente ✓ · interpreta un entero negativo en un contexto real ✓.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 1.2 · Suma y resta de enteros con signo</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante suma y resta enteros con signo usando la recta numérica y las reglas de signo; comprende que restar es sumar el opuesto (a − b = a + (−b)); y verifica resultados usando el valor absoluto como guía de magnitud.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> fichas de dos colores (cara roja = negativo, cara amarilla = positivo) para modelar suma de enteros; tabla de reglas de suma (mismo signo → sumar y conservar; diferente signo → restar y tomar el signo del mayor); MyOpenMath. <em>Modalidad:</em> modelo con fichas → recta numérica → algoritmo de reglas de signo.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El termómetro sube y baja" — los estudiantes resuelven 10 situaciones de temperatura como historia (Ej.: "Eran -8°F. Subió 15°. ¿Cuántos grados hay ahora?") usando primero la recta, luego las reglas. Práctica de conversión a − b = a + (−b) con 6 problemas. Asincrónica: 12 ejercicios en MyOpenMath con retroalimentación en cada paso.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problemas en Brightspace — 4 de suma con igual signo, 4 de suma con diferente signo, 4 de resta reescrita como suma del opuesto. Sin calculadora. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> analítica de suma/resta de enteros (3 criterios × 4 niveles): aplica la regla de signo correcta · calcula la magnitud correctamente · convierte resta en suma del opuesto y resuelve.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 1.3 · Multiplicación y división de enteros; aplicaciones</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante multiplica y divide enteros con signo aplicando las reglas de signo (pos×pos = pos; neg×neg = pos; pos×neg = neg); justifica la regla neg×neg = pos usando la propiedad distributiva; resuelve expresiones y problemas de contexto con las cuatro operaciones combinadas.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla resumen de reglas de signo para × y ÷ (4 combinaciones); contextos reales de multiplicación negativa (pérdida por acción × número de acciones; temperatura que baja X grados por hora durante Y horas); MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> demostración con el patrón de productos (3×(-2)=-6; 2×(-2)=-4; 1×(-2)=-2; 0×(-2)=0; -1×(-2)=?) antes de enunciar la regla.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El detective de signos" — 12 expresiones donde el estudiante (1) predice el signo del resultado antes de calcular, (2) calcula, (3) verifica. Problemas de aplicación: temperatura, elevación, finanzas. Actividad grupal: crear una "historia" que use multiplicación/división de negativos. Asincrónica: 10 ejercicios en MyOpenMath + 2 problemas de contexto.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 4 de multiplicación de enteros, 4 de división de enteros, 4 de problemas de contexto (temperatura, dinero, tiempo). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de operaciones con enteros (4 criterios × 4 niveles): aplica la regla de signos en multiplicación · aplica la regla en división · resuelve expresiones de 2–3 operaciones con enteros · interpreta el resultado negativo en el contexto del problema.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 2 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t2">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 2 · Fracciones complejas, exponentes y raíces cuadradas perfectas</h2>
+        <div class="subtitulo">Semanas 3–4 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: NS · SLO Number System 4–6 · Secciones 1.2, 1.3 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 2.1 · Fracciones complejas con coeficientes negativos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante simplifica fracciones complejas que involucran coeficientes negativos, opera con fracciones que tienen numeradores o denominadores negativos, y resuelve expresiones que combinan fracciones y enteros con signo.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de casos: -(a/b) = (-a)/b = a/(-b); modelos visuales de fracción negativa en la recta numérica; MyOpenMath: lección de fracciones complejas. <em>Modalidad:</em> casos progresivos: fracción con numerador neg. → denominador neg. → ambos neg. → simplificación de fracción compleja con enteros.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Positivo o negativo?" — los estudiantes clasifican 10 fracciones antes de simplificar (¿el resultado es positivo o negativo?). Luego simplifican fracciones tipo (-12)/(-8), (-3/4)×(-2/5), (2/3)÷(-4). Actividad en parejas: uno simplifica, el otro verifica con la regla de signos. Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 problemas en Brightspace — 3 de simplificar fracciones con signos, 4 de operar fracciones complejas (+, -, ×, ÷), 3 de expresiones mixtas entero + fracción negativa. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de fracciones con signo (3 criterios × 4 niveles): determina el signo del resultado correctamente · simplifica al mínimo término · opera fracciones con signo sin errores de signo ni de cálculo.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 2.2 · Exponentes enteros positivos y potencias de base 10</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante escribe y evalúa potencias con exponente entero positivo; distingue base del exponente; aplica el exponente cero (a⁰ = 1 para a ≠ 0); calcula potencias de 10; y reconoce cuadrados perfectos del 1 al 225 (1², 2²… 15²).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de potencias de 2 hasta 2¹⁰ y de 10 hasta 10⁶; tarjetas de cuadrados perfectos (1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225); MyOpenMath. <em>Modalidad:</em> construir la tabla de potencias de 2 por multiplicación repetida antes de introducir la notación exponencial.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Construcción de la tabla de potencias" — los estudiantes completan en grupo la tabla de bases 2, 3, 4, 5, 10 hasta el exponente 4. Juego de "¿Cuánto vale?" — tarjetas con expresiones exponenciales, los estudiantes escriben el valor numérico. Flashcards de cuadrados perfectos para memorización. Asincrónica: 12 ejercicios de evaluar potencias y reconocer cuadrados perfectos en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 4 de evaluar potencias (incluye base negativa), 4 de identificar cuadrados perfectos, 4 de potencias de 10 (× y ÷ mentales: 5.3 × 10³ = ?). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de exponentes (3 criterios × 4 niveles): distingue base de exponente y evalúa correctamente · aplica a⁰ = 1 sin confundirlo con a¹ = a · identifica los 15 cuadrados perfectos del 1 al 225 sin tabla.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 2.3 · Raíces cuadradas de cuadrados perfectos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula la raíz cuadrada de cuadrados perfectos hasta √225 sin calculadora, identifica que la raíz cuadrada y el cuadrado son operaciones inversas, estima la raíz cuadrada de un entero no perfecto ubicándola entre dos enteros consecutivos, y usa la calculadora TI-30XS para verificar.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> cuadrícula para "construir cuadrados" visuales (un cuadrado de lado 5 unidades tiene 25 cuadritos → √25 = 5); tabla de cuadrados/raíces perfectas; calculadora TI-30XS (tecla √x); MyOpenMath. <em>Modalidad:</em> modelo visual con cuadrícula → relación inversa cuadrado↔raíz → fluency con la tabla → estimación de raíces no perfectas.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "La geometría de las raíces" — los estudiantes dibujan cuadrados de áreas dadas (25, 36, 49...) en papel cuadriculado y leen el lado como la raíz cuadrada. Estimación: √50 está entre √49 = 7 y √64 = 8, más cerca de 7. Verifican con TI-30XS. Asincrónica: 10 ejercicios de raíces exactas y 4 de estimación en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 6 de raíces cuadradas exactas (cuadrados perfectos hasta √225), 4 de estimación de raíces no perfectas (entre qué dos enteros está √x). Sin calculadora. Tiempo: 15 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de raíces cuadradas (3 criterios × 4 niveles): calcula raíces de cuadrados perfectos sin tabla · explica la relación inversa entre cuadrar y sacar raíz · estima raíces no perfectas ubicándolas entre dos enteros consecutivos.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 3 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t3">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 3 · PEMDAS completo</h2>
+        <div class="subtitulo">Semanas 5–6 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: OA · NS · SLO Number System 7 · Sección 1.4 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 3.1 · Orden de operaciones: repaso y extensión a paréntesis anidados</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante aplica el orden de operaciones (PEMDAS) a expresiones con paréntesis simples, corchetes y llaves anidados, con las cuatro operaciones y enteros con signo; distingue errores comunes de orden (izquierda a derecha para × y ÷ al mismo nivel).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> mnemónico PEMDAS con ejemplos visuales en color (P en rojo, E en naranja, MD en azul, AS en verde); fichas de "pasos" para registrar cada operación; MyOpenMath. <em>Modalidad:</em> demostración del error más común (calcular de izquierda a derecha sin respetar el orden) → corrección → práctica.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El árbitro del PEMDAS" — el profesor presenta una expresión con un "error plantado" en el orden y los estudiantes lo identifican y corrigen. Luego resuelven 8 expresiones con paréntesis anidados paso a paso. Actividad en parejas: un estudiante resuelve mostrando cada paso, el otro actúa de árbitro verificando el orden. Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de expresiones con paréntesis simples, 4 con paréntesis anidados [( )], 2 de identificar el error en una solución dada. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de orden de operaciones básico (3 criterios × 4 niveles): resuelve paréntesis antes que las demás operaciones · aplica × y ÷ antes que + y − · trabaja de izquierda a derecha cuando hay operaciones del mismo nivel.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 3.2 · PEMDAS con potencias y raíces</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante evalúa expresiones numéricas que incluyen potencias y raíces cuadradas dentro del orden de operaciones PEMDAS completo; distingue −3² = −9 de (−3)² = 9; aplica el PEMDAS a expresiones con enteros negativos, potencias y paréntesis combinados.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla PEMDAS actualizada con E en el segundo nivel (Paréntesis → Exponentes → Mult/Div → Sum/Res); ejemplos clave de error frecuente: −3² vs. (−3)²; MyOpenMath. <em>Modalidad:</em> el profesor trabaja 4 ejemplos "trampa" en la pizarra, luego los estudiantes los identifican y corrigen.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Cuidado con los exponentes" — 6 pares de expresiones casi idénticas con una diferencia de paréntesis o signo (ej: −4² y (−4)²; 2 + 3² y (2+3)²); los estudiantes calculan ambas y explican por qué son diferentes. Luego 8 expresiones completas con PEMDAS completo (potencias incluidas). Asincrónica: 12 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 4 de expresiones con potencias en PEMDAS, 4 de distinguir −n² vs. (−n)², 4 de expresiones mixtas (paréntesis + potencias + enteros con signo). Sin calculadora. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de PEMDAS con exponentes (4 criterios × 4 niveles): evalúa potencias en el paso correcto del PEMDAS · distingue −n² de (−n)² · aplica raíces cuadradas en el paso de exponentes · calcula el resultado final correctamente con todos los niveles.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 3.3 · PEMDAS en expresiones con fracciones y contexto algebraico</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante evalúa expresiones que contienen fracciones dentro del PEMDAS (el denominador de una fracción actúa como paréntesis implícito); sustituye valores numéricos en expresiones algebraicas simples y evalúa respetando el PEMDAS completo.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> regla del "denominador como paréntesis": (3+5)/(2×4) significa que el numerador y el denominador se calculan por separado antes de dividir; fichas de sustitución; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> progresión: expresiones numéricas puras → introducir una variable → sustituir y evaluar con PEMDAS.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Evalúa la expresión" — los estudiantes reciben 6 expresiones con fracciones complejas y 4 expresiones algebraicas simples para sustituir y evaluar. Actividad de conexión con el GED: 3 preguntas tipo GED de evaluación de expresiones. Asincrónica: 8 ejercicios de PEMDAS con fracciones + 4 de sustitución en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de PEMDAS con fracciones, 4 de sustitución y evaluación con PEMDAS, 2 tipo GED (formato de selección múltiple con texto contextualizador). Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> integradora de PEMDAS (4 criterios × 4 niveles): aplica el denominador como paréntesis implícito · sustituye correctamente el valor de la variable · sigue el orden PEMDAS completo (P→E→MD→AS) sin saltarse pasos · obtiene el resultado correcto.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 4 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t4">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 4 · Razones, tasas unitarias y proporciones</h2>
+        <div class="subtitulo">Semanas 7–8 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: RP · SLO Ratio &amp; Proportional Relationships 1–2 · Secciones 2.1 y 2.2 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 4.1 · Razones y tasas unitarias en contexto</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante escribe razones en tres formas (a:b, a/b, "a a b"), calcula tasas unitarias (precio por unidad, velocidad, producción por hora), compara tasas unitarias para tomar decisiones de compra, e interpreta razones en contextos de geografía, deportes y trabajo.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> etiquetas de precios de supermercado con dos presentaciones del mismo producto (ej. 3 latas por $5.97 vs. 5 latas por $9.50); tabla de tasas unitarias comunes; MyOpenMath. <em>Modalidad:</em> "el mejor precio" como contexto motivador antes de la formalización.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El comprador inteligente" — los estudiantes comparan 5 pares de productos con precios diferentes para determinar cuál ofrece mejor precio por unidad. Luego calculan tasas de velocidad (km por hora), producción (artículos por día) y consumo (millas por galón). Asincrónica: 10 ejercicios de razones y tasas unitarias en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de escribir razones en sus tres formas, 4 de calcular tasas unitarias, 3 de comparar tasas y tomar decisiones. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de razones y tasas (3 criterios × 4 niveles): escribe la razón correctamente en las tres formas · calcula la tasa unitaria dividiendo correctamente · compara tasas unitarias y justifica la decisión con los números.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 4.2 · Proporciones directas: regla de tres y resolver proporciones</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica relaciones de proporcionalidad directa (cuando uno aumenta el otro aumenta en la misma razón), resuelve proporciones usando producto cruzado (a/b = c/d → ad = bc), aplica la regla de tres directa para encontrar valores desconocidos, y verifica sus soluciones sustituyendo.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de "¿es proporcional?" con contraejemplos; diagrama visual de producto cruzado; 10 problemas de contexto real (recetas, mapas, conversión de moneda, mezclas); MyOpenMath. <em>Modalidad:</em> comparar tabla de valores proporcionales vs. no proporcionales antes del algoritmo del producto cruzado.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "La receta del chef" — los estudiantes adaptan una receta de 4 porciones a 6, 10 y 15 porciones usando proporciones. Luego resuelven 6 proporciones con producto cruzado en contextos de distancia en mapas y conversión de moneda. Asincrónica: 10 problemas de proporciones en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 2 de identificar si una relación es proporcional, 5 de resolver proporciones (encontrar x), 3 de aplicación (receta, mapa, velocidad). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de proporciones directas (3 criterios × 4 niveles): plantea la proporción correctamente con las unidades alineadas · aplica el producto cruzado sin errores · verifica la solución sustituyendo en la proporción original.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 4.3 · Proporciones inversas y aplicaciones mixtas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante distingue la proporción inversa de la directa (cuando uno aumenta el otro disminuye en la misma razón, a×b = k), identifica situaciones de proporcionalidad inversa en contextos reales (velocidad–tiempo, trabajadores–días, presión–volumen básico) y resuelve problemas que combinan ambos tipos de proporción.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla comparativa: proporcional directa vs. inversa con ejemplos y contraejemplos; 8 situaciones de contexto para clasificar; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> "si duplico X, ¿qué le pasa a Y?" como pregunta diagnóstica antes de clasificar.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Directa o inversa?" — los estudiantes clasifican 8 situaciones reales y resuelven 2 de cada tipo. Problema integrador: "4 pintores tardan 6 días en pintar un edificio — ¿cuánto tardarían 8 pintores?" Asincrónica: foro en Brightspace — cada estudiante inventa y resuelve una situación de proporción de su trabajo o vida diaria.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de clasificar (¿directa o inversa?), 4 de resolver proporciones inversas, 3 de aplicación mixta. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de proporciones inversas (3 criterios × 4 niveles): distingue proporción directa de inversa con justificación · plantea y resuelve proporciones inversas usando k = x×y · aplica el tipo correcto de proporción en un problema de contexto real.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 5 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t5">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 5 · Porcentajes: conceptos, cálculos y aplicaciones</h2>
+        <div class="subtitulo">Semanas 9–10 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: RP · SLO Ratio &amp; Proportional Relationships 3 · Sección 2.3 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 5.1 · El porcentaje: conversiones y los tres casos fundamentales</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante convierte entre porcentaje, fracción y decimal en ambas direcciones; aplica la fórmula Parte = Porcentaje × Todo para los tres casos (hallar la parte, hallar el todo, hallar el porcentaje); y usa la proporción porcentual como método alternativo.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> triángulo del porcentaje (Parte / Todo × %); tabla de conversiones comunes (50% = ½ = 0.5; 25% = ¼ = 0.25; 75% = ¾ = 0.75; 33⅓% ≈ 1/3); calculadora TI-30XS para verificar; MyOpenMath. <em>Modalidad:</em> contexto de examen antes de la fórmula — "Si sacaste 18/25, ¿qué porcentaje es?"</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Los tres casos del porcentaje" — los estudiantes identifican en 9 problemas cuál de los tres valores falta (parte, todo o %) antes de resolverlos. Actividad visual: el triángulo del porcentaje como herramienta — cubrir el valor desconocido para ver qué operación usar. Asincrónica: 12 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 4 de cada caso (hallar parte, hallar todo, hallar %). Incluye conversiones. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de porcentaje básico (3 criterios × 4 niveles): convierte correctamente entre %, fracción y decimal · identifica el caso correcto (¿qué me falta?) · aplica la fórmula o proporción y obtiene el resultado correcto.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 5.2 · Cambio porcentual: aumento y disminución</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula el porcentaje de aumento y disminución usando la fórmula % cambio = (cambio / valor original) × 100; identifica si el cambio es positivo o negativo; y aplica el concepto a situaciones reales de salarios, precios y poblaciones.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> fórmula de cambio porcentual con ejemplos de aumento (precio subió de $40 a $52) y disminución (temperatura bajó de 80°F a 68°F); tabla de contextos reales; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> el estudiante primero estima si el cambio es grande o pequeño antes de calcular el porcentaje exacto.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Noticias económicas" — los estudiantes reciben 8 titulares ficticios con datos de cambio (precio, salario, población) y calculan el % de cambio, clasificando si es aumento o disminución. Discusión: ¿un cambio de $5 siempre representa el mismo %? (diferencia entre valor absoluto y relativo). Asincrónica: 8 ejercicios en MyOpenMath + foro de reflexión.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de calcular % de aumento, 4 de calcular % de disminución, 2 de interpretación (¿cuál cambio es proporcionalmente mayor?). Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de cambio porcentual (3 criterios × 4 niveles): identifica el valor original (denominador) correctamente · calcula el cambio absoluto (numerador) · aplica la fórmula y expresa el resultado como porcentaje con signo o contexto correcto.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 5.3 · Descuento, impuesto, propina y aplicaciones mixtas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula precios con descuento (precio final = precio original × (1 − %)), impuesto sobre ventas (precio final = precio original × (1 + %)), y propina razonable; resuelve problemas de porcentaje encadenados (descuento + impuesto consecutivos) y justifica por qué el orden no es siempre indiferente.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> recibos de compra reales (del estudiante o simulados) que muestran subtotal + impuesto + total; tabla de precios con descuento del 10%, 20%, 25%, 30%; calculadora TI-30XS. <em>Modalidad:</em> recibo real como punto de partida — el estudiante verifica los cálculos del recibo antes de aprender el procedimiento formal.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "La noche de shopping" — los estudiantes simulan comprar 5 artículos con descuentos y luego calcular el impuesto sobre el precio descontado. Problema integrador: "El televisor tenía un 15% de descuento. Sobre ese precio, hay un 8.25% de impuesto en Illinois. ¿Cuánto pago?" Asincrónica: 8 problemas de aplicación en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de descuento simple, 3 de impuesto sobre ventas, 2 de propina, 2 de descuento + impuesto encadenados. Tiempo: 25 min. Se permite calculadora.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de porcentajes aplicados (4 criterios × 4 niveles): calcula el precio descontado correctamente · calcula el impuesto sobre el precio correcto (original o descontado) · calcula la propina razonable · justifica la diferencia cuando se aplican dos porcentajes consecutivos.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 6 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t6">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 6 · Matemáticas financieras y conversiones de medidas</h2>
+        <div class="subtitulo">Semanas 11–12 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: RP · MD · SLO Ratio &amp; Proportional Relationships 4 · Secciones 2.4 y 3.1 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 6.1 · Interés simple: fórmula I = P × r × t</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante aplica la fórmula de interés simple I = P × r × t para calcular el interés, el capital final (A = P + I), y despeja cualquiera de las cuatro variables (P, r, t, I) cuando las otras tres son conocidas; interpreta el significado de cada variable en contextos de ahorro y préstamo.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tarjetas con la fórmula I = Prt y sus variables explicadas (P = principal/capital, r = tasa en decimal, t = tiempo en años); tabla de conversión de tasa mensual a anual; calculadora TI-30XS; MyOpenMath. <em>Modalidad:</em> contexto de cuenta de ahorros o préstamo del banco antes de la fórmula abstracta.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El banco y yo" — los estudiantes calculan cuánto interés ganarían en una cuenta de ahorro de $2,000 al 3% anual durante 2 años; y cuánto pagarían de interés en un préstamo de $5,000 al 8% durante 18 meses. Despejan P y t en 4 problemas. Asincrónica: 10 ejercicios de interés simple en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de calcular I, 3 de calcular A (capital + interés), 3 de despejar P, r o t. Tiempo: 20 min. Se permite calculadora.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de interés simple (3 criterios × 4 niveles): convierte la tasa % a decimal y el tiempo a años correctamente · aplica la fórmula I = Prt sin errores · despeja la variable pedida y calcula el resultado con unidades ($, %, años).</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 6.2 · Depreciación y otras aplicaciones financieras</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula la depreciación lineal de un activo (valor que pierde por año = (valor inicial − valor residual) / vida útil), determina el valor contable en un año específico, y resuelve problemas financieros aplicados que combinan porcentaje, interés simple y depreciación.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> fórmula de depreciación lineal con contextos (automóvil, computadora, equipo de trabajo); tabla de valor contable año por año; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> tabla de depreciación progresiva — el estudiante construye la tabla antes de usar la fórmula directamente.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El auto de Juan" — Juan compró un auto en $24,000. Se espera que dure 8 años con un valor residual de $4,000. Los estudiantes construyen la tabla de depreciación año por año, calculan la depreciación anual y determinan el valor del auto después de 3 y 5 años. Actividad de decisión: ¿conviene vender el auto antes o después? Asincrónica: 6 problemas de depreciación en MyOpenMath + 4 de repaso de interés simple.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de depreciación lineal, 3 de valor contable en año específico, 3 de problemas financieros mixtos (interés + depreciación). Tiempo: 25 min. Se permite calculadora.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de matemáticas financieras (3 criterios × 4 niveles): calcula la tasa de depreciación anual correctamente · construye o interpreta la tabla de valor contable año a año · resuelve un problema financiero integrado (I = Prt y depreciación) con exactitud.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 6.3 · Conversiones entre el sistema inglés y el métrico</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante convierte entre unidades del sistema inglés y el sistema métrico para longitud, peso y capacidad usando factores de conversión (1 in ≈ 2.54 cm; 1 mi ≈ 1.609 km; 1 lb ≈ 454 g; 1 gal ≈ 3.785 L); resuelve problemas de conversión de doble paso (ej. pies → metros); y aplica conversiones en contextos de salud, trabajo y viaje.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> tabla de factores de conversión inglés↔métrico más usados; método del "factor de conversión en fracción" (multiplicar por 1 en forma de fracción de equivalencia); MyOpenMath. <em>Modalidad:</em> contexto de salud — "El médico anotó su peso en libras, pero la farmacia lo pide en kg. ¿Cómo convertir?"</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El viaje a México" — los estudiantes convierten las medidas de un viaje de Chicago a Guadalajara (millas → km, °F → °C, galones de gasolina → litros, libras de equipaje → kg). Método de la fracción de conversión aplicado paso a paso. Asincrónica: 10 ejercicios en MyOpenMath de conversiones inglés↔métrico.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de conversión de longitud, 3 de peso, 2 de capacidad, 2 de conversión de doble paso (mi → m en dos pasos). Se permite la tabla de factores. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de conversiones mixtas (3 criterios × 4 niveles): selecciona el factor de conversión correcto · aplica el método de fracción de conversión (multiplica correctamente y cancela unidades) · expresa el resultado con la unidad objetivo correcta y aproximación razonable.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 7 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t7">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 7 · Geometría transicional: figuras compuestas y el círculo</h2>
+        <div class="subtitulo">Semanas 13–14 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: G · SLO Geometry 1–4 · Secciones 3.2 y 3.3 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 7.1 · Área de figuras compuestas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula el área de figuras compuestas (formadas por dos o más figuras simples) descomponiéndolas en rectángulos, triángulos y trapecios, sumando o restando las áreas parciales según corresponda, y expresa el resultado con unidades cuadradas.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> figuras compuestas sobre papel cuadriculado (en forma de L, T, U, con "mordidas" rectangulares o triangulares); tabla de fórmulas de área (rectángulo, triángulo, trapecio); MyOpenMath. <em>Modalidad:</em> estrategia "dividir para conquistar" — dibujar líneas auxiliares para separar la figura en partes simples.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El plano del apartamento" — los estudiantes reciben el plano de 3 apartamentos con formas irregulares y calculan el área total de cada uno para determinar cuál tiene más m². Estrategia de adición y estrategia de sustracción (área grande − área que falta). Asincrónica: 6 figuras compuestas en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 8 preguntas en Brightspace — 4 figuras compuestas con dimensiones dadas (calcular área), 2 de hallar una dimensión desconocida dado el área total, 2 de aplicación (costo de alfombra o pintura por m²). Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de figuras compuestas (4 criterios × 4 niveles): descompone la figura correctamente (dibuja las líneas auxiliares) · aplica la fórmula correcta a cada parte · suma o resta las áreas parciales correctamente · expresa el resultado en unidades cuadradas con exactitud.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 7.2 · Circunferencia del círculo</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula la circunferencia de un círculo dados el radio o el diámetro usando C = 2πr = πd; usa π ≈ 3.14159 y la aproximación 22/7; distingue radio, diámetro, circunferencia y arco; y resuelve problemas aplicados (longitud de cerca circular, distancia recorrida en una vuelta, envolver un objeto cilíndrico).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> cuerda y objetos circulares (lata, plato) para medir la circunferencia físicamente y dividir por el diámetro para "descubrir" π; fórmulas C = πd y C = 2πr; calculadora TI-30XS (tecla π); MyOpenMath. <em>Modalidad:</em> descubrimiento de π midiendo objetos reales antes de usar la fórmula.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "¿Cuánto mide la pista?" — los estudiantes calculan la circunferencia de una pista circular de atletismo de radio 40 m, de un plato de radio 15 cm, y de la llanta de un auto de diámetro 58 cm. Problema inverso: encontrar el radio dado la circunferencia. Asincrónica: 8 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de calcular C dado r, 3 de calcular C dado d, 2 de encontrar r o d dado C, 2 de aplicación. Se permite calculadora y tabla de fórmulas. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de circunferencia (3 criterios × 4 niveles): distingue radio de diámetro y los relaciona correctamente (d = 2r) · aplica la fórmula C = πd o C = 2πr correctamente · expresa el resultado con unidades lineales y una aproximación razonable de π.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 7.3 · Área del círculo y problemas integradores con π</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula el área de un círculo usando A = πr², encuentra el radio o diámetro dado el área, resuelve problemas con figuras compuestas que incluyen semicírculos y sectores circulares, y distingue cuándo usar circunferencia (borde) vs. área (superficie).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> demostración visual de A = πr² (reagrupar sectores del círculo en un paralelogramo); fórmula A = πr²; problemas con figuras compuestas rectángulo + semicírculo (pista de atletismo); MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> visual de reagrupación de sectores antes de la fórmula algebraica.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "La pista de atletismo completa" — los estudiantes calculan el área de una pista estándar (dos rectas + dos semicírculos) usando la fórmula del rectángulo y del círculo. Problema inverso: dado un área de jardín circular de 78.5 m², ¿cuánto mide el radio? Asincrónica: 8 ejercicios en MyOpenMath incluyendo figuras con semicírculos.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 3 de área de círculo (dado r), 2 de encontrar r dado A, 3 de figuras compuestas con semicírculos, 2 de distinguir circunferencia vs. área en contexto (¿cuánto borde? ¿cuánta superficie?). Tiempo: 25 min. Se permite calculadora.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de área del círculo (4 criterios × 4 niveles): aplica A = πr² correctamente · calcula r a partir de A despejando correctamente · combina área del círculo con otras figuras en figuras compuestas · distingue cuándo aplicar circunferencia y cuándo aplicar área según el contexto.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TEMA 8 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t8">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Tema 8 · Estadística descriptiva, gráficos circulares y probabilidad simple</h2>
+        <div class="subtitulo">Semanas 15–16 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: SP · SLO Statistics &amp; Probability 1–5 · Secciones 4.1, 4.2 y 4.3 del Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 8.1 · Media, mediana, moda, rango y media ponderada</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula la media aritmética, mediana, moda y rango de un conjunto de datos; identifica cuándo la media puede ser engañosa por la presencia de valores atípicos; calcula la media ponderada (promedio de notas con créditos diferentes, salario promedio con horas distintas); y elige la medida más representativa según el contexto.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> conjunto de datos reales: notas del semestre, temperaturas semanales, salarios de un departamento; algoritmo visual para mediana (ordenar y encontrar el centro); fórmula de media ponderada Σ(valor × peso) / Σpesos; MyOpenMath. <em>Modalidad:</em> comparar la media con y sin un valor atípico para motivar la necesidad de la mediana.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "El reporte de calificaciones" — los estudiantes calculan la media ponderada de sus notas si tienen: quiz (20%), examen parcial (30%), tarea (20%) y examen final (30%). Luego analizan un conjunto de salarios con un CEO que gana 10 veces más que los empleados y discuten cuál medida representa mejor el "salario típico". Asincrónica: 10 ejercicios en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — 3 de media, 3 de mediana (par e impar), 2 de moda y rango, 4 de media ponderada. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de estadística descriptiva (4 criterios × 4 niveles): calcula la media aritmética correctamente · calcula la mediana ordenando primero los datos · calcula la media ponderada correctamente · elige y justifica la medida más representativa para un contexto dado.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 8.2 · Gráficos circulares: leer, interpretar y construir</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante lee e interpreta gráficos circulares (de "pie") expresados en porcentajes y en valores absolutos, calcula el ángulo central de cada sector (360° × %), construye un gráfico circular simple a partir de datos de porcentaje, y convierte entre porcentaje, ángulo y valor absoluto.</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> 3 gráficos circulares reales (presupuesto familiar, composición de la población de Chicago por origen, distribución del tiempo de trabajo); transportador y compás para construir; MyOpenMath. <em>Modalidad:</em> "el gráfico que ya usé en el Tema 5" — conectar el gráfico circular con el porcentaje estudiado anteriormente.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Mi presupuesto en gráfico" — los estudiantes crean un gráfico circular de su presupuesto mensual (o uno simulado: 35% comida, 30% renta, 15% transporte, 10% salud, 10% ocio). Calculan los ángulos, los dibujan con transportador y etiquetan cada sector. Asincrónica: 6 preguntas de interpretación de gráficos reales + 1 construcción en MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas en Brightspace — 4 de leer e interpretar un gráfico circular dado, 3 de calcular ángulos a partir de porcentajes, 3 de convertir entre porcentaje, ángulo y valor absoluto. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> de gráficos circulares (4 criterios × 4 niveles): lee correctamente los porcentajes del gráfico · convierte porcentaje → ángulo central correctamente · construye el gráfico con sectores bien dimensionados · etiqueta correctamente cada sector con nombre y porcentaje.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lección 8.3 · Probabilidad simple y proyecto final integrador</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante calcula la probabilidad simple de un evento como P(A) = favorables/total, expresa la probabilidad como fracción, decimal y porcentaje, identifica el espacio muestral de experimentos simples (moneda, dado, baraja), y distingue eventos imposibles (P=0), seguros (P=1) y posibles (0 &lt; P &lt; 1).</div>
+          <div class="componente material"><strong>Material/Recursos:</strong> dados, monedas y urnas con fichas de colores para experimentos físicos; tabla del espacio muestral de lanzar un dado y una moneda; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modalidad:</em> experimento físico (lanzar el dado 20 veces y registrar resultados) antes de la probabilidad teórica.</div>
+          <div class="componente practica"><strong>Práctica guiada:</strong> "Experimento y teoría" — los estudiantes lanzan una moneda 20 veces (experimento) y comparan la frecuencia relativa con la probabilidad teórica (1/2). Luego calculan probabilidades teóricas de 8 eventos con dado, urna y baraja simplificada. Actividad final: 10 preguntas tipo GED de nivel básico mezclando todos los temas del nivel. Asincrónica: foro — cada estudiante sube su proyecto final.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> <strong>Evaluación final sumativa</strong> — 25 preguntas en Brightspace mezclando todos los temas: 5 de enteros con signo y PEMDAS, 5 de porcentajes, 5 de geometría (área compuesta y círculo), 5 de estadística descriptiva, 5 de probabilidad y gráficos circulares. Tiempo: 60 min. 2 intentos. Se permite calculadora TI-30XS (limpiar memoria antes).</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> <strong>analítica del proyecto final</strong> (5 criterios × 4 niveles = 20 pts): (1) cálculo correcto de al menos 2 medidas de tendencia central con sus datos personales · (2) gráfico circular correctamente construido y etiquetado · (3) interpretación escrita del gráfico con oraciones completas y datos · (4) al menos 1 cálculo de porcentaje o interés simple aplicado a una situación real · (5) presentación oral o foro con argumentación coherente. La nota del proyecto se combina con la del quiz sumativo.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════ NOTAS PEDAGÓGICAS ═══════════════ -->
+  <div class="notas">
+    <strong>📝 Notas pedagógicas para revisión:</strong>
+    <ul>
+      <li><strong>Distribución 50/50:</strong> cada lección sugiere 2 horas sincrónicas + 2 asincrónicas. Total: 48 sinc. + 48 asinc. = 96 hrs.</li>
+      <li><strong>PEMDAS como hilo conductor:</strong> el Tema 3 introduce formalmente el PEMDAS completo, pero los Temas 1 y 2 lo preparan progresivamente (operaciones con enteros → potencias → PEMDAS). A partir del Tema 4, el PEMDAS se aplica tácitamente en todos los cálculos.</li>
+      <li><strong>Continuidad con Nivel 1 y Nivel 3:</strong> fracciones simples y decimales básicos se dan por dominados (Nivel 1). Raíces irracionales, álgebra lineal y geometría avanzada quedan para el Nivel 3.</li>
+      <li><strong>Calculadora TI-30XS:</strong> se introduce plenamente en este nivel para porcentajes, interés y geometría con π. Recordar siempre la instrucción de limpiar memoria antes de calcular.</li>
+      <li><strong>Matemáticas financieras (Tema 6):</strong> este tema es especialmente relevante para adultos hispanohablantes con experiencias reales de préstamos, ahorros y presupuesto familiar. Conectar siempre con situaciones auténticas.</li>
+      <li><strong>Brightspace HTML:</strong> al pasar este plan a páginas Brightspace, solo hex sólidos (sin rgba ni gradientes); &lt;details&gt;/&lt;summary&gt; nativos funcionan en Brightspace moderno, pero si hay problemas usar .caja-acordeon con onClick en &lt;div&gt;.</li>
+      <li><strong>Steck-Vaughn:</strong> en una segunda fase, alinear cada lección con las páginas del workbook <em>Matemáticas GED</em> para referencia del libro físico.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Plan curricular preparado para Prof. José M. Fernández (Truman College, CCC) — con Claude.<br>
+    Spanish ASE Math: Level 2 · AE 0170-0322 · Adult Education · Brightspace D2L
+  </footer>
+
+</div>
+</body>
+</html>
